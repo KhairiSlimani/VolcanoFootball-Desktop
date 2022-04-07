@@ -21,7 +21,7 @@ public class JoueurService implements IServiceJoueur {
     public boolean ajouterJoueur(Joueur joueur) {
         try {
 
-            String req = "INSERT INTO `joueur`( `nom_joueur`, `prenom_joueur`, `age`,  `position`, `photo`, `description`) VALUES (?,?,?,?,?,?)";
+            String req = "INSERT INTO `joueur`( `nom_joueur`, `prenom_joueur`, `age`,  `position`, `photo`, `description`,`equipe_id`) VALUES (?,?,?,?,?,?,?)";
             PreparedStatement pstm = con.prepareStatement(req);
             pstm.setString(1, joueur.getNom_joueur());
             pstm.setString(2, joueur.getPrenom_joueur());
@@ -29,6 +29,7 @@ public class JoueurService implements IServiceJoueur {
             pstm.setString(4, joueur.getPosition());
             pstm.setString(5,joueur.getPhoto());
             pstm.setString(6, joueur.getDescription());
+            pstm.setInt(7, joueur.getEquipe());
             pstm.executeUpdate();
             System.out.println("Ajout effectué");
             return true;
@@ -41,7 +42,7 @@ public class JoueurService implements IServiceJoueur {
     @Override
     public boolean modifierJoueur(Joueur joueur) {
         try {
-            String req = "UPDATE joueur SET  nom_joueur=? , prenom_joueur=? , age=? , position=? , photo=? , description=?  WHERE id=?";
+            String req = "UPDATE joueur SET  nom_joueur=? , prenom_joueur=? , age=? , position=? , photo=? , description=?, equipe_id=? WHERE id=?";
             PreparedStatement pstm = con.prepareStatement(req);
             pstm.setString(1, joueur.getNom_joueur());
             pstm.setString(2, joueur.getPrenom_joueur());
@@ -49,7 +50,8 @@ public class JoueurService implements IServiceJoueur {
             pstm.setString(4, joueur.getPosition());
             pstm.setString(5,joueur.getPhoto());
             pstm.setString(6, joueur.getDescription());
-            pstm.setInt(7,joueur.getId());
+            pstm.setInt(7,joueur.getEquipe());
+            pstm.setInt(8,joueur.getId());
             pstm.executeUpdate();
             System.out.println("Modification effectuée");
             return true;
@@ -87,6 +89,7 @@ public class JoueurService implements IServiceJoueur {
                 j.setDescription(rs.getString("description"));
                 j.setPosition(rs.getString("position"));
                 j.setPhoto(rs.getString("photo"));
+                j.setEquipe(rs.getInt("equipe_id"));
 
                 joueur.add(j);
             }

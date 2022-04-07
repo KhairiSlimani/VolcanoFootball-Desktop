@@ -11,7 +11,7 @@ public class Pidev {
     public static void main(String[] args) {
 // String nom_joueur,String prenom_joueur,int age, String position,String photo,int equipe, String Description
 
-        Joueur p2 = new Joueur(6,"Foulen","BEN FOULEN",33,"aaa","aaaaa",1,"aaaaaaaaaa");
+        Joueur p2 = new Joueur(7,"Foulen","BEN FOULEN",33,"aaa","aaaaa",1,"aaaaaaaaaa");
         Joueur p1 = new Joueur("Foulen","BEN FOULEN",33,"aaa","aaaaa",1,"aaaaaaaaaa");
         JoueurService ps = new JoueurService();
 
