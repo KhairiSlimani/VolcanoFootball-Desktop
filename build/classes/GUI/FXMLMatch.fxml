@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="GUI.FXMLMatchController">
+   <children>
+      <AnchorPane prefHeight="587.0" prefWidth="760.0" style="-fx-background-color: black;">
+         <children>
+            <Button layoutX="15.0" layoutY="431.0" mnemonicParsing="false" onAction="#Edit" prefHeight="32.0" prefWidth="164.0" style="-fx-background-color: f63a4c;" text="Modifier" textFill="#fff8f8">
+               <font>
+                  <Font name="Times New Roman Bold" size="18.0" />
+               </font>
+            </Button>
+            <Button layoutX="15.0" layoutY="475.0" mnemonicParsing="false" onAction="#Delete" prefHeight="32.0" prefWidth="164.0" style="-fx-background-color: f63a4c;" text="Supprimer" textFill="#fff8f8">
+               <font>
+                  <Font name="Times New Roman Bold" size="18.0" />
+               </font>
+            </Button>
+            <TextField fx:id="TFNomMatch" layoutX="13.0" layoutY="140.0" promptText="Nom Match" />
+            <Button fx:id="btn_quitter" layoutX="15.0" layoutY="522.0" mnemonicParsing="false" onAction="#Quitter" prefHeight="35.0" prefWidth="164.0" style="-fx-background-color: f63a4c;" text="Menu" textFill="#fff8f8">
+               <font>
+                  <Font name="Times New Roman Bold" size="19.0" />
+               </font>
+            </Button>
+            <ImageView fitHeight="23.0" fitWidth="28.0" layoutX="146.0" layoutY="436.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@image/2931178_change_edit_pencil_creative_design_icon.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="32.0" fitWidth="35.0" layoutX="141.0" layoutY="475.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@image/3669360_delete_forever_ic_icon.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="32.0" fitWidth="35.0" layoutX="141.0" layoutY="525.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@image/3643763_list_mark_menu_option_sign_icon.png" />
+               </image>
+            </ImageView>
+            <TextField fx:id="TFNomArbitre" layoutX="13.0" layoutY="179.0" promptText="Nom Arbitre" />
+            <TextField fx:id="TFStade" layoutX="13.0" layoutY="218.0" promptText="Stade" />
+            <TextField fx:id="TFTour" layoutX="12.0" layoutY="256.0" promptText="Tour" />
+            <TextField fx:id="TFImage" layoutX="12.0" layoutY="294.0" promptText="Image" />
+            <TableView fx:id="tableview" layoutX="202.0" layoutY="106.0" onSort="#getSelected" prefHeight="264.0" prefWidth="554.0">
+               <columns>
+                  <TableColumn fx:id="col_id" prefWidth="54.0" text="Id" />
+                  <TableColumn fx:id="col_NomM" prefWidth="90.0" text="Nom Match" />
+                  <TableColumn fx:id="col_NomA" prefWidth="89.0" text="Nom Arbitre" />
+                  <TableColumn fx:id="col_Stade" prefWidth="82.0" text="Stade" />
+                  <TableColumn fx:id="col_Tour" prefWidth="92.0" text="Tour" />
+                  <TableColumn fx:id="col_Image" prefWidth="75.0" text="Image" />
+                  <TableColumn fx:id="col_Date" prefWidth="75.0" text="Date" />
+               </columns>
+            </TableView>
+            <TextField fx:id="TFDate" layoutX="12.0" layoutY="338.0" promptText="Date" />
+            <Button layoutX="15.0" layoutY="389.0" mnemonicParsing="false" onAction="#add" prefHeight="32.0" prefWidth="164.0" style="-fx-background-color: f63a4c;" text="Ajouter " textFill="#fcf7f7">
+               <font>
+                  <Font name="Times New Roman Bold" size="18.0" />
+               </font>
+            </Button>
+            <ImageView fitHeight="32.0" fitWidth="35.0" layoutX="142.0" layoutY="385.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@image/4634453_+_add_interface_plus_ui_icon.png" />
+               </image>
+            </ImageView>
+            <TextField fx:id="TFId" layoutX="13.0" layoutY="104.0" promptText="id" />
+            <Label graphicTextGap="1.0" layoutX="16.0" layoutY="77.0" prefHeight="23.0" prefWidth="243.0" text="Ajouter Un Match :" textFill="#f63a46" textOverrun="CLIP" underline="true">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Label>
+            <Label layoutX="20.0" layoutY="17.0" opacity="0.72" prefHeight="50.0" prefWidth="443.0" text="Gestion des Matchs :" textAlignment="CENTER" textFill="WHITE" textOverrun="CENTER_ELLIPSIS">
+               <font>
+                  <Font name="System Bold Italic" size="42.0" />
+               </font>
+            </Label>
+            <ImageView fitHeight="86.0" fitWidth="256.0" layoutX="584.0" layoutY="5.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@image/logo.png" />
+               </image>
+            </ImageView>
+         </children>
+      </AnchorPane>
+      <TextField fx:id="TFid" layoutX="38.0" layoutY="31.0" promptText="ID Produit" visible="false" />
+   </children>
+</AnchorPane>

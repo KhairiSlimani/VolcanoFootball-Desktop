@@ -1,6 +1,6 @@
-package Entities;
+package entities;
 
-import java.util.Date;
+import java.sql.Date;
 
 /**
  *
@@ -17,8 +17,7 @@ public class Match {
     private String image;
     private String date;
 
-    public Match(){
-    }
+    
     public Match(int id, String nom_match, String nom_arbitre, String tour, String stade, String date, String image) {
         this.id = id;
         this.nom_match = nom_match;
@@ -29,15 +28,12 @@ public class Match {
         this.image = image;
 
     }
-    public Match(String nom_match, String nom_arbitre, String stade, String tour, String date, String image) {
-
-        this.nom_match = nom_match;
-        this.nom_arbitre = nom_arbitre;
-        this.stade = stade;
-        this.tour = tour;
-        this.date = date;
-        this.image = image;
-
+    public Match(){
+    }
+    
+@Override
+    public String toString() {
+        return "Match{" + "id=" + id + ", nom_match=" + nom_match + ", nom_arbitre=" + nom_arbitre + ", stade=" + stade + ",tour=" + tour + ",date=" + date + ",image=" + image +'}';
     }
 
     public int getId() {
@@ -94,18 +90,6 @@ public class Match {
 
     public void setImage(String image) {
         this.image = image;
-    }
-
-
-
-
-
-
-
-
-    @Override
-    public String toString() {
-        return "Match{" + "id=" + id + ", nom_match=" + nom_match + ", nom_arbitre=" + nom_arbitre + ", stade=" + stade + ",tour=" + tour + ",date=" + date + ",image=" + image +'}';
     }
 
 
