@@ -30,7 +30,7 @@ public class MenuFXMain extends Application {
             Parent root = loader.load();
             Scene scene = new Scene(root);
             primaryStage.setScene(scene);
-            primaryStage.setTitle("Interfce categorie");
+            primaryStage.setTitle("Interfce Match");
             primaryStage.show();
 
         } catch (IOException ex) {
