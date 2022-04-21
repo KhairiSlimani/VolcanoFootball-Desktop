@@ -22,12 +22,13 @@ public class EquipeService implements IServiceEquipe {
     public boolean ajouterEquipe(Equipe equipe) {
         try {
 
-            String req = "INSERT INTO `equipe`( `nom_equipe`, `date_creation`, `drapeau_equipe`, `nom_entreneur`) VALUES (?,?,?,?)";
+            String req = "INSERT INTO `equipe`( `nom_equipe`, `date_creation`, `drapeau_equipe`, `nom_entreneur`,`email`) VALUES (?,?,?,?,?)";
             PreparedStatement pstm = con.prepareStatement(req);
             pstm.setString(1, equipe.getNom_equipe());
             pstm.setDate(2,  equipe.getDate_creation());
             pstm.setString(3, equipe.getDrapeau_equipe());
             pstm.setString(4, equipe.getNom_entreneur());
+            pstm.setString(5, equipe.getEmail());
             pstm.executeUpdate();
             System.out.println("Ajout effectué");
             return true;
@@ -40,13 +41,14 @@ public class EquipeService implements IServiceEquipe {
     @Override
     public boolean modifierEquipe(Equipe equipe) {
         try {
-            String req = "UPDATE equipe SET  nom_equipe=? , date_creation=? , drapeau_equipe=? , nom_entreneur=?   WHERE id=?";
+            String req = "UPDATE equipe SET  nom_equipe=? , date_creation=? , drapeau_equipe=? , nom_entreneur=? , email=?   WHERE id=?";
             PreparedStatement pstm = con.prepareStatement(req);
             pstm.setString(1, equipe.getNom_equipe());
             pstm.setDate(2, equipe.getDate_creation());
             pstm.setString(3, equipe.getDrapeau_equipe());
             pstm.setString(4, equipe.getNom_entreneur());
-            pstm.setInt(5,equipe.getId());
+            pstm.setString(5, equipe.getEmail());
+            pstm.setInt(6,equipe.getId());
             pstm.executeUpdate();
             System.out.println("Modification effectuée");
             return true;
@@ -83,6 +85,7 @@ public class EquipeService implements IServiceEquipe {
                 equipe.setDate_creation(rs.getDate("date_creation"));
                 equipe.setNom_entreneur(rs.getString("nom_entreneur"));
                 equipe.setDrapeau_equipe(rs.getString("drapeau_equipe"));
+                equipe.setEmail(rs.getString("email"));
 
                 equipes.add(equipe);
             }

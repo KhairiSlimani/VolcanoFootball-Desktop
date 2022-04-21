@@ -324,7 +324,7 @@ public class JoueurController implements Initializable {
   
             ObservableList<Joueur> list = j.afficherJoueurs();
             System.out.println(list);
-            Joueur joueur = new Joueur(Integer.parseInt(tid.getText()), tfnom.getText(), tfprenom.getText(), Integer.parseInt(tfage.getText()), tfposition.getText(), tfphoto.getText(), Integer.parseInt(tfequipe.getText()), tfdesc.getText());
+            Joueur joueur = new Joueur(tfnom.getText(), tfprenom.getText(), Integer.parseInt(tfage.getText()), tfposition.getText(), tfphoto.getText(), Integer.parseInt(tfequipe.getText()), tfdesc.getText());
             System.out.println(joueur);
             if (!list.contains(joueur)) {
                 System.out.println(!list.contains(joueur));

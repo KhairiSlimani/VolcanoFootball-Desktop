@@ -34,6 +34,7 @@ import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.text.Text;
 import javafx.stage.Stage;
+import volcanofootball.SendmailequipeController;
 
 /**
  * FXML Controller class
@@ -42,6 +43,7 @@ import javafx.stage.Stage;
  */
 public class EquipeController implements Initializable {
 
+    private Parent root;
     @FXML
     private Button btn_ajouterequipe;
     @FXML
@@ -78,6 +80,12 @@ public class EquipeController implements Initializable {
     private Text tentre;
     @FXML
     private Text tdrapeau;
+    @FXML
+    private TableColumn<Equipe, String> colmail;
+    @FXML
+    private TextField tfmail;
+    @FXML
+    private Button btn_mail;
 
     /**
      * Initializes the controller class.
@@ -97,14 +105,15 @@ public class EquipeController implements Initializable {
     @FXML
     public void selectEquipe() {
         Equipe selectedEquipe = tableequipe.getSelectionModel().getSelectedItem();
+        System.out.println(selectedEquipe.getEmail());
         if (tableequipe.getSelectionModel().getSelectedItem() != null) {
 
             tid.setText(String.valueOf(selectedEquipe.getId()));
             tfnomequipe.setText(selectedEquipe.getNom_equipe());
             tfnomentre.setText(selectedEquipe.getNom_entreneur());
             tfdrapeau.setText(selectedEquipe.getDrapeau_equipe());
+            tfmail.setText(selectedEquipe.getEmail());
             tfdate.setValue(LOCAL_DATE(selectedEquipe.getDate_creation().toString()));
-
             tableequipe.getSelectionModel().clearSelection();
 
         }
@@ -122,6 +131,7 @@ public class EquipeController implements Initializable {
         coldate.setCellValueFactory(new PropertyValueFactory<>("date_creation"));
         colnomentre.setCellValueFactory(new PropertyValueFactory<>("nom_entreneur"));
         coldrapeau.setCellValueFactory(new PropertyValueFactory<>("drapeau_equipe"));
+        colmail.setCellValueFactory(new PropertyValueFactory<>("email"));
         tableequipe.setItems(list);
 
     }
@@ -158,7 +168,7 @@ public class EquipeController implements Initializable {
 
         } else {
 
-            Equipe equipe = new Equipe(tfnomequipe.getText(), gettedDatePickerDate, tfnomentre.getText(), tfdrapeau.getText());
+            Equipe equipe = new Equipe(tfnomequipe.getText(), gettedDatePickerDate, tfnomentre.getText(), tfdrapeau.getText(), tfmail.getText());
 
             EquipeService es = new EquipeService();
             ObservableList<Equipe> list = es.afficherEquipe();
@@ -168,6 +178,7 @@ public class EquipeController implements Initializable {
                 tfnomequipe.clear();
                 tfdrapeau.clear();
                 tfnomentre.clear();
+                tfmail.clear();
                 Platform.runLater(() -> tdrapeau.setText(""));
                 Platform.runLater(() -> tnom.setText(""));
                 Platform.runLater(() -> tdate.setText(""));
@@ -189,7 +200,7 @@ public class EquipeController implements Initializable {
 
             EquipeService e = new EquipeService();
             java.sql.Date gettedDatePickerDate = java.sql.Date.valueOf(tfdate.getValue());
-            Equipe equipe = new Equipe(Integer.parseInt(tid.getText()), tfnomequipe.getText(), gettedDatePickerDate, tfnomentre.getText(), tfdrapeau.getText());
+            Equipe equipe = new Equipe(Integer.parseInt(tid.getText()), tfnomequipe.getText(), gettedDatePickerDate, tfnomentre.getText(), tfdrapeau.getText(), tfmail.getText());
             Alert alert = new Alert(AlertType.CONFIRMATION);
             alert.setTitle("Confirmation du suppression");
             alert.setContentText("voulez-vous vraiment modifier cette equipe ?");
@@ -243,6 +254,7 @@ public class EquipeController implements Initializable {
                 tfnomequipe.clear();
                 tfdrapeau.clear();
                 tfnomentre.clear();
+                tfmail.clear();
             }
         }
 
@@ -269,15 +281,38 @@ public class EquipeController implements Initializable {
                 tfnomequipe.clear();
                 tfdrapeau.clear();
                 tfnomentre.clear();
+                tfmail.clear();
 
             } else {
                 tid.setText("");
                 tfnomequipe.clear();
                 tfdrapeau.clear();
                 tfnomentre.clear();
+                tfmail.clear();
             }
         }
 
+    }
+
+    @FXML
+    private void sendMail(MouseEvent event) throws IOException {
+        if ("".equals(tid.getText())) {
+            Alert alert = new Alert(AlertType.WARNING);
+            alert.setTitle("Attention");
+            alert.setContentText("Veuillez selectionner une equipe!!");
+            alert.showAndWait();
+        } else {
+            String mail = tfmail.getText();
+
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("sendmailequipe.fxml"));
+            root = loader.load();
+            SendmailequipeController sendmailequipeController = loader.getController();
+            sendmailequipeController.displayMail(mail);
+            Scene scene = new Scene(root);
+            Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+            stage.setScene(scene);
+            stage.show();
+        }
     }
 
     @FXML
