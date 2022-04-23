@@ -105,5 +105,32 @@ public class JoueurService implements IServiceJoueur {
         }
         return joueur;
     }
+    @Override
+    public ObservableList<Joueur> afficherJoueursByEquipe(int id) {
+        ObservableList<Joueur> joueur = FXCollections.observableArrayList();
+
+        try {
+            String req = "SELECT * FROM joueur WHERE equipe_id = " + id +"";
+            PreparedStatement pstm = con.prepareStatement(req);
+            ResultSet rs = pstm.executeQuery();
+            while (rs.next()) {
+                Joueur j = new Joueur();
+                j.setId(rs.getInt("id"));
+                j.setNom_joueur(rs.getString("nom_joueur"));
+                j.setPrenom_joueur(rs.getString("prenom_joueur"));
+                j.setAge(rs.getInt("age"));
+                j.setDescription(rs.getString("description"));
+                j.setPosition(rs.getString("position"));
+                j.setPhoto(rs.getString("photo"));
+                j.setEquipe(rs.getInt("equipe_id"));
+
+                joueur.add(j);
+            }
+        } catch (SQLException ex) {
+            Logger.getLogger(JoueurService.class.getName()).log(Level.SEVERE, null, ex);
+            System.out.println("Echec");
+        }
+        return joueur;
+    }
 
 }

@@ -103,6 +103,6 @@ public class Joueur {
 
     @Override
     public String toString() {
-        return "Equipe{" + "id=" + id + ", nom_joueur=" + nom_joueur + ", prenom_joueur=" + prenom_joueur + ",age="+ age + ",position" +position + ",photo="+photo +",Description="+Description+'}';
+        return "Joueur{" + "id=" + id + ", nom_joueur=" + nom_joueur + ", prenom_joueur=" + prenom_joueur + ",age="+ age + ",position" +position + ",photo="+photo +",Description="+Description+'}';
     }
 }

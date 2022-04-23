@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.chart.BarChart?>
+<?import javafx.scene.chart.CategoryAxis?>
+<?import javafx.scene.chart.NumberAxis?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+
+<AnchorPane id="AnchorPane" prefHeight="638.0" prefWidth="1085.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="volcanofootball.StatequipeController">
+   <children>
+      <Pane prefHeight="128.0" prefWidth="1091.0" style="-fx-background-color: #2d333d;">
+         <children>
+            <ImageView fx:id="retour" fitHeight="128.0" fitWidth="300.0" layoutX="450.0" onMouseClicked="#dashboard" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../images/logo%20(NB).png" />
+               </image>
+            </ImageView>
+         </children>
+         <padding>
+            <Insets right="5.0" />
+         </padding>
+      </Pane>
+      <BarChart fx:id="barChart" layoutY="128.0" prefHeight="510.0" prefWidth="1091.0" title="Nombre de Joueurs par Equipe">
+        <xAxis>
+          <CategoryAxis side="BOTTOM" fx:id="xAxis" />
+        </xAxis>
+        <yAxis>
+          <NumberAxis side="LEFT" />
+        </yAxis>
+      </BarChart>
+   </children>
+</AnchorPane>

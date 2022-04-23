@@ -63,6 +63,15 @@ public class HomeController implements Initializable {
         stage.setScene(scene);
         stage.show();
     }
+    @FXML
+    private void OpenStat(MouseEvent event) throws IOException {
+        
+        Parent root = FXMLLoader.load(getClass().getResource("statequipe.fxml"));
+        Scene scene = new Scene(root);
+        Stage stage = (Stage)((Node)event.getSource()).getScene().getWindow();
+        stage.setScene(scene);
+        stage.show();
+    }
     
   
 }

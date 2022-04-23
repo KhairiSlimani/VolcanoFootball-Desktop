@@ -101,6 +101,9 @@ public class JoueurController implements Initializable {
     public void initialize(URL url, ResourceBundle rb) {
         // TODO
         showJoueur();
+        JoueurService joueur = new JoueurService();
+        ObservableList<Joueur> list = joueur.afficherJoueursByEquipe(1);
+        System.out.println(list.size());
 
     }
 
