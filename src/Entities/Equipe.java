@@ -13,30 +13,33 @@ public class Equipe {
     private String drapeau_equipe;
     private String nom_entreneur;
     private String email;
+    private int rang;
     
 
     public Equipe() {
     }
 
-    public Equipe(int id, String nom_equipe, Date date_creation,String nom_entreneur,String drapeau_equipe,String email) {
+    public Equipe(int id, String nom_equipe, Date date_creation,String nom_entreneur,String drapeau_equipe,String email,int rang) {
         this.id = id;
         this.nom_equipe = nom_equipe;
         this.date_creation= date_creation;
         this.nom_entreneur = nom_entreneur;
         this.drapeau_equipe= drapeau_equipe;
         this.email=email;
+        this.rang=rang;
 
     }
-    public Equipe( String nom_equipe, Date date_creation,String nom_entreneur,String drapeau_equipe,String email) {
+    public Equipe( String nom_equipe, Date date_creation,String nom_entreneur,String drapeau_equipe,String email,int rang) {
      
         this.nom_equipe = nom_equipe;
         this.date_creation = date_creation;
         this.nom_entreneur = nom_entreneur;
         this.drapeau_equipe= drapeau_equipe;
         this.email=email;
-
+        this.rang=rang;
     }
 
+   
     public void setId(int id) {
         this.id = id;
     }
@@ -87,11 +90,19 @@ public class Equipe {
         this.email = email;
     }
 
+    public int getRang() {
+        return rang;
+    }
+
+    public void setRang(int rang) {
+        this.rang = rang;
+    }
+
     
 
 
     @Override
     public String toString() {
-        return "Joueur{" + "id=" + id + ", nom_equipe=" + nom_equipe + ", date_creation=" + date_creation + ",drapeau_equipe="+ drapeau_equipe + ",nom_entreneur" +nom_entreneur +  ",email" +email + '}';
+        return "Joueur{" + "id=" + id + ", nom_equipe=" + nom_equipe + ", date_creation=" + date_creation + ",drapeau_equipe="+ drapeau_equipe + ",nom_entreneur" +nom_entreneur +  ",email" +email +",rang" +rang + '}';
     }
 }

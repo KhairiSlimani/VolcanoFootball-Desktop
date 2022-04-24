@@ -12,4 +12,5 @@ public interface IServiceEquipe {
     boolean supprimerEquipe(int id);
 
     List<Equipe> afficherEquipe();
+    List<Equipe> afficherEquipeOrderBy();
 }

@@ -86,6 +86,16 @@ public class EquipeController implements Initializable {
     private TextField tfmail;
     @FXML
     private Button btn_mail;
+    @FXML
+    private TextField tfrang;
+    @FXML
+    private TableColumn<Equipe, Integer> colrang;
+    @FXML
+    private Text equipe1;
+    @FXML
+    private Text equipe2;
+    @FXML
+    private Text equipe3;
 
     /**
      * Initializes the controller class.
@@ -94,6 +104,8 @@ public class EquipeController implements Initializable {
     public void initialize(URL url, ResourceBundle rb) {
         // TODO
         showEquipe();
+        RangEquipe();
+
     }
 
     public static final LocalDate LOCAL_DATE(String dateString) {
@@ -112,6 +124,7 @@ public class EquipeController implements Initializable {
             tfnomequipe.setText(selectedEquipe.getNom_equipe());
             tfnomentre.setText(selectedEquipe.getNom_entreneur());
             tfdrapeau.setText(selectedEquipe.getDrapeau_equipe());
+            tfrang.setText(String.valueOf(selectedEquipe.getRang()));
             tfmail.setText(selectedEquipe.getEmail());
             tfdate.setValue(LOCAL_DATE(selectedEquipe.getDate_creation().toString()));
             tableequipe.getSelectionModel().clearSelection();
@@ -120,6 +133,32 @@ public class EquipeController implements Initializable {
 
         tableequipe.getSelectionModel().clearSelection();
 
+    }
+
+    public void RangEquipe() {
+
+        EquipeService es = new EquipeService();
+        ObservableList<Equipe> list = es.afficherEquipeOrderBy();
+        System.out.println(list);
+        int k = 0;
+        for (Equipe e : list) {
+            switch (k) {
+                case 0:
+                    equipe1.setText(e.getNom_equipe());
+                    k++;
+                    break;
+                case 1:
+                    equipe2.setText(e.getNom_equipe());
+                    k++;
+                    break;
+                case 2:
+                    equipe3.setText(e.getNom_equipe());
+                    k++;
+                    break;
+                default:
+                    break;
+            }
+        }
     }
 
     public void showEquipe() {
@@ -132,6 +171,7 @@ public class EquipeController implements Initializable {
         colnomentre.setCellValueFactory(new PropertyValueFactory<>("nom_entreneur"));
         coldrapeau.setCellValueFactory(new PropertyValueFactory<>("drapeau_equipe"));
         colmail.setCellValueFactory(new PropertyValueFactory<>("email"));
+        colrang.setCellValueFactory(new PropertyValueFactory<>("rang"));
         tableequipe.setItems(list);
 
     }
@@ -150,31 +190,42 @@ public class EquipeController implements Initializable {
             Platform.runLater(() -> tdrapeau.setText(""));
             Platform.runLater(() -> tdate.setText(""));
             Platform.runLater(() -> tentre.setText(""));
+            Platform.runLater(() -> tfrang.setText(""));
         } else if ("".equals(tfnomentre.getText())) {
             Platform.runLater(() -> tentre.setText("Veuillez entrer un nom d'entreneur"));
             Platform.runLater(() -> tnom.setText(""));
             Platform.runLater(() -> tdate.setText(""));
             Platform.runLater(() -> tdrapeau.setText(""));
+            Platform.runLater(() -> tfrang.setText(""));
         } else if (tfdate == null) {
             Platform.runLater(() -> tdate.setText("Veuillez entrer une date"));
             Platform.runLater(() -> tnom.setText(""));
             Platform.runLater(() -> tdrapeau.setText(""));
             Platform.runLater(() -> tentre.setText(""));
+            Platform.runLater(() -> tfrang.setText(""));
         } else if ("".equals(tfdrapeau.getText())) {
             Platform.runLater(() -> tdrapeau.setText("Veuillez entrer un drapeau"));
             Platform.runLater(() -> tnom.setText(""));
             Platform.runLater(() -> tdate.setText(""));
             Platform.runLater(() -> tentre.setText(""));
+            Platform.runLater(() -> tfrang.setText(""));
+
+        } else if ("".equals(tfrang.getText())) {
+            Platform.runLater(() -> tfrang.setText("Veuillez entrer le rang FIFA"));
+            Platform.runLater(() -> tnom.setText(""));
+            Platform.runLater(() -> tdate.setText(""));
+            Platform.runLater(() -> tentre.setText(""));
+            Platform.runLater(() -> tdrapeau.setText(""));
 
         } else {
-
-            Equipe equipe = new Equipe(tfnomequipe.getText(), gettedDatePickerDate, tfnomentre.getText(), tfdrapeau.getText(), tfmail.getText());
-
             EquipeService es = new EquipeService();
+            Equipe equipe = new Equipe(tfnomequipe.getText(), gettedDatePickerDate, tfnomentre.getText(), tfdrapeau.getText(), tfmail.getText(), Integer.parseInt(tfrang.getText()));
+
             ObservableList<Equipe> list = es.afficherEquipe();
             if (!list.contains(equipe)) {
                 es.ajouterEquipe(equipe);
                 showEquipe();
+                RangEquipe();
                 tfnomequipe.clear();
                 tfdrapeau.clear();
                 tfnomentre.clear();
@@ -183,6 +234,7 @@ public class EquipeController implements Initializable {
                 Platform.runLater(() -> tnom.setText(""));
                 Platform.runLater(() -> tdate.setText(""));
                 Platform.runLater(() -> tentre.setText(""));
+                Platform.runLater(() -> tfrang.setText(""));
             }
 
         }
@@ -200,7 +252,7 @@ public class EquipeController implements Initializable {
 
             EquipeService e = new EquipeService();
             java.sql.Date gettedDatePickerDate = java.sql.Date.valueOf(tfdate.getValue());
-            Equipe equipe = new Equipe(Integer.parseInt(tid.getText()), tfnomequipe.getText(), gettedDatePickerDate, tfnomentre.getText(), tfdrapeau.getText(), tfmail.getText());
+            Equipe equipe = new Equipe(tfnomequipe.getText(), gettedDatePickerDate, tfnomentre.getText(), tfdrapeau.getText(), tfmail.getText(), Integer.parseInt(tfrang.getText()));
             Alert alert = new Alert(AlertType.CONFIRMATION);
             alert.setTitle("Confirmation du suppression");
             alert.setContentText("voulez-vous vraiment modifier cette equipe ?");
@@ -235,17 +287,17 @@ public class EquipeController implements Initializable {
 
                     EquipeService es = new EquipeService();
                     ObservableList<Equipe> list = es.afficherEquipe();
-                    if (!list.contains(equipe)) {
-                        es.modifierEquipe(equipe);
-                        showEquipe();
-                        tfnomequipe.clear();
-                        tfdrapeau.clear();
-                        tfnomentre.clear();
-                        Platform.runLater(() -> tdrapeau.setText(""));
-                        Platform.runLater(() -> tnom.setText(""));
-                        Platform.runLater(() -> tdate.setText(""));
-                        Platform.runLater(() -> tentre.setText(""));
-                    }
+
+                    es.modifierEquipe(equipe);
+                    showEquipe();
+                    RangEquipe();
+                    tfnomequipe.clear();
+                    tfdrapeau.clear();
+                    tfnomentre.clear();
+                    Platform.runLater(() -> tdrapeau.setText(""));
+                    Platform.runLater(() -> tnom.setText(""));
+                    Platform.runLater(() -> tdate.setText(""));
+                    Platform.runLater(() -> tentre.setText(""));
 
                 }
 
@@ -278,6 +330,7 @@ public class EquipeController implements Initializable {
             if (result.get() == ButtonType.OK) {
                 e.supprimerEquipe(Integer.parseInt(tid.getText()));
                 showEquipe();
+                RangEquipe();
                 tfnomequipe.clear();
                 tfdrapeau.clear();
                 tfnomentre.clear();

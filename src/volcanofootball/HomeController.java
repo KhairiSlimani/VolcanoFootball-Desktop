@@ -43,10 +43,6 @@ public class HomeController implements Initializable {
     }    
     @FXML
     private void OpenEquipe(MouseEvent event) throws IOException {
-        /*EquipeService es = new EquipeService();
-        ObservableList<Equipe> list = es.afficherEquipe();
-        System.out.println(list.toString());*/
-        
 
         Parent root = FXMLLoader.load(getClass().getResource("Equipe.fxml"));
         Scene scene = new Scene(root);

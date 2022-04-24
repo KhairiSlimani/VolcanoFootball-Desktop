@@ -5,8 +5,9 @@
         <group>
             <file>file:/C:/Users/jrady/Desktop/VolcanoFootballDesktop/src/Entities/Joueur.java</file>
             <file>file:/C:/Users/jrady/Desktop/VolcanoFootballDesktop/src/Services/EquipeService.java</file>
-            <file>file:/C:/Users/jrady/Desktop/VolcanoFootballDesktop/src/volcanofootball/statequipe.fxml</file>
+            <file>file:/C:/Users/jrady/Desktop/VolcanoFootballDesktop/src/Entities/Equipe.java</file>
             <file>file:/C:/Users/jrady/Desktop/VolcanoFootballDesktop/src/IServices/IServiceJoueur.java</file>
+            <file>file:/C:/Users/jrady/Desktop/VolcanoFootballDesktop/src/IServices/IServiceEquipe.java</file>
             <file>file:/C:/Users/jrady/Desktop/VolcanoFootballDesktop/src/Services/JoueurService.java</file>
             <file>file:/C:/Users/jrady/Desktop/VolcanoFootballDesktop/src/volcanofootball/EquipeController.java</file>
             <file>file:/C:/Users/jrady/Desktop/VolcanoFootballDesktop/src/volcanofootball/StatequipeController.java</file>

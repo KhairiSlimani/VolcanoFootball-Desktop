@@ -27,13 +27,14 @@
             <Insets right="5.0" />
          </padding>
       </Pane>
-      <TableView fx:id="tableequipe" layoutX="-1.0" layoutY="176.0" onMouseClicked="#selectEquipe" prefHeight="463.0" prefWidth="716.0">
+      <TableView fx:id="tableequipe" layoutX="-1.0" layoutY="176.0" onMouseClicked="#selectEquipe" prefHeight="295.0" prefWidth="716.0">
         <columns>
           <TableColumn fx:id="colequipe" prefWidth="89.0" text="Equipe" />
           <TableColumn fx:id="coldate" prefWidth="139.0" text="Date de Création" />
             <TableColumn fx:id="colnomentre" prefWidth="136.0" text="Nom Entreneur" />
-            <TableColumn fx:id="colmail" prefWidth="186.0" text="Email" />
-            <TableColumn fx:id="coldrapeau" prefWidth="164.0" text="Drapeau" />
+            <TableColumn fx:id="colmail" prefWidth="128.0" text="Email" />
+            <TableColumn fx:id="coldrapeau" prefWidth="170.0" text="Drapeau" />
+            <TableColumn fx:id="colrang" prefWidth="53.0" text="Rang" />
         </columns>
       </TableView>
       <Text layoutX="39.0" layoutY="164.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Dashboard/Equipe">
@@ -90,5 +91,18 @@
             <Font size="18.0" />
          </font>
       </Button>
+      <Text layoutX="765.0" layoutY="502.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Rang : " />
+      <TextField fx:id="tfrang" layoutX="887.0" layoutY="485.0" prefHeight="25.0" prefWidth="153.0" />
+      <Text layoutX="45.0" layoutY="553.0" strokeType="OUTSIDE" strokeWidth="0.0" text="1er equipe : " />
+      <Text layoutX="39.0" layoutY="517.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Meilleurs Equipe selon le rang FIFA">
+         <font>
+            <Font size="28.0" />
+         </font>
+      </Text>
+      <Text layoutX="45.0" layoutY="579.0" strokeType="OUTSIDE" strokeWidth="0.0" text="2 éme equipe :" />
+      <Text layoutX="45.0" layoutY="603.0" strokeType="OUTSIDE" strokeWidth="0.0" text="3 éme equipe : " />
+      <Text fx:id="equipe1" layoutX="143.0" layoutY="553.0" strokeType="OUTSIDE" strokeWidth="0.0" />
+      <Text fx:id="equipe2" layoutX="143.0" layoutY="579.0" strokeType="OUTSIDE" strokeWidth="0.0" />
+      <Text fx:id="equipe3" layoutX="143.0" layoutY="602.0" strokeType="OUTSIDE" strokeWidth="0.0" />
    </children>
 </AnchorPane>
