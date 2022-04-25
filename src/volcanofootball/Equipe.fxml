@@ -37,7 +37,7 @@
             <TableColumn fx:id="colrang" prefWidth="53.0" text="Rang" />
         </columns>
       </TableView>
-      <Text layoutX="39.0" layoutY="164.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Dashboard/Equipe">
+      <Text layoutX="14.0" layoutY="165.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Dashboard/Equipe">
          <font>
             <Font size="28.0" />
          </font>
@@ -104,5 +104,7 @@
       <Text fx:id="equipe1" layoutX="143.0" layoutY="553.0" strokeType="OUTSIDE" strokeWidth="0.0" />
       <Text fx:id="equipe2" layoutX="143.0" layoutY="579.0" strokeType="OUTSIDE" strokeWidth="0.0" />
       <Text fx:id="equipe3" layoutX="143.0" layoutY="602.0" strokeType="OUTSIDE" strokeWidth="0.0" />
+      <TextField fx:id="tfsearch" layoutX="272.0" layoutY="143.0" prefHeight="25.0" prefWidth="356.0" />
+      <Button fx:id="btn_trier" layoutX="637.0" layoutY="143.0" mnemonicParsing="false" onMouseClicked="#showEquipeTrier" prefHeight="25.0" prefWidth="78.0" text="Trier" />
    </children>
 </AnchorPane>

@@ -11,11 +11,16 @@ import java.io.IOException;
 import java.net.URL;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
+import java.util.ArrayList;
 import java.util.Date;
+import java.util.List;
 import java.util.Optional;
 import java.util.ResourceBundle;
+import java.util.function.Predicate;
 import javafx.application.Platform;
+import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
+import javafx.collections.transformation.FilteredList;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
@@ -96,6 +101,10 @@ public class EquipeController implements Initializable {
     private Text equipe2;
     @FXML
     private Text equipe3;
+    @FXML
+    private TextField tfsearch;
+    @FXML
+    private Button btn_trier;
 
     /**
      * Initializes the controller class.
@@ -105,7 +114,39 @@ public class EquipeController implements Initializable {
         // TODO
         showEquipe();
         RangEquipe();
+        EquipeService es = new EquipeService();
+        ObservableList<Equipe> list = es.afficherEquipe();
+        tfsearch.textProperty().addListener((observable, oldValue, newValue)
+                -> tableequipe.setItems(filterList(list, newValue))
+        );
 
+    }
+
+    private boolean searchFindsEquipe(Equipe equipe, String searchText) {
+        return (equipe.getNom_equipe().toLowerCase().contains(searchText.toLowerCase()))
+                || (equipe.getEmail().toLowerCase().contains(searchText.toLowerCase()))
+                || (equipe.getNom_entreneur().toLowerCase().contains(searchText.toLowerCase()))
+                || Integer.valueOf(equipe.getId()).toString().equals(searchText.toLowerCase());
+
+    }
+
+    private Predicate<Equipe> createPredicate(String searchText) {
+        return equipe -> {
+            if (searchText == null || searchText.isEmpty()) {
+                return true;
+            }
+            return searchFindsEquipe(equipe, searchText);
+        };
+    }
+
+    private ObservableList<Equipe> filterList(List<Equipe> list, String searchText) {
+        List<Equipe> filteredList = new ArrayList<>();
+        for (Equipe equipe : list) {
+            if (searchFindsEquipe(equipe, searchText)) {
+                filteredList.add(equipe);
+            }
+        }
+        return FXCollections.observableList(filteredList);
     }
 
     public static final LocalDate LOCAL_DATE(String dateString) {
@@ -366,6 +407,21 @@ public class EquipeController implements Initializable {
             stage.setScene(scene);
             stage.show();
         }
+    }
+
+    @FXML
+    public void showEquipeTrier() {
+        EquipeService es = new EquipeService();
+        ObservableList<Equipe> list = es.afficherEquipeOrderBy();
+        System.out.println(list.toString());
+        System.out.println(list);
+        colequipe.setCellValueFactory(new PropertyValueFactory<>("nom_equipe"));
+        coldate.setCellValueFactory(new PropertyValueFactory<>("date_creation"));
+        colnomentre.setCellValueFactory(new PropertyValueFactory<>("nom_entreneur"));
+        coldrapeau.setCellValueFactory(new PropertyValueFactory<>("drapeau_equipe"));
+        colmail.setCellValueFactory(new PropertyValueFactory<>("email"));
+        colrang.setCellValueFactory(new PropertyValueFactory<>("rang"));
+        tableequipe.setItems(list);
     }
 
     @FXML
