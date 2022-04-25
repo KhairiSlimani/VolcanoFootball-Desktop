@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXDialog?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.FlowPane?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane id="AnchorPane" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="1150.0" style="-fx-background-color: #1E1E1E;" stylesheets="@../stylesheet.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Gui.user.UsersController">
+   <children>
+      <AnchorPane layoutX="25.0" layoutY="22.0" prefHeight="105.0" prefWidth="180.0" style="-fx-background-radius: 15; -fx-background-color: linear-gradient(to top, #ff00cc, #333399);">
+         <children>
+            <Text fill="WHITE" layoutX="15.0" layoutY="50.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Page">
+               <font>
+                  <Font size="24.0" />
+               </font>
+            </Text>
+            <Text fill="WHITE" layoutX="15.0" layoutY="80.0" strokeType="OUTSIDE" strokeWidth="0.0" text="d'Utilisateurs">
+               <font>
+                  <Font size="24.0" />
+               </font>
+            </Text>
+         </children>
+      </AnchorPane>
+      <JFXButton layoutX="1005.0" layoutY="233.0" onAction="#ShowAddUser" prefHeight="40.0" prefWidth="120.0" styleClass="btn" text="Ajouter User">
+         <font>
+            <Font name="System Bold" size="14.0" />
+         </font>
+         <padding>
+            <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+         </padding>
+      </JFXButton>
+      <ScrollPane fx:id="ScrollPane" layoutX="25.0" layoutY="285.0" prefHeight="1100.0" prefWidth="1100.0" style="-fx-background: transparent; -fx-background-color: transparent;">
+         <content>
+            <FlowPane fx:id="FlowPane" hgap="40.0" prefHeight="180.0" prefWidth="1080.0" vgap="40.0" />
+         </content>
+      </ScrollPane>
+      <Text fill="WHITE" layoutX="21.0" layoutY="269.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Liste des Utilisateurs">
+         <font>
+            <Font size="24.0" />
+         </font>
+      </Text>
+      <StackPane fx:id="container" layoutX="738.0" layoutY="22.0" style="-fx-background-color: transparent;">
+         <children>
+            <JFXDialog fx:id="dialog" style="-fx-background-color: transparent;" />
+         </children>
+      </StackPane>
+   </children>
+</AnchorPane>

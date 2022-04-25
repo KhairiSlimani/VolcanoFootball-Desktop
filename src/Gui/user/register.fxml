@@ -32,7 +32,7 @@
             </ImageView>
             <VBox layoutX="51.0" layoutY="169.0" prefHeight="279.0" prefWidth="283.0">
                <children>
-                  <JFXTextField focusColor="#b82025" labelFloat="true" promptText="Username">
+                  <JFXTextField fx:id="tfUsername" focusColor="#b82025" labelFloat="true" promptText="Username">
                      <font>
                         <Font size="14.0" />
                      </font>
@@ -40,7 +40,7 @@
                         <Insets bottom="20.0" />
                      </VBox.margin>
                   </JFXTextField>
-                  <JFXTextField focusColor="#b82025" labelFloat="true" promptText="Mot de passe">
+                  <JFXTextField fx:id="tfPassword" focusColor="#b82025" labelFloat="true" promptText="Mot de passe">
                      <font>
                         <Font size="14.0" />
                      </font>
@@ -48,7 +48,7 @@
                         <Insets bottom="20.0" />
                      </VBox.margin>
                   </JFXTextField>
-                  <JFXTextField focusColor="#b82025" labelFloat="true" promptText="Email">
+                  <JFXTextField fx:id="tfEmail" focusColor="#b82025" labelFloat="true" promptText="Email">
                      <font>
                         <Font size="14.0" />
                      </font>
@@ -56,7 +56,7 @@
                         <Insets bottom="20.0" />
                      </VBox.margin>
                   </JFXTextField>
-                  <JFXTextField focusColor="#b82025" labelFloat="true" promptText="Nom">
+                  <JFXTextField fx:id="tfNom" focusColor="#b82025" labelFloat="true" promptText="Nom">
                      <font>
                         <Font size="14.0" />
                      </font>
@@ -64,7 +64,7 @@
                         <Insets bottom="20.0" />
                      </VBox.margin>
                   </JFXTextField>
-                  <JFXTextField focusColor="#b82025" labelFloat="true" promptText="Prenom">
+                  <JFXTextField fx:id="tfPrenom" focusColor="#b82025" labelFloat="true" promptText="Prenom">
                      <font>
                         <Font size="14.0" />
                      </font>
@@ -72,7 +72,7 @@
                         <Insets bottom="20.0" />
                      </VBox.margin>
                   </JFXTextField>
-                  <JFXButton onMouseClicked="#Register" prefHeight="25.0" prefWidth="285.0" styleClass="btn" text="S'inscrire">
+                  <JFXButton onAction="#Register" prefHeight="25.0" prefWidth="285.0" styleClass="btn" text="S'inscrire">
                      <VBox.margin>
                         <Insets top="20.0" />
                      </VBox.margin>

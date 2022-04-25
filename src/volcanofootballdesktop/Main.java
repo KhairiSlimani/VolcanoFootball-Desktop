@@ -44,6 +44,13 @@ public class Main extends Application {
         ps.SupprimerProduit(13);
         System.out.println(ps.AfficherProduits().toString());
         
+        
+        Parent root = FXMLLoader.load(getClass().getResource("register.fxml"));
+        Scene scene = new Scene(root);
+        Stage stage = (Stage)((Node)event.getSource()).getScene().getWindow();
+        stage.setScene(scene);
+        stage.show();
+
         */
         
         launch(args);

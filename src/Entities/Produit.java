@@ -19,7 +19,7 @@ public class Produit {
     public Produit() {
     }
 
-    public Produit(int id, String nom, String type, String taille, String couleur, int nbrEtoiles, String description, float prix, String photo) {
+    public Produit(int id, String nom, String type, String taille, String couleur, float prix, String photo) {
         this.id = id;
         this.nom = nom;
         this.type = type;
@@ -31,13 +31,11 @@ public class Produit {
         this.photo = photo;
     }
 
-    public Produit(String nom, String type, String taille, String couleur, int nbrEtoiles, String description, float prix, String photo) {
+    public Produit(String nom, String type, String taille, String couleur, float prix, String photo) {
         this.nom = nom;
         this.type = type;
         this.taille = taille;
         this.couleur = couleur;
-        this.nbrEtoiles = nbrEtoiles;
-        this.description = description;
         this.prix = prix;
         this.photo = photo;
     }

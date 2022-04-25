@@ -1,6 +1,7 @@
 package IServices;
 
 import Entities.Produit;
+import Entities.User;
 
 import java.util.List;
 
@@ -14,4 +15,6 @@ public interface IServiceProduit {
 
     List<Produit> AfficherProduits();
 
+    Produit RecupererProduit(int id);
+    Produit RecupererProduit(String nom);
 }

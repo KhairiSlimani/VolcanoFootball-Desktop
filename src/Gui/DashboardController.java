@@ -5,6 +5,7 @@
  */
 package Gui;
 
+import Gui.produit.ProduitsController;
 import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
@@ -16,10 +17,11 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.BorderPane;
+import javafx.scene.layout.HBox;
 import javafx.scene.layout.Pane;
+import javafx.scene.layout.VBox;
 import javafx.scene.text.Text;
 import javafx.stage.Stage;
-
 
 /**
  * FXML Controller class
@@ -29,19 +31,46 @@ import javafx.stage.Stage;
 public class DashboardController implements Initializable {
     
     Pane view;
-
+    
     @FXML
     private Text sessionName;
     @FXML
     private BorderPane borderPane;
+    @FXML
+    private HBox dashboardBox;
+    @FXML
+    private HBox usersBox;
+    @FXML
+    private HBox produitsBox;
+    @FXML
+    private HBox commandesBox;
+    @FXML
+    private VBox SideBar;
+    @FXML
+    private HBox favorisBox;
+    @FXML
+    private Text cartSize;
+    @FXML
+    private Text commandesText;
 
     /**
      * Initializes the controller class.
      */
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-       
+        sessionName.setText(SessionManager.get().getUsername());
+        if(SessionManager.get().getRole().equals("Client")){
+            SideBar.getChildren().remove(usersBox);
+            commandesText.setText("Mes Commandes");
+        }
+        SetCartSize();
+        //cartSize.setText("test");
+    }   
+    
+    public void SetCartSize() {
+        cartSize.setText(String.valueOf(SessionManager.get().CartSize()));
     }    
+
 
     @FXML
     private void Logout(MouseEvent event) throws IOException {
@@ -51,14 +80,51 @@ public class DashboardController implements Initializable {
         Stage stage = (Stage)((Node)event.getSource()).getScene().getWindow();
         stage.setScene(scene);
         stage.show();
-
+        SessionManager.get().DeleteCart();
     }
 
     @FXML
     private void OpenUsers(MouseEvent event) throws IOException {
-        
         view = new FXMLLoader().load(getClass().getResource("user/users.fxml"));
         borderPane.setCenter(view);
     }
+
+    @FXML
+    private void OpenProduits(MouseEvent event) throws IOException {
+        /*
+        view = new FXMLLoader().load(getClass().getResource("produit/produits.fxml"));
+        borderPane.setCenter(view);
+        */
+        
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("produit/produits.fxml"));
+        view=loader.load();
+        ProduitsController controller = loader.getController();
+        controller.CartSize(cartSize);
+        borderPane.setCenter(view);
+        
+
+
+    }
+
+    @FXML
+    private void OpenCommandes(MouseEvent event) throws IOException {
+        view = new FXMLLoader().load(getClass().getResource("commande/commandes.fxml"));
+        borderPane.setCenter(view);
+
+    }
     
+    @FXML
+    private void OpenFavoris(MouseEvent event) throws IOException {
+        view = new FXMLLoader().load(getClass().getResource("favori/favoris.fxml"));
+        borderPane.setCenter(view);
+    }
+
+    @FXML
+    private void OpenCart(MouseEvent event) throws IOException {
+        view = new FXMLLoader().load(getClass().getResource("commande/cart.fxml"));
+        borderPane.setCenter(view);
+    }
+    
+    
+
 }

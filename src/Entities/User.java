@@ -14,12 +14,12 @@ public class User {
     private String email;
     private String role;
     private String token;
-    private Boolean enabled;
+    private int activated;
 
     public User() {
     }
 
-    public User(int id, String username, String password, String nom, String prenom, String email, String role, String token, Boolean enabled) {
+    public User(int id, String username, String password, String nom, String prenom, String email, String role, String token, int activated) {
         this.id = id;
         this.username = username;
         this.password = password;
@@ -28,11 +28,10 @@ public class User {
         this.email = email;
         this.role = role;
         this.token = token;
-        this.enabled = enabled;
-
+        this.activated = activated;
     }
 
-    public User(String username, String password, String nom, String prenom, String email, String role, String token, Boolean enabled) {
+    public User(String username, String password, String nom, String prenom, String email, String role, String token, int activated) {
         this.username = username;
         this.password = password;
         this.nom = nom;
@@ -40,9 +39,10 @@ public class User {
         this.email = email;
         this.role = role;
         this.token = token;
-        this.enabled = enabled;
+        this.activated = activated;
 
     }
+ 
 
     public int getId() {
         return id;
@@ -108,20 +108,13 @@ public class User {
         this.token = token;
     }
 
-    public Boolean getEnabled() {
-        return enabled;
+    public int getActivated() {
+        return activated;
     }
 
-    public void setEnabled(Boolean enabled) {
-        this.enabled = enabled;
+    public void setActivated(int activated) {
+        this.activated = activated;
     }
 
-
-
-
-    @Override
-    public String toString() {
-        return "User{" + "id=" + id + ", username=" + username + ", password=" + password + ", nom=" + nom + ", prenom=" + prenom + ", email=" + email + '}';
-    }
 
 }

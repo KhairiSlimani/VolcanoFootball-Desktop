@@ -13,5 +13,12 @@ public interface IServiceUser {
     boolean SupprimerUser(int id);
 
     List<User> AfficherUsers();
+    
+    boolean Login(String username, String password);
+    
+    boolean Register(User user);
+    
+    User RecupererUser(String username);
+    User RecupererUser(int id);
 
 }

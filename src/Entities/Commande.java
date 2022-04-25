@@ -18,21 +18,19 @@ public class Commande {
     public Commande() {
     }
 
-    public Commande(int id, int user, int produit, int quantite, String adresse, Date date) {
+    public Commande(int id, int user, int produit, int quantite, String adresse) {
         this.id = id;
         this.user = user;
         this.produit = produit;
         this.quantite = quantite;
         this.adresse = adresse;
-        this.date = date;
     }
 
-    public Commande(int user, int produit, int quantite, String adresse, Date date) {
+    public Commande(int user, int produit, int quantite, String adresse) {
         this.user = user;
         this.produit = produit;
         this.quantite = quantite;
         this.adresse = adresse;
-        this.date = date;
     }
 
     public int getId() {

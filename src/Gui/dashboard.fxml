@@ -40,6 +40,33 @@
                         <FontAwesomeIconView fill="WHITE" glyphName="SEARCH" size="1.5em" />
                      </children>
                   </HBox>
+                  <HBox alignment="CENTER" prefHeight="100.0" prefWidth="423.0">
+                     <children>
+                        <Text fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="Vous avez sélectionné">
+                           <font>
+                              <Font size="18.0" />
+                           </font>
+                        </Text>
+                        <FontAwesomeIconView fill="WHITE" glyphName="SHOPPING_CART" onMouseClicked="#OpenCart" size="45" style="-fx-cursor: hand;" wrappingWidth="43.78571319580078">
+                           <HBox.margin>
+                              <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                           </HBox.margin>
+                        </FontAwesomeIconView>
+                        <Text fx:id="cartSize" fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="0">
+                           <font>
+                              <Font size="18.0" />
+                           </font>
+                        </Text>
+                        <Text fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="Produits">
+                           <font>
+                              <Font size="18.0" />
+                           </font>
+                           <HBox.margin>
+                              <Insets left="10.0" />
+                           </HBox.margin>
+                        </Text>
+                     </children>
+                  </HBox>
                   <HBox alignment="CENTER_RIGHT" HBox.hgrow="ALWAYS">
                      <children>
                         <Text fx:id="sessionName" fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="Username">
@@ -63,9 +90,9 @@
       </HBox>
    </top>
    <left>
-      <VBox maxWidth="-Infinity" prefWidth="150.0" style="-fx-background-color: #171717;" BorderPane.alignment="CENTER">
+      <VBox fx:id="SideBar" maxWidth="-Infinity" prefWidth="150.0" style="-fx-background-color: #171717;" BorderPane.alignment="CENTER">
          <children>
-            <HBox alignment="CENTER_LEFT" styleClass="hover_border">
+            <HBox fx:id="dashboardBox" alignment="CENTER_LEFT" styleClass="hover_border">
                <VBox.margin>
                   <Insets bottom="2.0" left="2.0" right="2.0" top="2.0" />
                </VBox.margin>
@@ -84,7 +111,7 @@
                   </Text>
                </children>
             </HBox>
-            <HBox alignment="CENTER_LEFT" onMouseClicked="#OpenUsers" styleClass="hover_border">
+            <HBox fx:id="usersBox" alignment="CENTER_LEFT" onMouseClicked="#OpenUsers" styleClass="hover_border">
                <padding>
                   <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
                </padding>
@@ -100,7 +127,7 @@
                   </Text>
                </children>
             </HBox>
-            <HBox alignment="CENTER_LEFT" styleClass="hover_border">
+            <HBox fx:id="produitsBox" alignment="CENTER_LEFT" onMouseClicked="#OpenProduits" styleClass="hover_border">
                <padding>
                   <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
                </padding>
@@ -116,13 +143,29 @@
                   </Text>
                </children>
             </HBox>
-            <HBox alignment="CENTER_LEFT" styleClass="hover_border">
+            <HBox fx:id="commandesBox" alignment="CENTER_LEFT" onMouseClicked="#OpenCommandes" styleClass="hover_border">
                <padding>
                   <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
                </padding>
                <children>
                   <FontAwesomeIconView fill="WHITE" glyphName="LIST_UL" size="2em" />
-                  <Text fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="Commandes">
+                  <Text fx:id="commandesText" fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="Commandes">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                     <HBox.margin>
+                        <Insets left="10.0" />
+                     </HBox.margin>
+                  </Text>
+               </children>
+            </HBox>
+            <HBox fx:id="favorisBox" alignment="CENTER_LEFT" onMouseClicked="#OpenFavoris" styleClass="hover_border">
+               <padding>
+                  <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+               </padding>
+               <children>
+                  <FontAwesomeIconView fill="WHITE" glyphName="HEART" size="2em" />
+                  <Text fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="Favoris">
                      <font>
                         <Font size="14.0" />
                      </font>
@@ -156,6 +199,9 @@
       </VBox>
    </left>
    <center>
-      <AnchorPane style="-fx-background-color: #1E1E1E;" BorderPane.alignment="CENTER" />
+      <AnchorPane style="-fx-background-color: #1E1E1E;" BorderPane.alignment="CENTER">
+         <BorderPane.margin>
+            <Insets />
+         </BorderPane.margin></AnchorPane>
    </center>
 </BorderPane>

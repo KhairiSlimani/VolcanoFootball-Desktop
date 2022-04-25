@@ -22,13 +22,12 @@ public class CommandeService implements IServiceCommande {
     @Override
     public boolean AjouterCommande(Commande c) {
         try {
-            String req = "INSERT INTO `commande` (`user_id`, `produit_id`, `quantite`, `date_ajout`, `adresse`) VALUES (?, ?, ?, ?, ?)";
+            String req = "INSERT INTO `commande` (`user_id`, `produit_id`, `quantite`, `adresse`) VALUES (?, ?, ?, ?)";
             PreparedStatement pstm = con.prepareStatement(req);
             pstm.setInt(1, c.getUser());
             pstm.setInt(2, c.getProduit());
             pstm.setInt(3, c.getQuantite());
-            pstm.setDate(4, c.getDate());
-            pstm.setString(5, c.getAdresse());
+            pstm.setString(4, c.getAdresse());
             pstm.executeUpdate();
 
             System.out.println("Commande Ajouté");
@@ -46,13 +45,13 @@ public class CommandeService implements IServiceCommande {
     public boolean ModifierCommande(Commande c) {
 
         try {
-            String req = "UPDATE commande SET  user_id=? , produit_id=? , quantite=? , date_ajout=? , adresse=?  WHERE id=?";
+            String req = "UPDATE commande SET  user_id=? , produit_id=? , quantite=? , adresse=?  WHERE id=?";
             PreparedStatement pstm = con.prepareStatement(req);
             pstm.setInt(1, c.getUser());
             pstm.setInt(2, c.getProduit());
             pstm.setInt(3, c.getQuantite());
-            pstm.setDate(4, c.getDate());
-            pstm.setString(5, c.getAdresse());
+            pstm.setString(4, c.getAdresse());
+            pstm.setInt(5, c.getId());
             pstm.executeUpdate();
 
             System.out.println("Commande Modifié");
@@ -90,6 +89,7 @@ public class CommandeService implements IServiceCommande {
             ResultSet rs = pstm.executeQuery();
             while (rs.next()) {
                 Commande c = new Commande();
+                c.setId(rs.getInt("id"));
                 c.setUser(rs.getInt("user_id"));
                 c.setProduit(rs.getInt("produit_id"));
                 c.setQuantite(rs.getInt("quantite"));
@@ -103,6 +103,29 @@ public class CommandeService implements IServiceCommande {
             System.out.println("Erreur d'affichage des commandes");
         }
         return commandes;
+
+    }
+
+    @Override
+    public Commande RecupererCommande(int id) {
+        
+        Commande commande = new Commande();
+        try {
+            String req = "SELECT * FROM commande WHERE id=\""+id+"\";";
+            PreparedStatement pstm = con.prepareStatement(req);
+            ResultSet rs = pstm.executeQuery();
+            while (rs.next()) {
+                commande.setId(rs.getInt("id"));
+                commande.setUser(rs.getInt("user_id"));
+                commande.setProduit(rs.getInt("produit_id"));
+                commande.setQuantite(rs.getInt("quantite"));
+                commande.setAdresse(rs.getString("adresse"));
+            }
+        } catch (SQLException ex) {
+            Logger.getLogger(ProduitService.class.getName()).log(Level.SEVERE, null, ex);
+            System.out.println("Erreur de récuperation");
+        }
+        return commande;
 
     }
 }

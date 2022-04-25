@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+
+<AnchorPane id="AnchorPane" prefHeight="150.0" prefWidth="250.0" styleClass="child" stylesheets="@../stylesheet.css" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/8.0.171" fx:controller="Gui.commande.AddCartController">
+   <children>
+      <VBox layoutX="15.0" layoutY="56.0" prefHeight="0.0" prefWidth="220.0">
+         <children>
+            <JFXTextField fx:id="tfAdresse" focusColor="#b82025" labelFloat="true" promptText="Adresse">
+               <VBox.margin>
+                  <Insets bottom="20.0" />
+               </VBox.margin>
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </JFXTextField>
+            <JFXButton onAction="#AddC" prefHeight="30.0" prefWidth="226.0" styleClass="btn" text="Ajouter Commandes">
+               <opaqueInsets>
+                  <Insets />
+               </opaqueInsets>
+               <padding>
+                  <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+               </padding>
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </JFXButton>
+         </children>
+      </VBox>
+      <Text fill="WHITE" layoutX="10.0" layoutY="34.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Entrez l'adresse s'il vous plaît">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Text>
+   </children>
+</AnchorPane>

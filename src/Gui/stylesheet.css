@@ -6,7 +6,7 @@
 .child
 {
     -fx-background-color: #171717;
-    -fx-background-radius: 15;
+    -fx-background-radius: 20;
 }
 
 .btnLabel
@@ -44,10 +44,20 @@
     -fx-text-fill: white;    
 }
 
+
 .hover_border:hover
 {
     -fx-border-color: red;
     -fx-border-width: 0px 0px 0px 5px;
     -fx-background-color: #b82025;
     -fx-cursor: hand;
+}
+
+.role
+{
+    -fx-border-color: #b82025;
+    -fx-border-width: #b82025;
+    -fx-border-width: #b82025;
+    -fx-border-radius: 15;
+    
 }
