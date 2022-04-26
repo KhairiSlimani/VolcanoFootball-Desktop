@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXPasswordField?>
 <?import com.jfoenix.controls.JFXTextField?>
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Label?>
@@ -40,14 +41,14 @@
                         <Insets bottom="20.0" />
                      </VBox.margin>
                   </JFXTextField>
-                  <JFXTextField fx:id="tfPassword" focusColor="#b82025" labelFloat="true" promptText="Mot de passe">
+                  <JFXPasswordField fx:id="tfPassword" focusColor="#b82025" labelFloat="true" promptText="Mot de passe">
                      <font>
                         <Font size="14.0" />
                      </font>
                      <VBox.margin>
                         <Insets bottom="20.0" />
                      </VBox.margin>
-                  </JFXTextField>
+                  </JFXPasswordField>
                   <JFXButton onMouseClicked="#Login" prefHeight="25.0" prefWidth="285.0" styleClass="btn" text="Connexion">
                      <VBox.margin>
                         <Insets top="20.0" />

@@ -32,6 +32,7 @@ import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.FlowPane;
 import javafx.scene.layout.Pane;
 import javafx.scene.layout.StackPane;
+import javafx.scene.text.Text;
 
 /**
  * FXML Controller class
@@ -48,9 +49,13 @@ public class UsersController implements Initializable {
     private JFXDialog dialog;
     @FXML
     private StackPane container;
+    @FXML
+    private Text nbrUsers;
+    @FXML
+    private Text nbrAdmins;
+    @FXML
+    private Text nbrClients;
     
-    
-
 
     /**
      * Initializes the controller class.
@@ -58,6 +63,7 @@ public class UsersController implements Initializable {
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         ListUsers();
+        Affichage();
     }
 
     public void ListUsers() {
@@ -102,12 +108,33 @@ public class UsersController implements Initializable {
         catch (IOException e){
             e.printStackTrace();
         }
-        
-        
-
     }
     
-
+    public void Affichage()
+    {
+        int admins=0;
+        int clients=0;
+        int users=0;
+        
+        UserService us = new UserService();
+        List<User> list = us.AfficherUsers();
+        for (int i = 0; i < list.size(); i++) {
+            users++;
+            if(list.get(i).getRole().equals("Admin"))
+            {
+                admins++;
+            }
+            else
+            {
+                clients++;
+            }
+        }
+        nbrClients.setText(String.valueOf(clients));
+        nbrAdmins.setText(String.valueOf(admins));
+        nbrUsers.setText(String.valueOf(users));
+        System.out.println("admins: "+admins);
+        System.out.println("clients: "+clients);
+    }
         
     
     

@@ -12,20 +12,6 @@
 
 <AnchorPane id="AnchorPane" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="1150.0" style="-fx-background-color: #1E1E1E;" stylesheets="@../stylesheet.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Gui.commande.CommandesController">
    <children>
-      <AnchorPane layoutX="14.0" layoutY="14.0" prefHeight="89.0" prefWidth="210.0" style="-fx-background-radius: 15; -fx-background-color: linear-gradient(to top, #ff00cc, #333399);">
-         <children>
-            <Text fill="WHITE" layoutX="17.0" layoutY="38.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Page">
-               <font>
-                  <Font size="24.0" />
-               </font>
-            </Text>
-            <Text fill="WHITE" layoutX="17.0" layoutY="69.0" strokeType="OUTSIDE" strokeWidth="0.0" text="des Commandes">
-               <font>
-                  <Font size="24.0" />
-               </font>
-            </Text>
-         </children>
-      </AnchorPane>
       <JFXButton layoutX="978.0" layoutY="243.0" onAction="#ShowAddCommande" prefHeight="40.0" prefWidth="157.0" styleClass="btn" text="Ajouter Commande">
          <font>
             <Font name="System Bold" size="14.0" />
@@ -49,5 +35,19 @@
             <JFXDialog fx:id="dialog" style="-fx-background-color: transparent;" />
          </children>
       </StackPane>
+      <AnchorPane layoutX="14.0" layoutY="14.0" prefHeight="184.0" prefWidth="193.0" style="-fx-background-radius: 15; -fx-background-color: linear-gradient(to top, #ff00cc, #333399);">
+         <children>
+            <Text fill="WHITE" layoutX="8.0" layoutY="66.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Page">
+               <font>
+                  <Font size="24.0" />
+               </font>
+            </Text>
+            <Text fill="WHITE" layoutX="8.0" layoutY="106.0" strokeType="OUTSIDE" strokeWidth="0.0" text="des Commandes">
+               <font>
+                  <Font size="24.0" />
+               </font>
+            </Text>
+         </children>
+      </AnchorPane>
    </children>
 </AnchorPane>

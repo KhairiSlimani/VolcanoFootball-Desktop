@@ -8,7 +8,7 @@
   </information>
   <resources>
     <j2se version="1.6+" href="http://java.sun.com/products/autodl/j2se"/>
-    <jar href="VolcanoFootballDesktop.jar" size="111218" download="eager" />
+    <jar href="VolcanoFootballDesktop.jar" size="112352" download="eager" />
     <jar href="lib\activation.jar" size="124332" download="eager" />
     <jar href="lib\fontawesomefx-8.9.jar" size="571068" download="eager" />
     <jar href="lib\javax.mail.jar" size="659033" download="eager" />

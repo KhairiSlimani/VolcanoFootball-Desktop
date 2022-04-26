@@ -12,11 +12,11 @@
 
 <AnchorPane id="AnchorPane" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="1150.0" style="-fx-background-color: #1E1E1E;" stylesheets="@../stylesheet.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Gui.commande.CartController">
    <children>
-      <AnchorPane layoutX="33.0" layoutY="41.0" prefHeight="98.0" prefWidth="200.0" style="-fx-background-radius: 15; -fx-background-color: linear-gradient(to top, #ff00cc, #333399);">
+      <AnchorPane layoutX="14.0" layoutY="14.0" prefHeight="184.0" prefWidth="193.0" style="-fx-background-radius: 15; -fx-background-color: linear-gradient(to top, #ff00cc, #333399);">
          <children>
-            <Text fill="WHITE" layoutX="38.0" layoutY="58.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Page Panier">
+            <Text fill="WHITE" layoutX="8.0" layoutY="106.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Page Panier">
                <font>
-                  <Font size="24.0" />
+                  <Font size="34.0" />
                </font>
             </Text>
          </children>

@@ -8,6 +8,7 @@ package Gui.user;
 import Entities.User;
 import Gui.AlertsController;
 import Services.UserService;
+import com.jfoenix.controls.JFXPasswordField;
 import com.jfoenix.controls.JFXTextField;
 import java.io.IOException;
 import java.net.URL;
@@ -31,7 +32,7 @@ public class LoginController implements Initializable {
     @FXML
     private JFXTextField tfUsername;
     @FXML
-    private JFXTextField tfPassword;
+    private JFXPasswordField tfPassword;
 
     /**
      * Initializes the controller class.

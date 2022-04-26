@@ -6,9 +6,11 @@
 package Gui.produit;
 
 import Entities.Produit;
+import Entities.User;
 import Gui.SessionManager;
 import Gui.user.AddUserController;
 import Services.ProduitService;
+import Services.UserService;
 import com.jfoenix.controls.JFXButton;
 import com.jfoenix.controls.JFXDialog;
 import java.io.IOException;
@@ -45,6 +47,8 @@ public class ProduitsController implements Initializable {
     private Text cartSize;
     @FXML
     private JFXButton showP;
+    @FXML
+    private Text nbrProduits;
 
     /**
      * Initializes the controller class.
@@ -56,7 +60,7 @@ public class ProduitsController implements Initializable {
         {
             addPB.setVisible(false);
         }
-        
+        Affichage();
 
     }    
     
@@ -114,6 +118,21 @@ public class ProduitsController implements Initializable {
     private void ShowProduits(ActionEvent event) {
         ListProduits();
     }
+    
+    public void Affichage()
+    {
+        int produits=0;
+        
+        ProduitService ps = new ProduitService();
+        List<Produit> list = ps.AfficherProduits();
+        for (int i = 0; i < list.size(); i++) {
+            produits++;
+        }
+        nbrProduits.setText(String.valueOf(produits));
+        System.out.println("produits: "+produits);
+
+    }
+
 
 
     
