@@ -11,18 +11,18 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane id="AnchorPane" prefHeight="700.0" prefWidth="1300.0" styleClass="parent" stylesheets="@../stylesheet.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Gui.user.LoginController">
+<AnchorPane id="AnchorPane" prefHeight="700.0" prefWidth="1300.0" styleClass="parent" stylesheets="@../stylesheet.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Gui.user.ActivateAccountController">
    <children>
       <AnchorPane layoutX="458.0" layoutY="98.0" prefHeight="520.0" prefWidth="385.0" styleClass="child">
          <children>
-            <Text fill="#4d4d4d" layoutX="129.0" layoutY="126.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Content de te revoir!">
+            <Text fill="#4d4d4d" layoutX="118.0" layoutY="129.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Activer votre compte">
                <font>
                   <Font size="14.0" />
                </font>
             </Text>
-            <Text fill="#b82025" layoutX="24.0" layoutY="150.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Connectez-vous à votre compte">
+            <Text fill="#b82025" layoutX="11.0" layoutY="154.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Veuillez entrer votre nom d'utilisateur et votre">
                <font>
-                  <Font size="24.0" />
+                  <Font size="18.0" />
                </font>
             </Text>
             <ImageView fitHeight="78.0" fitWidth="166.0" layoutX="115.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true">
@@ -40,7 +40,7 @@
                         <Insets bottom="20.0" />
                      </VBox.margin>
                   </JFXTextField>
-                  <JFXTextField fx:id="tfPassword" focusColor="#b82025" labelFloat="true" promptText="Mot de passe">
+                  <JFXTextField fx:id="tfToken" focusColor="#b82025" labelFloat="true" promptText="Code de confirmation">
                      <font>
                         <Font size="14.0" />
                      </font>
@@ -48,7 +48,7 @@
                         <Insets bottom="20.0" />
                      </VBox.margin>
                   </JFXTextField>
-                  <JFXButton onMouseClicked="#Login" prefHeight="25.0" prefWidth="285.0" styleClass="btn" text="Connexion">
+                  <JFXButton onAction="#Activate" prefHeight="25.0" prefWidth="285.0" styleClass="btn" text="Activer mon compte">
                      <VBox.margin>
                         <Insets top="20.0" />
                      </VBox.margin>
@@ -61,32 +61,27 @@
                   </JFXButton>
                </children>
             </VBox>
-            <Label layoutX="51.0" layoutY="420.0" text="Mot de passe oublié?" textFill="#4d4d4d">
+            <Label layoutX="51.0" layoutY="436.0" text="Pas encore inscrit?" textFill="#4d4d4d">
                <font>
                   <Font size="14.0" />
                </font>
             </Label>
-            <Label layoutX="187.0" layoutY="420.0" onMouseClicked="#OpenReset" styleClass="btnLabel" text="Réinitialiser le mot de passe" textFill="#b82025">
+            <Label layoutX="171.0" layoutY="436.0" onMouseClicked="#OpenRegister" styleClass="btnLabel" text="S'inscrire" textFill="#b82025">
                <font>
                   <Font size="14.0" />
                </font>
             </Label>
-            <Label layoutX="51.0" layoutY="447.0" text="Pas encore inscrit?" textFill="#4d4d4d">
+            <Text fill="#b82025" layoutX="29.0" layoutY="177.0" strokeType="OUTSIDE" strokeWidth="0.0" text="code d'activation afin d'activer le compte">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Text>
+            <Label layoutX="51.0" layoutY="416.0" text="Avez-vous déjà un compte?" textFill="#4d4d4d">
                <font>
                   <Font size="14.0" />
                </font>
             </Label>
-            <Label layoutX="171.0" layoutY="447.0" onMouseClicked="#OpenRegister" styleClass="btnLabel" text="S'inscrire" textFill="#b82025">
-               <font>
-                  <Font size="14.0" />
-               </font>
-            </Label>
-            <Label layoutX="51.0" layoutY="473.0" text="Compte n'est pas activé?" textFill="#4d4d4d">
-               <font>
-                  <Font size="14.0" />
-               </font>
-            </Label>
-            <Label layoutX="209.0" layoutY="473.0" onMouseClicked="#OpenActivate" styleClass="btnLabel" text="Activer mon compte" textFill="#b82025">
+            <Label layoutX="227.0" layoutY="416.0" onMouseClicked="#OpenLogin" styleClass="btnLabel" text="Se connecter" textFill="#b82025">
                <font>
                   <Font size="14.0" />
                </font>

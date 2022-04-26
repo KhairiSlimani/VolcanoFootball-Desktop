@@ -66,7 +66,7 @@
                   <Font size="14.0" />
                </font>
             </Label>
-            <Label layoutX="187.0" layoutY="420.0" styleClass="btnLabel" text="Réinitialiser le mot de passe" textFill="#b82025">
+            <Label layoutX="187.0" layoutY="420.0" onMouseClicked="#OpenReset" styleClass="btnLabel" text="Réinitialiser le mot de passe" textFill="#b82025">
                <font>
                   <Font size="14.0" />
                </font>
@@ -81,12 +81,12 @@
                   <Font size="14.0" />
                </font>
             </Label>
-            <Label layoutX="51.0" layoutY="475.0" text="Compte n'est pas activé?" textFill="#4d4d4d">
+            <Label layoutX="51.0" layoutY="473.0" text="Compte n'est pas activé?" textFill="#4d4d4d">
                <font>
                   <Font size="14.0" />
                </font>
             </Label>
-            <Label layoutX="209.0" layoutY="475.0" styleClass="btnLabel" text="Activer mon compte" textFill="#b82025">
+            <Label layoutX="209.0" layoutY="473.0" onMouseClicked="#OpenActivate" styleClass="btnLabel" text="Activer mon compte" textFill="#b82025">
                <font>
                   <Font size="14.0" />
                </font>

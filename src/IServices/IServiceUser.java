@@ -20,5 +20,5 @@ public interface IServiceUser {
     
     User RecupererUser(String username);
     User RecupererUser(int id);
-
+    User RecupererUserEmail(String email);
 }

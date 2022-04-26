@@ -61,3 +61,8 @@
     -fx-border-radius: 15;
     
 }
+
+.hand:hover
+{
+    -fx-fill: #b82025;
+}

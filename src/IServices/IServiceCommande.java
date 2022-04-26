@@ -13,5 +13,6 @@ public interface IServiceCommande {
     boolean SupprimerCommande(int id);
 
     List<Commande> AfficherCommandes();
+    List<Commande> AfficherCommandes(int idUser);
     Commande RecupererCommande(int id);
 }

@@ -47,7 +47,7 @@
                               <Font size="18.0" />
                            </font>
                         </Text>
-                        <FontAwesomeIconView fill="WHITE" glyphName="SHOPPING_CART" onMouseClicked="#OpenCart" size="45" style="-fx-cursor: hand;" wrappingWidth="43.78571319580078">
+                        <FontAwesomeIconView fill="WHITE" glyphName="SHOPPING_CART" onMouseClicked="#OpenCart" size="45" style="-fx-cursor: hand;" styleClass="hand" wrappingWidth="43.78571319580078">
                            <HBox.margin>
                               <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
                            </HBox.margin>
@@ -71,13 +71,13 @@
                      <children>
                         <Text fx:id="sessionName" fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="Username">
                            <font>
-                              <Font name="System Bold" size="14.0" />
+                              <Font size="18.0" />
                            </font>
                            <HBox.margin>
                               <Insets right="10.0" />
                            </HBox.margin>
                         </Text>
-                        <FontAwesomeIconView fill="WHITE" glyphName="USER" size="3em">
+                        <FontAwesomeIconView fill="WHITE" glyphName="USER" onMouseClicked="#OpenProfil" size="45" style="-fx-cursor: hand;" styleClass="hand">
                            <HBox.margin>
                               <Insets bottom="10.0" left="10.0" right="20.0" top="10.0" />
                            </HBox.margin>

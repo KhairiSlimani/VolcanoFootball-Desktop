@@ -7,6 +7,7 @@ package Gui.user;
 
 import Entities.User;
 import Gui.AlertsController;
+import Gui.SessionManager;
 import Services.UserService;
 import com.jfoenix.controls.JFXComboBox;
 import com.jfoenix.controls.JFXDialog;
@@ -56,6 +57,7 @@ public class EditUserController implements Initializable {
     private FlowPane flowPane;
     private JFXDialog dialog;
     private StackPane container;
+    private boolean profil=false;
 
 
     /**
@@ -68,6 +70,11 @@ public class EditUserController implements Initializable {
         roles.add("Client");
         tfRole.setItems(roles);
         tfRole.getSelectionModel().selectFirst();
+        
+        if(SessionManager.get().getRole().equals("Client"))
+        {
+            tfRole.setVisible(false);
+        }
 
     }    
 
@@ -94,25 +101,33 @@ public class EditUserController implements Initializable {
             AlertsController.get().Alert(".","Erreur","Le mot de passe doit faire au moins 4 caractères!");            
             control = false;
         }
-        else if (!(Pattern.matches("^[a-zA-Z0-9]+[@]{1}+[a-zA-Z0-9]+[.]{1}+[a-zA-Z0-9]+$", email))){
+        else if (!(Pattern.matches("^[A-Za-z0-9_.]+[@]{1}+[a-zA-Z0-9]+[.]{1}+[a-zA-Z0-9]+$", email))){
             AlertsController.get().Alert(".","Erreur","L'email n'est pas valide!");            
             control = false;
         }
         
         if(control == true)
         {
-            
-            User u = new User(UserId,username, password, nom, prenom, email, role, "token", 1);
+            User u = new User();
+            if(SessionManager.get().getRole().equals("Client"))
+            {
+                u = new User(UserId,username, password, nom, prenom, email, "Client", "token", 1);
+            }
+            else
+            {
+                u = new User(UserId,username, password, nom, prenom, email, role, "token", 1);
+            }
             UserService us = new UserService();
             boolean test = us.ModifierUser(u);
+            AlertsController.get().Alert("information","Succès","User Modifié!");
+            tfUsername.clear();
+            tfPassword.clear();
+            tfEmail.clear();
+            tfNom.clear();
+            tfPrenom.clear();
             
-            if(test == true)
+            if(profil == false)
             {
-                tfUsername.clear();
-                tfPassword.clear();
-                tfEmail.clear();
-                tfNom.clear();
-                tfPrenom.clear();
                 flowPane.getChildren().clear();
                 List<User> list = us.AfficherUsers();
                 try {
@@ -127,8 +142,11 @@ public class EditUserController implements Initializable {
                 } catch (IOException e){
                     e.printStackTrace();
                 }
-
-
+                
+            }
+            else
+            {
+                SessionManager.get().StartSession(u.getId(),u.getUsername(), u.getPassword(),u.getNom(),u.getPrenom(),u.getEmail(),u.getRole());
             }
         }
     }
@@ -150,5 +168,19 @@ public class EditUserController implements Initializable {
         tfEmail.setText(u.getEmail());
         
     }
+    
+    public void SetUserInfos(User u, JFXDialog d, StackPane c, boolean p){
+        
+        profil=p;
+        dialog = d;
+        container = c;
+        UserId = u.getId();
+        tfUsername.setText(u.getUsername());
+        tfNom.setText(u.getNom());
+        tfPrenom.setText(u.getPrenom());
+        tfEmail.setText(u.getEmail());
+        
+    }
+
     
 }

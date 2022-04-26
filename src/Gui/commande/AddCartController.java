@@ -70,10 +70,8 @@ public class AddCartController implements Initializable {
                 c.setAdresse(tfAdresse.getText());
                 cs.AjouterCommande(c);
             }
-
+            SessionManager.get().DeleteCart();
         }    
-
-
     }
     
     public void setInfos(FlowPane fp, JFXDialog d, StackPane cn ){

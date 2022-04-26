@@ -128,4 +128,31 @@ public class CommandeService implements IServiceCommande {
         return commande;
 
     }
+
+    @Override
+    public List<Commande> AfficherCommandes(int idUser) {
+        List<Commande> commandes = new ArrayList();
+        try {
+            String req = "SELECT * FROM commande WHERE user_id = " + idUser + "";
+            PreparedStatement pstm = con.prepareStatement(req);
+            ResultSet rs = pstm.executeQuery();
+            while (rs.next()) {
+                Commande c = new Commande();
+                c.setId(rs.getInt("id"));
+                c.setUser(rs.getInt("user_id"));
+                c.setProduit(rs.getInt("produit_id"));
+                c.setQuantite(rs.getInt("quantite"));
+                c.setDate(rs.getDate("date_ajout"));
+                c.setAdresse(rs.getString("adresse"));
+
+                commandes.add(c);
+            }
+        } catch (SQLException ex) {
+            Logger.getLogger(ProduitService.class.getName()).log(Level.SEVERE, null, ex);
+            System.out.println("Erreur d'affichage des commandes");
+        }
+        return commandes;
+
+    }
+    
 }

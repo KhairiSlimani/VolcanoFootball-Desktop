@@ -91,7 +91,7 @@ public class AddUserController implements Initializable {
             AlertsController.get().Alert(".","Erreur","Le mot de passe doit faire au moins 4 caractères!");            
             control = false;
         }
-        else if (!(Pattern.matches("^[a-zA-Z0-9]+[@]{1}+[a-zA-Z0-9]+[.]{1}+[a-zA-Z0-9]+$", email))){
+        else if (!(Pattern.matches("^[A-Za-z0-9_.]+[@]{1}+[a-zA-Z0-9]+[.]{1}+[a-zA-Z0-9]+$", email))){
             AlertsController.get().Alert(".","Erreur","L'email n'est pas valide!");            
             control = false;
         }

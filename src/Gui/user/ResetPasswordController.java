@@ -7,11 +7,13 @@ package Gui.user;
 
 import Entities.User;
 import Gui.AlertsController;
+import Gui.Mailer;
 import Services.UserService;
 import com.jfoenix.controls.JFXTextField;
 import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
@@ -26,12 +28,10 @@ import javafx.stage.Stage;
  *
  * @author Khairi
  */
-public class LoginController implements Initializable {
+public class ResetPasswordController implements Initializable {
 
     @FXML
-    private JFXTextField tfUsername;
-    @FXML
-    private JFXTextField tfPassword;
+    private JFXTextField tfEmail;
 
     /**
      * Initializes the controller class.
@@ -42,37 +42,26 @@ public class LoginController implements Initializable {
     }    
 
     @FXML
-    private void Login(MouseEvent event) throws IOException {
+    private void ResetPassword(ActionEvent event) {
         
-        boolean control = true;
-        String username = tfUsername.getText();
-        String password = tfPassword.getText();
+        UserService us = new UserService();
+        User u = new User();
+        u = us.RecupererUserEmail(tfEmail.getText());
         
-        if(username.length()==0 || password.length() ==0){
-            AlertsController.get().Alert(".","Erreur","Veuillez entrer toutes les informations nécessaires!");
-            control = false;
-        }
-        
-        if(control == true)
+        if(u.getUsername() != null)
         {
-            UserService us = new UserService();
-            boolean test = us.Login(username,password);
-            
-            if(test == true)
-            {
-                Parent root = FXMLLoader.load(getClass().getResource("../dashboard.fxml"));
-                Scene scene = new Scene(root);
-                Stage stage = (Stage)((Node)event.getSource()).getScene().getWindow();
-                stage.setScene(scene);
-                stage.show();
-
-            }
+            Mailer m = new Mailer();
+            m.ResetPassword(tfEmail.getText(), u.getUsername(), u.getPassword());
         }
+        else
+        {
+            AlertsController.get().Alert(".","Erreur","Il n'y a pas de compte avec ce mail!");
+        }
+
     }
 
     @FXML
     private void OpenRegister(MouseEvent event) throws IOException {
-        
         Parent root = FXMLLoader.load(getClass().getResource("register.fxml"));
         Scene scene = new Scene(root);
         Stage stage = (Stage)((Node)event.getSource()).getScene().getWindow();
@@ -90,15 +79,13 @@ public class LoginController implements Initializable {
     }
 
     @FXML
-    private void OpenReset(MouseEvent event) throws IOException {
-        Parent root = FXMLLoader.load(getClass().getResource("ResetPassword.fxml"));
+    private void OpenLogin(MouseEvent event) throws IOException {
+        Parent root = FXMLLoader.load(getClass().getResource("login.fxml"));
         Scene scene = new Scene(root);
         Stage stage = (Stage)((Node)event.getSource()).getScene().getWindow();
         stage.setScene(scene);
         stage.show();
 
     }
-    
-    
     
 }

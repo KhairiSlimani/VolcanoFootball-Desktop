@@ -124,6 +124,13 @@ public class DashboardController implements Initializable {
         view = new FXMLLoader().load(getClass().getResource("commande/cart.fxml"));
         borderPane.setCenter(view);
     }
+
+    @FXML
+    private void OpenProfil(MouseEvent event) throws IOException {
+        view = new FXMLLoader().load(getClass().getResource("user/profile.fxml"));
+        borderPane.setCenter(view);
+
+    }
     
     
 

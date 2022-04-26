@@ -12,6 +12,7 @@ import com.jfoenix.controls.JFXTextField;
 import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
@@ -26,12 +27,12 @@ import javafx.stage.Stage;
  *
  * @author Khairi
  */
-public class LoginController implements Initializable {
+public class ActivateAccountController implements Initializable {
 
     @FXML
     private JFXTextField tfUsername;
     @FXML
-    private JFXTextField tfPassword;
+    private JFXTextField tfToken;
 
     /**
      * Initializes the controller class.
@@ -42,37 +43,37 @@ public class LoginController implements Initializable {
     }    
 
     @FXML
-    private void Login(MouseEvent event) throws IOException {
-        
-        boolean control = true;
-        String username = tfUsername.getText();
-        String password = tfPassword.getText();
-        
-        if(username.length()==0 || password.length() ==0){
-            AlertsController.get().Alert(".","Erreur","Veuillez entrer toutes les informations nécessaires!");
-            control = false;
-        }
-        
-        if(control == true)
+    private void Activate(ActionEvent event) throws IOException {
+        User u = new User();
+        UserService us = new UserService();
+        u = us.RecupererUser(tfUsername.getText());
+        if(u.getUsername() != null)
         {
-            UserService us = new UserService();
-            boolean test = us.Login(username,password);
-            
-            if(test == true)
+            if(u.getToken().equals(tfToken.getText()))
             {
-                Parent root = FXMLLoader.load(getClass().getResource("../dashboard.fxml"));
+                u.setActivated(1);
+                us.ModifierUser(u);
+                AlertsController.get().Alert("information","Succès","Compte activé!");
+                Parent root = FXMLLoader.load(getClass().getResource("login.fxml"));
                 Scene scene = new Scene(root);
                 Stage stage = (Stage)((Node)event.getSource()).getScene().getWindow();
                 stage.setScene(scene);
                 stage.show();
-
+            }
+            else
+            {
+                AlertsController.get().Alert(".","Erreur","Le code d'activation est erroné!");
             }
         }
+        else
+        {
+          AlertsController.get().Alert(".","Erreur","User n'existe pas!");            
+        }
+
     }
 
     @FXML
     private void OpenRegister(MouseEvent event) throws IOException {
-        
         Parent root = FXMLLoader.load(getClass().getResource("register.fxml"));
         Scene scene = new Scene(root);
         Stage stage = (Stage)((Node)event.getSource()).getScene().getWindow();
@@ -81,24 +82,12 @@ public class LoginController implements Initializable {
     }
 
     @FXML
-    private void OpenActivate(MouseEvent event) throws IOException {
-        Parent root = FXMLLoader.load(getClass().getResource("ActivateAccount.fxml"));
+    private void OpenLogin(MouseEvent event) throws IOException {
+        Parent root = FXMLLoader.load(getClass().getResource("login.fxml"));
         Scene scene = new Scene(root);
         Stage stage = (Stage)((Node)event.getSource()).getScene().getWindow();
         stage.setScene(scene);
         stage.show();
     }
-
-    @FXML
-    private void OpenReset(MouseEvent event) throws IOException {
-        Parent root = FXMLLoader.load(getClass().getResource("ResetPassword.fxml"));
-        Scene scene = new Scene(root);
-        Stage stage = (Stage)((Node)event.getSource()).getScene().getWindow();
-        stage.setScene(scene);
-        stage.show();
-
-    }
-    
-    
     
 }

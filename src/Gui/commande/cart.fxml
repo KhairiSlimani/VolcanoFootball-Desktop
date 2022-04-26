@@ -10,17 +10,11 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-
-<AnchorPane id="AnchorPane" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="1150.0" style="-fx-background-color: #1E1E1E;" stylesheets="@../stylesheet.css" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/8.0.171" fx:controller="Gui.commande.CartController">
+<AnchorPane id="AnchorPane" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="1150.0" style="-fx-background-color: #1E1E1E;" stylesheets="@../stylesheet.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Gui.commande.CartController">
    <children>
       <AnchorPane layoutX="33.0" layoutY="41.0" prefHeight="98.0" prefWidth="200.0" style="-fx-background-radius: 15; -fx-background-color: linear-gradient(to top, #ff00cc, #333399);">
          <children>
-            <Text fill="WHITE" layoutX="14.0" layoutY="43.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Page">
-               <font>
-                  <Font size="24.0" />
-               </font>
-            </Text>
-            <Text fill="WHITE" layoutX="14.0" layoutY="71.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Panier">
+            <Text fill="WHITE" layoutX="38.0" layoutY="58.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Page Panier">
                <font>
                   <Font size="24.0" />
                </font>
@@ -32,7 +26,7 @@
             <FlowPane fx:id="FlowPane" hgap="40.0" prefHeight="200.0" prefWidth="1080.0" vgap="40.0" />
          </content>
       </ScrollPane>
-      <Text fill="WHITE" layoutX="25.0" layoutY="267.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Liste des Commandes">
+      <Text fill="WHITE" layoutX="25.0" layoutY="267.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Panier">
          <font>
             <Font size="24.0" />
          </font>

@@ -6,10 +6,12 @@
 package Gui.commande;
 
 import Entities.Commande;
+import Gui.SessionManager;
 import Services.CommandeService;
 import com.jfoenix.controls.JFXDialog;
 import java.io.IOException;
 import java.net.URL;
+import java.util.ArrayList;
 import java.util.List;
 import java.util.ResourceBundle;
 import javafx.event.ActionEvent;
@@ -73,7 +75,17 @@ public class CommandesController implements Initializable {
     public void ListCommandes() {
         
         CommandeService cs = new CommandeService();
-        List<Commande> list = cs.AfficherCommandes();
+        List<Commande> list = new ArrayList();
+        
+        if(SessionManager.get().getRole().equals("Admin"))
+        {
+            list = cs.AfficherCommandes();
+        }
+        else
+        {
+            list = cs.AfficherCommandes(SessionManager.get().getId());
+        }
+        
         try {
             for (int i = 0; i < list.size(); i++) {
                 

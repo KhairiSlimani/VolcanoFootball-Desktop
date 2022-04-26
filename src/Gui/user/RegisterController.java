@@ -7,10 +7,13 @@ package Gui.user;
 
 import Entities.User;
 import Gui.AlertsController;
+import Gui.Mailer;
 import Services.UserService;
 import com.jfoenix.controls.JFXTextField;
 import java.io.IOException;
 import java.net.URL;
+import java.nio.charset.StandardCharsets;
+import java.util.Base64;
 import java.util.ResourceBundle;
 import java.util.regex.Pattern;
 import javafx.event.ActionEvent;
@@ -83,19 +86,24 @@ public class RegisterController implements Initializable {
             AlertsController.get().Alert(".","Erreur","Le mot de passe doit faire au moins 4 caractères!");            
             control = false;
         }
-        else if (!(Pattern.matches("^[a-zA-Z0-9]+[@]{1}+[a-zA-Z0-9]+[.]{1}+[a-zA-Z0-9]+$", email))){
+        else if (!(Pattern.matches("^[A-Za-z0-9_.]+[@]{1}+[a-zA-Z0-9]+[.]{1}+[a-zA-Z0-9]+$", email))){
             AlertsController.get().Alert(".","Erreur","L'email n'est pas valide!");            
             control = false;
         }
         
+        
+        
         if(control == true)
         {
-            User u = new User(username, password, nom, prenom, email, "Client", "token", 1);
+            String token = Base64.getEncoder().encodeToString((username + ":" + password).getBytes(StandardCharsets.UTF_8));
+            User u = new User(username, password, nom, prenom, email, "Client", token, 0);
             UserService us = new UserService();
             boolean test = us.Register(u);
             
             if(test == true)
             {
+                Mailer m = new Mailer();
+                m.ConfirmationAccountMail(email, username, token);
                 tfUsername.clear();
                 tfPassword.clear();
                 tfEmail.clear();

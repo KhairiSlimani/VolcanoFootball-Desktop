@@ -64,7 +64,7 @@ public class UserService implements IServiceUser {
             pstm.setInt(9, u.getId());
             pstm.executeUpdate();
 
-            AlertsController.get().Alert("information","Succès","User Modifié!");
+            
             System.out.println("User Modifié "+u.getId());
             return true;
         } catch (SQLException ex) {
@@ -141,6 +141,7 @@ public class UserService implements IServiceUser {
                 else
                 {
                     AlertsController.get().Alert(".","Erreur","Mauvais mot de passe!");
+                    return false;
                 }
             }
             
@@ -216,7 +217,7 @@ public class UserService implements IServiceUser {
                 user.setUsername(rs.getString("username"));
             }
         } catch (SQLException ex) {
-            Logger.getLogger(ProduitService.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(UserService.class.getName()).log(Level.SEVERE, null, ex);
             System.out.println("Erreur de récuperation");
         }
         return user;
@@ -229,6 +230,33 @@ public class UserService implements IServiceUser {
         User user = new User();
         try {
             String req = "SELECT * FROM user WHERE id=\""+id+"\";";
+            PreparedStatement pstm = con.prepareStatement(req);
+            ResultSet rs = pstm.executeQuery();
+            while (rs.next()) {
+                user.setId(rs.getInt("id"));
+                user.setRole(rs.getString("role"));
+                user.setPassword(rs.getString("password"));
+                user.setNom(rs.getString("nom"));
+                user.setPrenom(rs.getString("prenom"));
+                user.setEmail(rs.getString("email"));
+                user.setToken(rs.getString("token"));
+                user.setActivated(rs.getInt("activated"));
+                user.setUsername(rs.getString("username"));
+            }
+        } catch (SQLException ex) {
+            Logger.getLogger(ProduitService.class.getName()).log(Level.SEVERE, null, ex);
+            System.out.println("Erreur de récuperation");
+        }
+        return user;
+
+    }
+
+    @Override
+    public User RecupererUserEmail(String email) {
+        
+                User user = new User();
+        try {
+            String req = "SELECT * FROM user WHERE email=\""+email+"\";";
             PreparedStatement pstm = con.prepareStatement(req);
             ResultSet rs = pstm.executeQuery();
             while (rs.next()) {

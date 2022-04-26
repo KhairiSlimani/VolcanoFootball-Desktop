@@ -108,7 +108,6 @@ public class ProduitsController implements Initializable {
     
     public void CartSize(Text t) {
         cartSize=t;
-        System.out.println("sayee");
     }
 
     @FXML

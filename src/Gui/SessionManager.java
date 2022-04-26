@@ -24,10 +24,11 @@ public class SessionManager {
     private String email;
     private String role;
     private boolean session;
+    private Text cartSize;
     Map<Integer, Integer> cart = new HashMap<>(); 
 
-    public void AddToCart(int idProduit, Text cartSize) {
-        
+    public void AddToCart(int idProduit, Text c) {
+        cartSize=c;
         Integer value = cart.get(idProduit);
         if (value == null) {
             cart.put(idProduit, 1);
@@ -56,11 +57,13 @@ public class SessionManager {
     }
 
     
-    public void DeleteCart() {
+    public void DeleteCart(){
         
         cart.clear();
+        cartSize.setText("0");
     }
-
+    
+    
     public int getId() {
         return id;
     }
