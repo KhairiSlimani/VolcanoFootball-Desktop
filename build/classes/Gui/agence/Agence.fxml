@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXDialog?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.FlowPane?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane id="AnchorPaneAg" fx:id="AnO" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="1150.0" style="-fx-background-color: #1E1E1E;" styleClass="..\stylesheet.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Gui.agence.AgenceController">
+   <children>
+      <JFXButton layoutX="959.0" layoutY="241.0" onAction="#ShowAddAgence" prefHeight="40.0" prefWidth="157.0" styleClass="btn" text="Ajouter Agence" textFill="#d10d0d">
+         <font>
+            <Font name="System Bold" size="14.0" />
+         </font>
+         <padding>
+            <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+         </padding>
+      </JFXButton>
+      <Text fill="WHITE" layoutX="41.0" layoutY="289.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Liste des Agence">
+         <font>
+            <Font size="24.0" />
+         </font>
+      </Text>
+      <AnchorPane layoutX="24.0" layoutY="24.0" prefHeight="89.0" prefWidth="210.0" style="-fx-background-radius: 15; -fx-background-color: linear-gradient(to top, #ff00cc, #333399);">
+         <children>
+            <Text fill="WHITE" layoutX="17.0" layoutY="38.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Page">
+               <font>
+                  <Font size="24.0" />
+               </font>
+            </Text>
+            <Text fill="WHITE" layoutX="17.0" layoutY="69.0" strokeType="OUTSIDE" strokeWidth="0.0" text="des Agences">
+               <font>
+                  <Font size="24.0" />
+               </font>
+            </Text>
+         </children>
+      </AnchorPane>
+      <ScrollPane fx:id="ScrollPaneAg" layoutX="45.0" layoutY="305.0" prefHeight="1100.0" prefWidth="1100.0" style="-fx-background: transparent; -fx-background-color: transparent;">
+         <content>
+            <FlowPane fx:id="FlowPaneAg" hgap="40.0" prefHeight="180.0" prefWidth="1080.0" vgap="40.0" />
+         </content>
+      </ScrollPane>
+      <StackPane fx:id="containerAg" layoutX="758.0" layoutY="42.0" style="-fx-background-color: transparent;">
+         <children>
+            <JFXDialog fx:id="dialog" style="-fx-background-color: transparent;" />
+         </children>
+      </StackPane>
+      <JFXButton fx:id="print" layoutX="27.0" layoutY="200.0" onAction="#Print" prefHeight="27.0" prefWidth="89.0" styleClass="btn" text="Print" textFill="#d10d0d">
+         <font>
+            <Font name="System Bold" size="14.0" />
+         </font>
+         <padding>
+            <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+         </padding>
+      </JFXButton>
+   </children>
+</AnchorPane>

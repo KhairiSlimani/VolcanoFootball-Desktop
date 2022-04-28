@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXDialog?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconView?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.FlowPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane id="AnchorPaneHe" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="1150.0" style="-fx-background-color: #1E1E1E;" styleClass="..\stylesheet.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Gui.hebergement.HebergementController">
+   <children>
+      <JFXButton layoutX="968.0" layoutY="253.0" onAction="#ShowAddHebergement" prefHeight="40.0" prefWidth="157.0" styleClass="btn" text="Ajouter Hébergement" textFill="#d10d0d">
+         <font>
+            <Font name="System Bold" size="14.0" />
+         </font>
+         <padding>
+            <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+         </padding>
+      </JFXButton>
+      <Text fill="WHITE" layoutX="51.0" layoutY="299.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Liste des Hébergement">
+         <font>
+            <Font size="24.0" />
+         </font>
+      </Text>
+      <AnchorPane layoutX="34.0" layoutY="34.0" prefHeight="89.0" prefWidth="210.0" style="-fx-background-radius: 15; -fx-background-color: linear-gradient(to top, #ff00cc, #333399);">
+         <children>
+            <Text fill="WHITE" layoutX="17.0" layoutY="38.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Page">
+               <font>
+                  <Font size="24.0" />
+               </font>
+            </Text>
+            <Text fill="WHITE" layoutX="17.0" layoutY="69.0" strokeType="OUTSIDE" strokeWidth="0.0" text="des Hébergement">
+               <font>
+                  <Font size="24.0" />
+               </font>
+            </Text>
+         </children>
+      </AnchorPane>
+      <ScrollPane fx:id="ScrollPaneAg" layoutX="55.0" layoutY="315.0" prefHeight="1100.0" prefWidth="1100.0" style="-fx-background: transparent; -fx-background-color: transparent;">
+         <content>
+            <FlowPane fx:id="FlowPaneAg" hgap="40.0" prefHeight="180.0" prefWidth="1080.0" vgap="40.0" />
+         </content>
+      </ScrollPane>
+      <StackPane fx:id="containerAg" layoutX="768.0" layoutY="52.0" style="-fx-background-color: transparent;">
+         <children>
+            <JFXDialog fx:id="dialog" style="-fx-background-color: transparent;" />
+         </children>
+      </StackPane>
+      <HBox alignment="CENTER" layoutX="461.0" layoutY="143.0" prefHeight="100.0" prefWidth="300.0">
+         <children>
+            <JFXTextField fx:id="recherche" focusColor="#b82025" labelFloat="true" onKeyPressed="#searchedAvance" prefHeight="25.0" prefWidth="252.0" promptText="Rechercher..." style="-fx-text-fill: white;" unFocusColor="WHITE">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </JFXTextField>
+            <FontAwesomeIconView accessibleRole="BUTTON" fill="WHITE" glyphName="SEARCH" size="1.5em" />
+         </children>
+      </HBox>
+   </children>
+</AnchorPane>

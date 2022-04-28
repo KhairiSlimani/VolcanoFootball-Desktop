@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconView?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.effect.DropShadow?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" fx:id="item" prefHeight="190.0" prefWidth="177.0" style="-fx-background-color: black; -fx-background-radius: 20;" styleClass="child" stylesheets="@../stylesheet.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Gui.hebergement.HebergementItem2Controller">
+   <effect>
+      <DropShadow />
+   </effect>
+   <children>
+      <ImageView fx:id="img" fitHeight="92.0" fitWidth="129.0" layoutX="29.0" layoutY="60.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../images/centroPNG.PNG" />
+         </image></ImageView>
+      <Label fx:id="adresse" layoutX="22.0" layoutY="25.0" prefHeight="28.0" prefWidth="121.0" text=" adresse" textAlignment="CENTER" textFill="#e01c16">
+         <font>
+            <Font name="Cambria Bold" size="11.0" />
+         </font>
+      </Label>
+      <JFXButton fx:id="deleteButton" ellipsisString="" layoutX="112.0" layoutY="160.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" onAction="#DeleteH" prefHeight="25.0" prefWidth="28.0" style="-fx-background-color: red;" text="Button">
+         <graphic>
+            <FontAwesomeIconView glyphName="TRASH" size="15" />
+         </graphic>
+      </JFXButton>
+      <JFXButton fx:id="editButton" ellipsisString="" layoutX="42.0" layoutY="160.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" onAction="#EditH" prefHeight="25.0" prefWidth="28.0" style="-fx-background-color: orange;" text="Button">
+         <graphic>
+            <FontAwesomeIconView glyphName="EDIT" size="15" />
+         </graphic>
+      </JFXButton>
+      <JFXButton fx:id="favButton" ellipsisString="" layoutX="76.0" layoutY="160.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" onAction="#addFav" prefHeight="25.0" prefWidth="28.0" style="-fx-background-color: pink;">
+         <graphic>
+            <FontAwesomeIconView glyphName="HEART" size="15" />
+         </graphic>
+      </JFXButton>
+      <Label fx:id="nomH" layoutX="25.0" layoutY="-3.0" prefHeight="28.0" prefWidth="121.0" text="NomH" textAlignment="CENTER" textFill="#e01c16">
+         <font>
+            <Font name="Cambria Bold" size="11.0" />
+         </font>
+      </Label>
+   </children>
+</AnchorPane>

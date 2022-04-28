@@ -3,6 +3,7 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
+<<<<<<< Updated upstream
             <file>file:/C:/Users/HP%20USER/Desktop/JavaFXPidev/src/entities/Hebergement.java</file>
             <file>file:/C:/Users/HP%20USER/Desktop/JavaFXPidev/src/Gui/Hebergement.fxml</file>
             <file>file:/C:/Users/HP%20USER/Desktop/JavaFXPidev/src/Gui/HebergementController.java</file>
@@ -12,6 +13,25 @@
             <file>file:/C:/Users/HP%20USER/Desktop/JavaFXPidev/src/services/AgenceCrud.java</file>
             <file>file:/C:/Users/HP%20USER/Desktop/JavaFXPidev/src/Gui/MainController.java</file>
             <file>file:/C:/Users/HP%20USER/Desktop/JavaFXPidev/src/Gui/AjouterHebergementFXMLController.java</file>
+=======
+            <file>file:/C:/Users/HP%20USER/Desktop/VolcanoFootballDesktop/src/Gui/commande/CommandeItemController.java</file>
+            <file>file:/C:/Users/HP%20USER/Desktop/VolcanoFootballDesktop/src/Services/ReservationCrud.java</file>
+            <file>file:/C:/Users/HP%20USER/Desktop/VolcanoFootballDesktop/src/IServices/IServiceHebergement.java</file>
+            <file>file:/C:/Users/HP%20USER/Desktop/VolcanoFootballDesktop/src/IServices/IServiceProduit.java</file>
+            <file>file:/C:/Users/HP%20USER/Desktop/VolcanoFootballDesktop/src/Gui/hebergement/AddHebergementController.java</file>
+            <file>file:/C:/Users/HP%20USER/Desktop/VolcanoFootballDesktop/src/Gui/commande/EditCommandeController.java</file>
+            <file>file:/C:/Users/HP%20USER/Desktop/VolcanoFootballDesktop/src/Gui/SendEmail.java</file>
+            <file>file:/C:/Users/HP%20USER/Desktop/VolcanoFootballDesktop/src/Gui/reservation/ReservationController.java</file>
+            <file>file:/C:/Users/HP%20USER/Desktop/VolcanoFootballDesktop/src/Services/ProduitService.java</file>
+            <file>file:/C:/Users/HP%20USER/Desktop/VolcanoFootballDesktop/src/Gui/hebergement/EditHebergement.fxml</file>
+            <file>file:/C:/Users/HP%20USER/Desktop/VolcanoFootballDesktop/src/Gui/hebergement/HebergementController.java</file>
+            <file>file:/C:/Users/HP%20USER/Desktop/VolcanoFootballDesktop/src/Gui/reservation/AddReservationController.java</file>
+            <file>file:/C:/Users/HP%20USER/Desktop/VolcanoFootballDesktop/src/Gui/commande/CommandesController.java</file>
+            <file>file:/C:/Users/HP%20USER/Desktop/VolcanoFootballDesktop/src/Gui/hebergement/EditHebergementController.java</file>
+            <file>file:/C:/Users/HP%20USER/Desktop/VolcanoFootballDesktop/src/Services/HebergementCrud.java</file>
+            <file>file:/C:/Users/HP%20USER/Desktop/VolcanoFootballDesktop/src/Gui/hebergement/HebergementItem2Controller.java</file>
+            <file>file:/C:/Users/HP%20USER/Desktop/VolcanoFootballDesktop/src/Gui/commande/AddCommandeController.java</file>
+>>>>>>> Stashed changes
         </group>
     </open-files>
 </project-private>
