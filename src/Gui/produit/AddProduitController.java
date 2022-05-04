@@ -71,6 +71,7 @@ public class AddProduitController implements Initializable {
         tailles.add("XL");
         tfTaille.setItems(tailles);
         tfTaille.getSelectionModel().selectFirst();
+
     }    
 
     @FXML

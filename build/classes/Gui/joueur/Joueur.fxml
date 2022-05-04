@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXDialog?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.FlowPane?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane id="AnchorPane" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="1150.0" style="-fx-background-color: #1E1E1E;" styleClass="..\stylesheet.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Gui.joueur.JoueurController">
+   <children>
+      <AnchorPane layoutX="33.0" layoutY="41.0" prefHeight="98.0" prefWidth="200.0" style="-fx-background-radius: 15; -fx-background-color: linear-gradient(to top, #ff00cc, #333399);">
+         <children>
+            <Text fill="WHITE" layoutX="14.0" layoutY="43.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Page">
+               <font>
+                  <Font size="24.0" />
+               </font>
+            </Text>
+            <Text fill="WHITE" layoutX="14.0" layoutY="71.0" strokeType="OUTSIDE" strokeWidth="0.0" text="des Joueurs">
+               <font>
+                  <Font size="24.0" />
+               </font>
+            </Text>
+         </children>
+      </AnchorPane>
+      <ScrollPane layoutX="33.0" layoutY="196.0" prefHeight="1191.0" prefWidth="1100.0" style="-fx-background: transparent; -fx-background-color: transparent;">
+         <content>
+            <FlowPane fx:id="FlowPane" hgap="40.0" prefHeight="371.0" prefWidth="1080.0" vgap="40.0">
+               <children>
+                  <TableView fx:id="tablejoueur" onMouseClicked="#selectJoueur" prefHeight="370.0" prefWidth="745.0" style="-fx-background-color: red;">
+                     <columns>
+                        <TableColumn fx:id="colid" prefWidth="41.0" text="ID" />
+                        <TableColumn fx:id="colnom" prefWidth="108.0" text="Nom" />
+                        <TableColumn fx:id="colprenom" prefWidth="99.0" text="Prénom" />
+                        <TableColumn fx:id="colage" prefWidth="99.0" text="Age" />
+                        <TableColumn fx:id="colposition" prefWidth="105.0" text="Position" />
+                        <TableColumn fx:id="coldesc" prefWidth="211.0" text="Déscription" />
+                        <TableColumn fx:id="colequipe" prefWidth="98.0" text="Equipe" />
+                        <TableColumn fx:id="colphoto" prefWidth="170.0" text="Photo" />
+                     </columns>
+                  </TableView>
+                  <AnchorPane prefHeight="370.0" prefWidth="234.0">
+                     <children>
+                        <GridPane layoutX="-28.0" layoutY="27.0" prefHeight="286.0" prefWidth="233.0">
+                          <columnConstraints>
+                            <ColumnConstraints hgrow="SOMETIMES" maxWidth="234.0" minWidth="10.0" prefWidth="234.0" />
+                          </columnConstraints>
+                          <rowConstraints>
+                            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                          </rowConstraints>
+                           <children>
+                              <JFXTextField fx:id="tfnom" promptText="Nom " />
+                              <JFXTextField fx:id="tfprenom" promptText="Prénom " GridPane.rowIndex="1" />
+                              <JFXTextField fx:id="tfage" promptText="Age" GridPane.rowIndex="2" />
+                              <JFXTextField fx:id="tfposition" promptText="Position" GridPane.rowIndex="3" />
+                              <JFXTextField fx:id="tfdesc" promptText="Description" GridPane.rowIndex="4" />
+                              <JFXTextField fx:id="tfequipe" promptText="Equipe" GridPane.rowIndex="5" />
+                              <JFXTextField fx:id="tfphoto" prefHeight="25.0" prefWidth="293.0" promptText="Photo" GridPane.rowIndex="6" />
+                           </children>
+                        </GridPane>
+                        <GridPane hgap="5.0" layoutX="-43.0" layoutY="318.0" prefHeight="52.0" prefWidth="279.0">
+                          <columnConstraints>
+                            <ColumnConstraints hgrow="SOMETIMES" maxWidth="84.0" minWidth="10.0" prefWidth="68.0" />
+                              <ColumnConstraints hgrow="SOMETIMES" maxWidth="94.0" minWidth="10.0" prefWidth="66.0" />
+                              <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                          </columnConstraints>
+                          <rowConstraints>
+                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                          </rowConstraints>
+                           <children>
+                              <JFXButton onAction="#ModifierJoueur" prefHeight="40.0" prefWidth="85.0" styleClass="btn" text="Modifier" GridPane.columnIndex="1">
+                                 <padding>
+                                    <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                                 </padding>
+                                 <font>
+                                    <Font name="System Bold" size="14.0" />
+                                 </font>
+                                 <GridPane.margin>
+                                    <Insets />
+                                 </GridPane.margin>
+                              </JFXButton>
+                              <JFXButton onAction="#SupprimerJoueur" prefHeight="40.0" prefWidth="98.0" styleClass="btn" text="Supprimer" GridPane.columnIndex="2">
+                                 <padding>
+                                    <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                                 </padding>
+                                 <font>
+                                    <Font name="System Bold" size="14.0" />
+                                 </font>
+                              </JFXButton>
+                              <JFXButton onAction="#AjouterJoueur" prefHeight="40.0" prefWidth="87.0" styleClass="btn" text="Ajouter">
+                                 <padding>
+                                    <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                                 </padding>
+                                 <font>
+                                    <Font name="System Bold" size="14.0" />
+                                 </font>
+                              </JFXButton>
+                           </children>
+                        </GridPane>
+                     </children>
+                     <FlowPane.margin>
+                        <Insets left="40.0" />
+                     </FlowPane.margin>
+                  </AnchorPane>
+               </children>
+            </FlowPane>
+         </content>
+      </ScrollPane>
+      <FlowPane fx:id="FlowPane" hgap="40.0" layoutX="10.0" layoutY="24.0" prefHeight="129.0" prefWidth="1080.0" vgap="40.0">
+         <children>
+            <Text fx:id="tid" strokeType="OUTSIDE" strokeWidth="0.0" />
+         </children></FlowPane>
+      <StackPane fx:id="container" layoutX="707.0" layoutY="41.0" style="-fx-background-color: transparent;">
+         <children>
+            <JFXDialog fx:id="dialog" style="-fx-background-color: transparent;" />
+         </children>
+      </StackPane>
+      <Text fill="WHITE" layoutX="33.0" layoutY="179.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Joueur">
+         <font>
+            <Font size="24.0" />
+         </font>
+      </Text>
+   </children>
+</AnchorPane>

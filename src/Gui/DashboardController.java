@@ -52,6 +52,16 @@ public class DashboardController implements Initializable {
     private Text cartSize;
     @FXML
     private Text commandesText;
+    @FXML
+    private Text commandesText11;
+    @FXML
+    private HBox joueurBox;
+    @FXML
+    private Text joueur;
+    @FXML
+    private HBox commandesBox1;
+    @FXML
+    private HBox EquipeBox;
 
     /**
      * Initializes the controller class.
@@ -128,6 +138,24 @@ public class DashboardController implements Initializable {
     @FXML
     private void OpenProfil(MouseEvent event) throws IOException {
         view = new FXMLLoader().load(getClass().getResource("user/profile.fxml"));
+        borderPane.setCenter(view);
+
+    }
+    @FXML
+    private void OpenJoueur(MouseEvent event) throws IOException {
+        view = new FXMLLoader().load(getClass().getResource("joueur/Joueur.fxml"));
+        borderPane.setCenter(view);
+
+    }
+    @FXML
+    private void OpenEquipe(MouseEvent event) throws IOException {
+        view = new FXMLLoader().load(getClass().getResource("equipe/Equipe.fxml"));
+        borderPane.setCenter(view);
+
+    }
+    @FXML
+    private void OpenStatEquipe(MouseEvent event) throws IOException {
+        view = new FXMLLoader().load(getClass().getResource("equipe/statequipe.fxml"));
         borderPane.setCenter(view);
 
     }

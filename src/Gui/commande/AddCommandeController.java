@@ -72,6 +72,7 @@ public class AddCommandeController implements Initializable {
             }
             tfUser.setItems(users);
             tfUser.getSelectionModel().selectFirst();
+
         }
         else
         {
@@ -79,7 +80,8 @@ public class AddCommandeController implements Initializable {
             ObservableList user = FXCollections.observableArrayList();
             user.add(u.getUsername());
             tfUser.setItems(user);
-            tfUser.getSelectionModel().selectFirst();  
+            tfUser.getSelectionModel().selectFirst();
+            
         }
         
         ObservableList produits = FXCollections.observableArrayList();

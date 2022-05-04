@@ -1,0 +1,201 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXDatePicker?>
+<?import com.jfoenix.controls.JFXDialog?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.FlowPane?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane id="AnchorPane" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="1150.0" style="-fx-background-color: #1E1E1E;" styleClass="..\stylesheet.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Gui.equipe.EquipeController">
+   <children>
+      <AnchorPane layoutX="33.0" layoutY="41.0" prefHeight="98.0" prefWidth="200.0" style="-fx-background-radius: 15; -fx-background-color: linear-gradient(to top, #ff00cc, #333399);">
+         <children>
+            <Text fill="WHITE" layoutX="14.0" layoutY="43.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Page">
+               <font>
+                  <Font size="24.0" />
+               </font>
+            </Text>
+            <Text fill="WHITE" layoutX="14.0" layoutY="71.0" strokeType="OUTSIDE" strokeWidth="0.0" text="des Equipes">
+               <font>
+                  <Font size="24.0" />
+               </font>
+            </Text>
+         </children>
+      </AnchorPane>
+      <ScrollPane layoutX="33.0" layoutY="196.0" prefHeight="1191.0" prefWidth="1100.0" style="-fx-background: transparent; -fx-background-color: transparent;">
+         <content>
+            <FlowPane fx:id="FlowPane" hgap="40.0" prefHeight="371.0" prefWidth="1080.0" vgap="40.0">
+               <children>
+                  <TableView fx:id="tableequipe" onMouseClicked="#selectEquipe" prefHeight="370.0" prefWidth="745.0" style="-fx-background-color: red;">
+                     <columns>
+                        <TableColumn fx:id="colequipe" prefWidth="67.0" text="Equipe" />
+                        <TableColumn fx:id="coldate" prefWidth="129.0" text="Date de Création" />
+                        <TableColumn fx:id="colnomentre" prefWidth="106.0" text="Nom Entrenaeur" />
+                        <TableColumn fx:id="colmail" prefWidth="235.0" text="E-mail" />
+                        <TableColumn fx:id="coldrapeau" prefWidth="122.0" text="Drapeau" />
+                        <TableColumn fx:id="colrang" prefWidth="83.0" text="Rang" />
+                     </columns>
+                  </TableView>
+                  <AnchorPane prefHeight="370.0" prefWidth="234.0">
+                     <children>
+                        <GridPane layoutX="-28.0" layoutY="27.0" prefHeight="250.0" prefWidth="233.0">
+                           <columnConstraints>
+                              <ColumnConstraints hgrow="SOMETIMES" maxWidth="234.0" minWidth="10.0" prefWidth="234.0" />
+                           </columnConstraints>
+                           <rowConstraints>
+                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                           </rowConstraints>
+                           <children>
+                              <JFXTextField fx:id="tfnomequipe" promptText="Nom " />
+                              <JFXTextField fx:id="tfnomentre" promptText="Nom Entreneur" GridPane.rowIndex="1" />
+                              <JFXTextField fx:id="tfmail" promptText="E-mail" GridPane.rowIndex="3" />
+                              <JFXTextField fx:id="tfdrapeau" promptText="Drapeau" GridPane.rowIndex="4" />
+                              <JFXTextField fx:id="tfrang" promptText="Rang" GridPane.rowIndex="5" />
+                              <JFXDatePicker fx:id="tfdate" prefHeight="25.0" prefWidth="235.0" GridPane.rowIndex="2" />
+                           </children>
+                        </GridPane>
+                        <GridPane hgap="5.0" layoutX="-43.0" layoutY="284.0" prefHeight="42.0" prefWidth="279.0">
+                           <columnConstraints>
+                              <ColumnConstraints hgrow="SOMETIMES" maxWidth="84.0" minWidth="10.0" prefWidth="68.0" />
+                              <ColumnConstraints hgrow="SOMETIMES" maxWidth="94.0" minWidth="10.0" prefWidth="66.0" />
+                              <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                           </columnConstraints>
+                           <rowConstraints>
+                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                           </rowConstraints>
+                           <children>
+                              <JFXButton onAction="#ModifierEquipe" prefHeight="40.0" prefWidth="85.0" styleClass="btn" text="Modifier" GridPane.columnIndex="1">
+                                 <padding>
+                                    <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                                 </padding>
+                                 <font>
+                                    <Font name="System Bold" size="14.0" />
+                                 </font>
+                                 <GridPane.margin>
+                                    <Insets />
+                                 </GridPane.margin>
+                              </JFXButton>
+                              <JFXButton onAction="#SupprimerEquipe" prefHeight="40.0" prefWidth="98.0" styleClass="btn" text="Supprimer" GridPane.columnIndex="2">
+                                 <padding>
+                                    <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                                 </padding>
+                                 <font>
+                                    <Font name="System Bold" size="14.0" />
+                                 </font>
+                              </JFXButton>
+                              <JFXButton onAction="#AjouterEquipe" prefHeight="40.0" prefWidth="87.0" styleClass="btn" text="Ajouter">
+                                 <padding>
+                                    <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                                 </padding>
+                                 <font>
+                                    <Font name="System Bold" size="14.0" />
+                                 </font>
+                              </JFXButton>
+                           </children>
+                        </GridPane>
+                        <GridPane hgap="5.0" layoutX="-38.0" layoutY="341.0" prefHeight="35.0" prefWidth="284.0">
+                           <columnConstraints>
+                              <ColumnConstraints hgrow="SOMETIMES" maxWidth="84.0" minWidth="10.0" prefWidth="60.0" />
+                              <ColumnConstraints hgrow="SOMETIMES" maxWidth="108.0" minWidth="10.0" prefWidth="108.0" />
+                              <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                           </columnConstraints>
+                           <rowConstraints>
+                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                           </rowConstraints>
+                           <children>
+                              <JFXButton onMouseClicked="#sendMail" prefHeight="40.0" prefWidth="108.0" styleClass="btn" text="Send Mail" GridPane.columnIndex="1">
+                                 <padding>
+                                    <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                                 </padding>
+                                 <font>
+                                    <Font name="System Bold" size="14.0" />
+                                 </font>
+                                 <GridPane.margin>
+                                    <Insets />
+                                 </GridPane.margin>
+                              </JFXButton>
+                           </children>
+                        </GridPane>
+                     </children>
+                     <FlowPane.margin>
+                        <Insets left="40.0" />
+                     </FlowPane.margin>
+                  </AnchorPane>
+               </children>
+            </FlowPane>
+         </content>
+      </ScrollPane>
+      <FlowPane fx:id="FlowPane" hgap="40.0" layoutX="10.0" layoutY="24.0" prefHeight="129.0" prefWidth="242.0" vgap="40.0">
+         <children>
+            <Text fx:id="tid" strokeType="OUTSIDE" strokeWidth="0.0" />
+         </children>
+      </FlowPane>
+      <StackPane fx:id="container" layoutX="707.0" layoutY="41.0" style="-fx-background-color: transparent;">
+         <children>
+            <JFXDialog fx:id="dialog" style="-fx-background-color: transparent;" />
+         </children>
+      </StackPane>
+      <Text fill="WHITE" layoutX="33.0" layoutY="179.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Equipe">
+         <font>
+            <Font size="24.0" />
+         </font>
+      </Text>
+      <AnchorPane layoutX="272.0" layoutY="41.0" prefHeight="98.0" prefWidth="768.0" style="-fx-background-radius: 15; -fx-background-color: linear-gradient(to top, #FF512F, #DD2476);">
+         <children>
+            <Text fill="WHITE" layoutX="14.0" layoutY="40.0" strokeType="OUTSIDE" strokeWidth="0.0" text="1 ére Equipe">
+               <font>
+                  <Font size="24.0" />
+               </font>
+            </Text>
+            <Text fill="WHITE" layoutX="318.0" layoutY="40.0" strokeType="OUTSIDE" strokeWidth="0.0" text="2éme Equipe">
+               <font>
+                  <Font size="24.0" />
+               </font>
+            </Text>
+            <Text fill="WHITE" layoutX="596.0" layoutY="40.0" strokeType="OUTSIDE" strokeWidth="0.0" text="3 éme Equipe">
+               <font>
+                  <Font size="24.0" />
+               </font>
+            </Text>
+            <Text fx:id="equipe1" fill="WHITE" layoutX="14.0" layoutY="75.0" strokeType="OUTSIDE" strokeWidth="0.0">
+               <font>
+                  <Font size="24.0" />
+               </font>
+            </Text>
+            <Text fx:id="equipe2" fill="WHITE" layoutX="318.0" layoutY="72.0" strokeType="OUTSIDE" strokeWidth="0.0">
+               <font>
+                  <Font size="24.0" />
+               </font>
+            </Text>
+            <Text fx:id="equipe3" fill="WHITE" layoutX="596.0" layoutY="74.0" strokeType="OUTSIDE" strokeWidth="0.0">
+               <font>
+                  <Font size="24.0" />
+               </font>
+            </Text>
+         </children>
+      </AnchorPane>
+      <JFXTextField fx:id="tfsearch" layoutX="151.0" layoutY="157.0" prefHeight="25.0" prefWidth="499.0" promptText="Rechercher" />
+      <JFXButton layoutX="675.0" layoutY="160.0" onAction="#showEquipeTrier" prefHeight="25.0" prefWidth="104.0" text="Trier" />
+      <StackPane fx:id="sp">
+         <children>
+            <JFXDialog fx:id="dialog" />
+         </children>
+      </StackPane>
+   </children>
+</AnchorPane>
