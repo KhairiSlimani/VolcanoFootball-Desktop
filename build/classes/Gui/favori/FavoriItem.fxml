@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconView?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.shape.Circle?>
+<?import javafx.scene.shape.Line?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<Pane fx:id="item" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="180.0" prefWidth="180.0" styleClass="child" stylesheets="@../stylesheet.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Gui.favori.FavoriItemController">
+   <children>
+      <Circle fill="WHITE" layoutX="46.0" layoutY="43.0" radius="37.0" stroke="WHITE" strokeType="INSIDE" />
+      <Line endX="-16.0" layoutX="184.0" layoutY="43.0" startX="-100.0" stroke="WHITE" />
+      <Text fx:id="nom" fill="WHITE" layoutX="107.0" layoutY="34.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Favori">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Text>
+      <Text fill="WHITE" layoutX="14.0" layoutY="118.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Produit: ">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Text>
+      <Text fx:id="nomProduit" fill="WHITE" layoutX="67.0" layoutY="118.0" strokeType="OUTSIDE" strokeWidth="0.0" text="nom">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Text>
+      <Text fill="WHITE" layoutX="15.0" layoutY="138.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Prix:">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Text>
+      <Text fx:id="prixProduit" fill="WHITE" layoutX="45.0" layoutY="138.0" strokeType="OUTSIDE" strokeWidth="0.0" text="prix">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Text>
+      <JFXButton fx:id="deleteButton" ellipsisString="" layoutX="76.0" layoutY="147.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" onAction="#DeleteFavori" prefHeight="25.0" prefWidth="28.0" style="-fx-background-color: red;" text="Button">
+         <graphic>
+            <FontAwesomeIconView fill="WHITE" glyphName="TRASH" size="15" />
+         </graphic>
+      </JFXButton>
+      <FontAwesomeIconView fill="RED" glyphName="HEART" layoutX="24.0" layoutY="62.0" size="45" />
+      <Text fill="WHITE" layoutX="14.0" layoutY="98.0" strokeType="OUTSIDE" strokeWidth="0.0" text="User: ">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Text>
+      <Text fx:id="username" fill="WHITE" layoutX="67.0" layoutY="98.0" strokeType="OUTSIDE" strokeWidth="0.0" text="nom">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Text>
+   </children>
+</Pane>

@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXComboBox?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconView?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+
+<AnchorPane id="AnchorPane" prefHeight="350.0" prefWidth="200.0" style="-fx-border-radius: 20; -fx-border-color: black; -fx-border-width: 2;" styleClass="child" stylesheets="@../stylesheet.css" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/8.0.171" fx:controller="Gui.commande.EditCommandeController">
+   <children>
+      <FontAwesomeIconView glyphName="LIST_UL" layoutX="79.0" layoutY="45.0" size="45" />
+      <VBox layoutX="16.0" layoutY="76.0" prefHeight="243.0" prefWidth="171.0">
+         <children>
+            <JFXComboBox fx:id="tfUser" focusColor="#b82025" labelFloat="true" prefHeight="25.0" prefWidth="202.0" promptText="User">
+               <VBox.margin>
+                  <Insets bottom="20.0" />
+               </VBox.margin>
+            </JFXComboBox>
+            <JFXComboBox fx:id="tfProduit" focusColor="#b82025" labelFloat="true" prefHeight="25.0" prefWidth="202.0" promptText="Produit">
+               <VBox.margin>
+                  <Insets bottom="20.0" />
+               </VBox.margin>
+            </JFXComboBox>
+            <JFXTextField fx:id="tfQuantite" focusColor="#b82025" labelFloat="true" promptText="Quantité">
+               <VBox.margin>
+                  <Insets bottom="20.0" />
+               </VBox.margin>
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </JFXTextField>
+            <JFXTextField fx:id="tfAdresse" focusColor="#b82025" labelFloat="true" promptText="Adresse">
+               <VBox.margin>
+                  <Insets bottom="20.0" />
+               </VBox.margin>
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </JFXTextField>
+            <JFXButton onAction="#EditC" prefHeight="25.0" prefWidth="192.0" styleClass="btn" text="Modifier Commande">
+               <opaqueInsets>
+                  <Insets />
+               </opaqueInsets>
+               <padding>
+                  <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+               </padding>
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </JFXButton>
+         </children>
+      </VBox>
+      <Button fx:id="buttonClose" layoutX="171.0" layoutY="6.0" mnemonicParsing="false" style="-fx-background-color: transparent;">
+         <graphic>
+            <FontAwesomeIconView glyphName="CLOSE" size="15" />
+         </graphic>
+      </Button>
+   </children>
+</AnchorPane>
