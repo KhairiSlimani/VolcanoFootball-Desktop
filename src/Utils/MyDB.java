@@ -4,7 +4,7 @@ import java.sql.DriverManager;
 import java.sql.SQLException;
 
 public class MyDB {
-    final String url ="jdbc:mysql://localhost:3306/volcano";
+    final String url ="jdbc:mysql://localhost:3306/volcanofootball";
     final String user="root";
     final String password="";
 
