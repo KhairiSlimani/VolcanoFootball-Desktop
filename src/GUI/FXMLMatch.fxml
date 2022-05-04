@@ -1,6 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.DatePicker?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.TableColumn?>
 <?import javafx.scene.control.TableView?>
@@ -28,7 +30,6 @@
             <TextField fx:id="TFNomArbitre" layoutX="23.0" layoutY="157.0" opacity="0.8" promptText="Nom Arbitre" />
             <TextField fx:id="TFStade" layoutX="21.0" layoutY="195.0" opacity="0.8" promptText="Stade" />
             <TextField fx:id="TFTour" layoutX="20.0" layoutY="233.0" opacity="0.8" promptText="Tour" />
-            <TextField fx:id="TFDate" layoutX="20.0" layoutY="270.0" opacity="0.8" promptText="Date" />
             <Label layoutX="85.0" layoutY="32.0" opacity="0.78" text="Ajouter Match :" textFill="WHITE" />
             <ImageView fitHeight="21.0" fitWidth="21.0" layoutX="19.0" layoutY="332.0" pickOnBounds="true" preserveRatio="true">
                <image>
@@ -74,6 +75,12 @@
                   <Image url="@image/3643763_list_mark_menu_option_sign_icon.png" />
                </image>
             </ImageView>
+            <DatePicker fx:id="TFDate" layoutX="20.0" layoutY="269.0" prefHeight="31.0" prefWidth="187.0" />
+            <Button fx:id="btn_météo" layoutX="222.0" layoutY="195.0" mnemonicParsing="false" onAction="#interfacemétéo" prefHeight="31.0" prefWidth="90.0" style="-fx-background-color: #290115;" text="test le météo" textFill="#f8f6f6">
+               <font>
+                  <Font name="Times New Roman Bold" size="12.0" />
+               </font>
+            </Button>
          </children>
       </AnchorPane>
       <TableView fx:id="tableview" cache="true" layoutX="340.0" layoutY="142.0" onSort="#getSelected" prefHeight="217.0" prefWidth="486.0">
@@ -91,5 +98,14 @@
             <Image url="@image/ball.png" />
          </image>
       </ImageView>
+      <ComboBox fx:id="triBox" layoutX="668.0" layoutY="107.0" onAction="#trie" prefWidth="150.0" promptText="trie par" />
+      <TextField fx:id="TFFilter" layoutX="340.0" layoutY="106.0" onAction="#searchConge" prefHeight="32.0" prefWidth="184.0" promptText="Rechercher" />
+      <Button fx:id="export" layoutX="400.0" layoutY="376.0" mnemonicParsing="false" onAction="#esportexcel" text="Excel" />
+      <Label fx:id="currentTimeTF" layoutX="660.0" layoutY="69.0" prefHeight="21.0" prefWidth="168.0" text="current Time" textFill="#d3bfbf" />
+      <Label layoutX="427.0" layoutY="14.0" text="Gestion des Matchs" textFill="#f63a4c">
+         <font>
+            <Font name="Dubai Medium" size="28.0" />
+         </font>
+      </Label>
    </children>
 </AnchorPane>

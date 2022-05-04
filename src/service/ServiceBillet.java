@@ -5,7 +5,7 @@
  */
 package service;
 
-import Entities.Billet;
+import entities.Billet;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;

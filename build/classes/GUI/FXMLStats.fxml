@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.chart.PieChart?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" prefHeight="462.0" prefWidth="644.0" style="-fx-background-color: #290115;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="GUI.FXMLStatsController">
+   <children>
+      <PieChart fx:id="piechart" layoutX="72.0" layoutY="31.0" title="Type billet" />
+      <Button fx:id="btn_quitter" layoutX="563.0" layoutY="415.0" mnemonicParsing="false" onAction="#Quitter" prefHeight="28.0" prefWidth="67.0" text="       ">
+         <font>
+            <Font name="Times New Roman" size="18.0" />
+         </font>
+      </Button>
+      <ImageView fitHeight="28.0" fitWidth="20.0" layoutX="597.0" layoutY="421.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@image/7693997_arrow_out_exit_leave_icon.png" />
+         </image>
+      </ImageView>
+   </children>
+</AnchorPane>

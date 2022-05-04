@@ -75,7 +75,6 @@
             <TextField fx:id="TFPrix" layoutX="43.0" layoutY="228.0" promptText="prix" />
          </children>
       </AnchorPane>
-      <TextField fx:id="TFFilter" layoutX="441.0" layoutY="102.0" prefHeight="32.0" prefWidth="147.0" promptText="Rechercher" />
       <ComboBox fx:id="triBox" layoutX="596.0" layoutY="103.0" prefHeight="31.0" prefWidth="82.0" promptText="trie par" />
       <TableView fx:id="tableview" layoutX="441.0" layoutY="147.0" onMouseClicked="#getSelected" prefHeight="356.0" prefWidth="232.0">
          <columns>
@@ -89,5 +88,17 @@
             <Image url="@image/ball.png" />
          </image>
       </ImageView>
+      <Button layoutX="572.0" layoutY="512.0" mnemonicParsing="false" onAction="#stats" prefHeight="38.0" prefWidth="90.0" style="-fx-background-color: black;" text="stats" textFill="WHITE">
+         <font>
+            <Font name="Dubai Medium" size="15.0" />
+         </font>
+      </Button>
+      <TextField fx:id="TFFilter" layoutX="437.0" layoutY="103.0" onAction="#searchConge" prefHeight="32.0" prefWidth="149.0" promptText="Rechercher" />
+      <Button fx:id="export" layoutX="504.0" layoutY="516.0" mnemonicParsing="false" onAction="#esportexcel" text="Excel" />
+      <Label layoutX="446.0" layoutY="30.0" text="Gestion des Billets" textFill="#f63a4c">
+         <font>
+            <Font name="Dubai Medium" size="28.0" />
+         </font>
+      </Label>
    </children>
 </AnchorPane>

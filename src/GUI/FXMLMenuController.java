@@ -54,7 +54,7 @@ public class FXMLMenuController implements Initializable {
                 mainStage.setScene(scene);
                  mainStage.setTitle("Interfce Match");
                 mainStage.show();
-                JOptionPane.showMessageDialog(null, "Bienvenue dans votre interface des matchs");
+                //JOptionPane.showMessageDialog(null, "Bienvenue dans votre interface des matchs");
         }catch(Exception e){
             JOptionPane.showMessageDialog(null, e);
         }
@@ -76,7 +76,7 @@ public class FXMLMenuController implements Initializable {
                 mainStage.setScene(scene);
                  mainStage.setTitle("Interfce Billet");
                 mainStage.show();
-                JOptionPane.showMessageDialog(null, "Bienvenue dans votre interface des billets");
+                //JOptionPane.showMessageDialog(null, "Bienvenue dans votre interface des billets");
         }catch(Exception e){
             JOptionPane.showMessageDialog(null, e);
         }

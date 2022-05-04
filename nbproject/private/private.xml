@@ -3,19 +3,21 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/C:/Users/DeLL/Desktop/GestionRH/src/GUI/FXMLMatchController.java</file>
-            <file>file:/C:/Users/DeLL/Desktop/GestionRH/src/GUI/FXMLMenuController.java</file>
-            <file>file:/C:/Users/DeLL/Desktop/GestionRH/src/GUI/FXMLBillet.fxml</file>
-            <file>file:/C:/Users/DeLL/Desktop/GestionRH/src/service/ServiceBillet.java</file>
-            <file>file:/C:/Users/DeLL/Desktop/GestionRH/src/entities/Billet.java</file>
-            <file>file:/C:/Users/DeLL/Desktop/GestionRH/src/GUI/FXMLBilletController.java</file>
-            <file>file:/C:/Users/DeLL/Desktop/GestionRH/src/service/ServiceMatch.java</file>
-            <file>file:/C:/Users/DeLL/Desktop/GestionRH/src/GUI/FXMLMatch.fxml</file>
-            <file>file:/C:/Users/DeLL/Desktop/GestionRH/src/GUI/log4j.properties</file>
-            <file>file:/C:/Users/DeLL/Desktop/GestionRH/src/reports/report1.jrxml</file>
-            <file>file:/C:/Users/DeLL/Desktop/GestionRH/src/utiles/Maconnexion.java</file>
-            <file>file:/C:/Users/DeLL/Desktop/GestionRH/src/gestionmatch/MenuFXMain.java</file>
-            <file>file:/C:/Users/DeLL/Desktop/GestionRH/src/entities/Match.java</file>
+            <file>file:/C:/Users/DeLL/Desktop/GestionMatch/src/gestionmatch/MenuFXMain.java</file>
+            <file>file:/C:/Users/DeLL/Desktop/GestionMatch/src/GUI/FXMLMenuController.java</file>
+            <file>file:/C:/Users/DeLL/Desktop/GestionMatch/src/GUI/FXMLBillet.fxml</file>
+            <file>file:/C:/Users/DeLL/Desktop/GestionMatch/src/utiles/Maconnexion.java</file>
+            <file>file:/C:/Users/DeLL/Desktop/GestionMatch/nbproject/build-impl.xml</file>
+            <file>file:/C:/Users/DeLL/Desktop/GestionMatch/src/GUI/FXMLBilletController.java</file>
+            <file>file:/C:/Users/DeLL/Desktop/GestionMatch/src/GUI/FXMLMatch.fxml</file>
+            <file>file:/C:/Users/DeLL/Desktop/GestionMatch/src/GUI/FXMLStatsController.java</file>
+            <file>file:/C:/Users/DeLL/Desktop/GestionMatch/src/service/ServiceMatch.java</file>
+            <file>file:/C:/Users/DeLL/Desktop/GestionMatch/src/entities/Match.java</file>
+            <file>file:/C:/Users/DeLL/Desktop/GestionMatch/src/GUI/FXMLMatchController.java</file>
+            <file>file:/C:/Users/DeLL/Desktop/GestionMatch/src/service/ServiceBillet.java</file>
+            <file>file:/C:/Users/DeLL/Desktop/GestionMatch/src/GUI/primary.fxml</file>
+            <file>file:/C:/Users/DeLL/Desktop/GestionMatch/src/GUI/FXMLStats.fxml</file>
+            <file>file:/C:/Users/DeLL/Desktop/GestionMatch/src/entities/Billet.java</file>
         </group>
     </open-files>
 </project-private>
