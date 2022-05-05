@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXDialog?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.FlowPane?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane id="AnchorPane" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="1150.0" style="-fx-background-color: #1E1E1E;" stylesheets="@../stylesheet.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Gui.stade.StadesController">
+   <children>
+      <ScrollPane layoutX="25.0" layoutY="285.0" prefHeight="1100.0" prefWidth="1100.0" style="-fx-background: transparent; -fx-background-color: transparent;">
+         <content>
+            <FlowPane fx:id="FlowPane" hgap="40.0" prefHeight="200.0" prefWidth="1080.0" vgap="40.0" />
+         </content>
+      </ScrollPane>
+      <Text fill="WHITE" layoutX="23.0" layoutY="267.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Liste des Stades">
+         <font>
+            <Font size="24.0" />
+         </font>
+      </Text>
+      <JFXButton fx:id="addPB" layoutX="985.0" layoutY="231.0" onAction="#ShowAddStade" prefHeight="40.0" prefWidth="140.0" styleClass="btn" text="Ajouter Stade">
+         <padding>
+            <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+         </padding>
+         <font>
+            <Font name="System Bold" size="14.0" />
+         </font>
+      </JFXButton>
+      <StackPane fx:id="container" layoutX="697.0" layoutY="31.0" style="-fx-background-color: transparent;">
+         <children>
+            <JFXDialog fx:id="dialog" style="-fx-background-color: transparent;" />
+         </children>
+      </StackPane>
+      <JFXButton fx:id="showP" layoutX="985.0" layoutY="181.0" onAction="#ShowStades" prefHeight="40.0" prefWidth="140.0" styleClass="btn" text="Afficher Stades">
+         <padding>
+            <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+         </padding>
+         <font>
+            <Font name="System Bold" size="14.0" />
+         </font>
+      </JFXButton>
+      <AnchorPane layoutX="14.0" layoutY="14.0" prefHeight="184.0" prefWidth="193.0" style="-fx-background-radius: 15; -fx-background-color: linear-gradient(to top, #ff00cc, #333399);">
+         <children>
+            <Text fill="WHITE" layoutX="14.0" layoutY="66.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Nombre total">
+               <font>
+                  <Font size="24.0" />
+               </font>
+            </Text>
+            <Text fx:id="nbrStades" fill="WHITE" layoutX="14.0" layoutY="136.0" strokeType="OUTSIDE" strokeWidth="0.0" text="99">
+               <font>
+                  <Font size="24.0" />
+               </font>
+            </Text>
+            <Text fill="WHITE" layoutX="47.0" layoutY="136.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Stades">
+               <font>
+                  <Font size="24.0" />
+               </font>
+            </Text>
+            <Text fill="WHITE" layoutX="14.0" layoutY="101.0" strokeType="OUTSIDE" strokeWidth="0.0" text="des Stades">
+               <font>
+                  <Font size="24.0" />
+               </font>
+            </Text>
+         </children>
+      </AnchorPane>
+      <JFXButton contentDisplay="CENTER" layoutX="788.0" layoutY="18.0" onAction="#stat" text="Statistique des Stades" textFill="WHITE" textOverrun="CLIP">
+         <font>
+            <Font name="Ebrima" size="32.0" />
+         </font>
+         <cursor>
+            <Cursor fx:constant="E_RESIZE" />
+         </cursor>
+      </JFXButton>
+      <JFXButton fx:id="imprimer" layoutX="262.0" layoutY="243.0" onAction="#Print" prefHeight="30.0" prefWidth="155.0" styleClass="btn" text="Imprimer" />
+   </children>
+</AnchorPane>

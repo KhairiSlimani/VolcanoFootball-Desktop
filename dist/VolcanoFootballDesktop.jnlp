@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<jnlp spec="1.0" xmlns:jfx="http://javafx.com" href="VolcanoFootballDesktop.jnlp">
+  <information>
+    <title>VolcanoFootballDesktop</title>
+    <vendor>Khairi</vendor>
+    <description>null</description>
+    <offline-allowed/>
+  </information>
+  <resources>
+    <j2se version="1.6+" java-vm-args="-Djava.security.policy=applet.policy "  href="http://java.sun.com/products/autodl/j2se"/>
+    <jar href="VolcanoFootballDesktop.jar" size="155234" download="eager" />
+    <jar href="lib\activation.jar" size="124332" download="eager" />
+    <jar href="lib\fontawesomefx-8.9.jar" size="571068" download="eager" />
+    <jar href="lib\javax.mail.jar" size="659033" download="eager" />
+    <jar href="lib\jfoenix-8.0.10.jar" size="2710207" download="eager" />
+    <jar href="lib\mysql-connector-java-8.0.28.jar" size="2476480" download="eager" />
+  </resources>
+  <applet-desc  width="800" height="600" main-class="com.javafx.main.NoJavaFXFallback"  name="VolcanoFootballDesktop" >
+    <param name="requiredFXVersion" value="8.0+"/>
+  </applet-desc>
+  <jfx:javafx-desc  width="800" height="600" main-class="volcanofootballdesktop.VolcanoFootballDesktop"  name="VolcanoFootballDesktop" />
+  <update check="always"/>
+</jnlp>
