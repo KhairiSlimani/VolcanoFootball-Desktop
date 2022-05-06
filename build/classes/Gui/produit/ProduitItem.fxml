@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconView?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.shape.Circle?>
+<?import javafx.scene.shape.Line?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<Pane fx:id="item" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="200.0" prefWidth="180.0" styleClass="child" stylesheets="@../stylesheet.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Gui.produit.ProduitItemController">
+   <children>
+      <Circle fill="WHITE" layoutX="47.0" layoutY="44.0" radius="37.0" stroke="WHITE" strokeType="INSIDE" />
+      <Line endX="-16.0" layoutX="185.0" layoutY="44.0" startX="-100.0" stroke="WHITE" />
+      <Text fx:id="nom" fill="WHITE" layoutX="111.0" layoutY="35.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Nom">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Text>
+      <Text fill="WHITE" layoutX="14.0" layoutY="97.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Type: ">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Text>
+      <Text fx:id="type" fill="WHITE" layoutX="51.0" layoutY="97.0" strokeType="OUTSIDE" strokeWidth="0.0" text="type">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Text>
+      <Text fill="WHITE" layoutX="15.0" layoutY="119.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Taille:">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Text>
+      <Text fx:id="taille" fill="WHITE" layoutX="54.0" layoutY="119.0" strokeType="OUTSIDE" strokeWidth="0.0" text="taille">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Text>
+      <Text fill="WHITE" layoutX="16.0" layoutY="139.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Couleur:">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Text>
+      <Text fx:id="couleur" fill="WHITE" layoutX="71.0" layoutY="139.0" strokeType="OUTSIDE" strokeWidth="0.0" text="couleur">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Text>
+      <Text fill="WHITE" layoutX="16.0" layoutY="159.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Prix:">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Text>
+      <Text fx:id="prix" fill="WHITE" layoutX="45.0" layoutY="159.0" strokeType="OUTSIDE" strokeWidth="0.0" text="prix">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Text>
+      <JFXButton fx:id="deleteButton" ellipsisString="" layoutX="133.0" layoutY="169.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" onAction="#DeleteProduit" prefHeight="25.0" prefWidth="28.0" style="-fx-background-color: red;" text="Button">
+         <graphic>
+            <FontAwesomeIconView glyphName="TRASH" size="15" />
+         </graphic>
+      </JFXButton>
+      <JFXButton fx:id="editButton" ellipsisString="" layoutX="26.0" layoutY="169.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" onAction="#EditProduit" prefHeight="25.0" prefWidth="28.0" style="-fx-background-color: orange;" text="Button">
+         <graphic>
+            <FontAwesomeIconView glyphName="EDIT" size="15" />
+         </graphic>
+      </JFXButton>
+      <FontAwesomeIconView glyphName="SHOPPING_CART" layoutX="21.0" layoutY="60.0" size="45" />
+      <JFXButton fx:id="favButton" ellipsisString="" layoutX="60.0" layoutY="169.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" onAction="#addFav" prefHeight="25.0" prefWidth="31.0" style="-fx-background-color: #EC3B83;">
+         <graphic>
+            <FontAwesomeIconView glyphName="HEART" size="15" />
+         </graphic>
+      </JFXButton>
+      <JFXButton fx:id="cartButton" ellipsisString="" layoutX="96.0" layoutY="169.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" onAction="#AddToCart" prefHeight="25.0" prefWidth="31.0" style="-fx-background-color: green;" text="Button">
+         <graphic>
+            <FontAwesomeIconView glyphName="SHOPPING_CART" size="15" />
+         </graphic>
+      </JFXButton>
+   </children>
+</Pane>

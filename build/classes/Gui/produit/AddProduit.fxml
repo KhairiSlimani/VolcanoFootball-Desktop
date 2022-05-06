@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXComboBox?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconView?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" prefHeight="350.0" prefWidth="200.0" style="-fx-border-radius: 20; -fx-border-color: black; -fx-border-width: 2;" styleClass="child" stylesheets="@../stylesheet.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Gui.produit.AddProduitController">
+   <children>
+      <FontAwesomeIconView glyphName="SHOPPING_CART" layoutX="80.0" layoutY="41.0" size="45" />
+      <VBox layoutX="15.0" layoutY="41.0" prefHeight="295.0" prefWidth="171.0">
+         <children>
+            <JFXTextField fx:id="tfNom" promptText="Nom">
+               <VBox.margin>
+                  <Insets bottom="15.0" />
+               </VBox.margin>
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </JFXTextField>
+            <JFXTextField fx:id="tfType" promptText="Type">
+               <VBox.margin>
+                  <Insets bottom="15.0" />
+               </VBox.margin>
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </JFXTextField>
+            <JFXComboBox fx:id="tfTaille" prefHeight="25.0" prefWidth="202.0" promptText="Taille">
+               <VBox.margin>
+                  <Insets bottom="15.0" />
+               </VBox.margin>
+            </JFXComboBox>
+            <JFXTextField fx:id="tfCouleur" promptText="Couleur">
+               <VBox.margin>
+                  <Insets bottom="15.0" />
+               </VBox.margin>
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </JFXTextField>
+            <JFXTextField fx:id="tfPrix" promptText="Prix">
+               <VBox.margin>
+                  <Insets bottom="15.0" />
+               </VBox.margin>
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </JFXTextField>
+            <JFXTextField fx:id="tfPhoto" promptText="Description">
+               <VBox.margin>
+                  <Insets bottom="15.0" />
+               </VBox.margin>
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </JFXTextField>
+            <JFXButton onAction="#AddP" prefHeight="25.0" prefWidth="192.0" styleClass="btn" text="Ajouter Produit">
+               <opaqueInsets>
+                  <Insets />
+               </opaqueInsets>
+               <padding>
+                  <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+               </padding>
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </JFXButton>
+         </children>
+      </VBox>
+      <Button fx:id="buttonClose" layoutX="172.0" layoutY="2.0" mnemonicParsing="false" style="-fx-background-color: transparent;">
+         <graphic>
+            <FontAwesomeIconView glyphName="CLOSE" size="15" />
+         </graphic>
+      </Button>
+   </children>
+</AnchorPane>

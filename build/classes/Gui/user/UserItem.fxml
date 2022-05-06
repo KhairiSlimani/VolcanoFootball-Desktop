@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconView?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.shape.Circle?>
+<?import javafx.scene.shape.Line?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<Pane fx:id="item" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="180.0" prefWidth="180.0" styleClass="child" stylesheets="@../stylesheet.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Gui.user.UserItemController">
+   <children>
+      <Text fx:id="username" fill="WHITE" layoutX="81.0" layoutY="27.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Username">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Text>
+      <Text fx:id="nom" fill="WHITE" layoutX="25.0" layoutY="86.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Nom">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Text>
+      <Text fx:id="prenom" fill="WHITE" layoutX="64.0" layoutY="86.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Prénom">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Text>
+      <Text fx:id="email" fill="WHITE" layoutX="26.0" layoutY="108.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Email">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Text>
+      <Circle fill="WHITE" layoutX="43.0" layoutY="37.0" radius="29.0" stroke="WHITE" strokeType="INSIDE" />
+      <FontAwesomeIconView glyphName="USER" layoutX="29.0" layoutY="49.0" size="3em" />
+      <Line endX="-8.0" layoutX="173.0" layoutY="37.0" startX="-100.0" stroke="WHITE" />
+      <Text fx:id="role" fill="WHITE" layoutX="27.0" layoutY="131.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Role">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Text>
+      <JFXButton ellipsisString="" layoutX="95.0" layoutY="146.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" onAction="#DeleteUser" prefHeight="25.0" prefWidth="28.0" style="-fx-background-color: red;" text="Button">
+         <graphic>
+            <FontAwesomeIconView glyphName="TRASH" size="15" />
+         </graphic>
+      </JFXButton>
+      <JFXButton ellipsisString="" layoutX="57.0" layoutY="146.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" onAction="#EditUser" prefHeight="25.0" prefWidth="28.0" style="-fx-background-color: orange;" text="Button">
+         <graphic>
+            <FontAwesomeIconView glyphName="EDIT" size="15" />
+         </graphic>
+      </JFXButton>
+   </children>
+</Pane>

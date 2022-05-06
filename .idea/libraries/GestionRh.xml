@@ -1,9 +1,0 @@
-<component name="libraryTable">
-  <library name="GestionRh">
-    <CLASSES>
-      <root url="jar://$PROJECT_DIR$/dist/GestionRh.jar!/" />
-    </CLASSES>
-    <JAVADOC />
-    <SOURCES />
-  </library>
-</component>
