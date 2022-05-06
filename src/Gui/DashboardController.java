@@ -5,7 +5,9 @@
  */
 package Gui;
 
+import Gui.kiosque.KiosquesController;
 import Gui.produit.ProduitsController;
+import Gui.stade.StadesController;
 import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
@@ -62,6 +64,14 @@ public class DashboardController implements Initializable {
     private HBox commandesBox1;
     @FXML
     private HBox EquipeBox;
+    @FXML
+    private HBox joueurBox1;
+    @FXML
+    private Text statequipe;
+    @FXML
+    private HBox StadeBox;
+    @FXML
+    private HBox KiosqueBox;
 
     /**
      * Initializes the controller class.
@@ -158,6 +168,26 @@ public class DashboardController implements Initializable {
         view = new FXMLLoader().load(getClass().getResource("equipe/statequipe.fxml"));
         borderPane.setCenter(view);
 
+    }
+
+    @FXML
+    private void OpenStade(MouseEvent event) throws IOException {
+        
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("stade/Stades.fxml"));
+        view=loader.load();
+        StadesController controller = loader.getController();
+        controller.CartSize(cartSize);
+        borderPane.setCenter(view);
+    }
+
+    @FXML
+    private void OpenKiosque(MouseEvent event) throws IOException {
+        
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("kiosque/Kiosques.fxml"));
+        view=loader.load();
+        KiosquesController controller = loader.getController();
+        
+        borderPane.setCenter(view);
     }
     
     

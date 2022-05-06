@@ -223,6 +223,38 @@
                   </Text>
                </children>
             </HBox>
+            <HBox fx:id="StadeBox" alignment="CENTER_LEFT" onMouseClicked="#OpenStade" styleClass="hover_border">
+               <padding>
+                  <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+               </padding>
+               <children>
+                  <FontAwesomeIconView fill="WHITE" glyphName="FOOTBALL" size="2em" />
+                  <Text fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="Stade">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                     <HBox.margin>
+                        <Insets left="10.0" />
+                     </HBox.margin>
+                  </Text>
+               </children>
+            </HBox>
+            <HBox fx:id="KiosqueBox" alignment="CENTER_LEFT" onMouseClicked="#OpenKiosque" styleClass="hover_border">
+               <padding>
+                  <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+               </padding>
+               <children>
+                  <FontAwesomeIconView fill="WHITE" glyphName="ANCHOR" size="2em" />
+                  <Text fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="Kiosque">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                     <HBox.margin>
+                        <Insets left="10.0" />
+                     </HBox.margin>
+                  </Text>
+               </children>
+            </HBox>
             <VBox alignment="CENTER" prefHeight="288.0" prefWidth="150.0" VBox.vgrow="ALWAYS">
                <children>
                   <HBox fx:id="commandesBox1" alignment="CENTER_LEFT" onMouseClicked="#OpenCommandes" styleClass="hover_border">

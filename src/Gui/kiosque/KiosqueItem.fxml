@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconView?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.shape.Line?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<Pane fx:id="item" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="200.0" prefWidth="180.0" styleClass="child" stylesheets="@../stylesheet.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Gui.kiosque.KiosqueItemController">
+   <children>
+      
+      <Line endX="-16.0" layoutX="185.0" layoutY="44.0" startX="-105.0" stroke="WHITE" />
+      <Text fx:id="nom" fill="WHITE" layoutX="86.0" layoutY="35.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Kiosque">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Text>
+     
+      <Text fill="WHITE" layoutX="15.0" layoutY="115.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Stade:">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Text>
+      <Text fx:id="stade" fill="WHITE" layoutX="66.0" layoutY="115.0" strokeType="OUTSIDE" strokeWidth="0.0" text="stade">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Text>
+     
+      <Text fx:id="nomLabel" fill="WHITE" layoutX="17.0" layoutY="82.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Nom:">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Text>
+      <Text fx:id="nom" fill="WHITE" layoutX="68.0" layoutY="81.0" strokeType="OUTSIDE" strokeWidth="0.0" text="nom">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Text>
+       <Text fill="WHITE" layoutX="17.0" layoutY="153.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Type:">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Text>
+      <Text fx:id="type" fill="WHITE" layoutX="66.0" layoutY="152.0" strokeType="OUTSIDE" strokeWidth="0.0" text="type">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Text>
+      <JFXButton fx:id="deleteButton" ellipsisString="" layoutX="95.0" layoutY="168.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" onAction="#DeleteKiosque" prefHeight="25.0" prefWidth="28.0" style="-fx-background-color: red;" text="Button">
+         <graphic>
+            <FontAwesomeIconView glyphName="TRASH" size="15" />
+         </graphic>
+      </JFXButton>
+      <JFXButton fx:id="editButton" ellipsisString="" layoutX="56.0" layoutY="168.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" onAction="#EditKiosque" prefHeight="25.0" prefWidth="28.0" style="-fx-background-color: orange;" text="Button">
+         <graphic>
+            <FontAwesomeIconView glyphName="EDIT" size="15" />
+         </graphic>
+      </JFXButton>
+      <FontAwesomeIconView glyphName="LIST_UL" layoutX="22.0" layoutY="60.0" size="45" />
+   </children>
+</Pane>

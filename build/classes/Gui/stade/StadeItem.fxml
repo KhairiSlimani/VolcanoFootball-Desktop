@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconView?>
+<?import java.lang.String?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.shape.Line?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<Pane fx:id="item" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="235.0" prefWidth="208.0" styleClass="child" stylesheets="@../stylesheet.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Gui.stade.StadeItemController">
+   <children>
+      <Line endX="-16.0" layoutX="185.0" layoutY="44.0" startX="-100.0" stroke="WHITE" />
+      <Text fx:id="nom" fill="WHITE" layoutX="81.0" layoutY="39.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Nom">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Text>
+      <Text fill="WHITE" layoutX="14.0" layoutY="97.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Adresse: ">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Text>
+      <Text fx:id="adresse" fill="WHITE" layoutX="88.0" layoutY="96.0" strokeType="OUTSIDE" strokeWidth="0.0" text="adresse">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Text>
+      <Text fill="WHITE" layoutX="12.0" layoutY="124.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Capacite:">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Text>
+      <Text fx:id="capacite" fill="WHITE" layoutX="86.0" layoutY="125.0" strokeType="OUTSIDE" strokeWidth="0.0" text="capacite">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Text>
+     
+      
+     
+      <JFXButton fx:id="deleteButton" ellipsisString="" layoutX="54.0" layoutY="169.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" onAction="#DeleteStade" prefHeight="25.0" prefWidth="28.0" style="-fx-background-color: red;" text="Button">
+         <graphic>
+            <FontAwesomeIconView glyphName="TRASH" size="15" />
+         </graphic>
+      </JFXButton>
+      <JFXButton fx:id="editButton" ellipsisString="" layoutX="14.0" layoutY="169.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" onAction="#EditStade" prefHeight="25.0" prefWidth="28.0" style="-fx-background-color: orange;" text="Button">
+         <graphic>
+            <FontAwesomeIconView glyphName="EDIT" size="15" text="" />
+         </graphic>
+      </JFXButton>
+      <Text fill="WHITE" layoutX="8.0" layoutY="152.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Date ouverture:">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Text>
+      <Text fx:id="date" fill="WHITE" layoutX="111.0" layoutY="152.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Date ouverture">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Text>
+      <JFXButton fx:id="PrintButton" ellipsisString="" layoutX="88.0" layoutY="169.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" onAction="#Print" prefHeight="25.0" prefWidth="47.0" style="-fx-background-color: red;" text="Print" textFill="WHITE" />
+      <JFXButton fx:id="insert_image" layoutX="145.0" layoutY="168.0" onAction="#insertImage" text="Photo" textFill="WHITE">
+         <styleClass>
+            <String fx:value="btnLabel" />
+            <String fx:value="role" />
+         </styleClass>
+      </JFXButton>
+      <ImageView fx:id="image_view" fitHeight="82.0" fitWidth="96.0" layoutX="5.0" layoutY="4.0" pickOnBounds="true" preserveRatio="true" />
+   </children>
+</Pane>
