@@ -72,8 +72,8 @@ public class EditStadeController implements Initializable {
     private void EditS(ActionEvent event) {
         boolean control = true;
         String nom = (tfNom.getText());
-        String adresse =(tfAdresse.getText());
-//        Date dateouverture = Date.valueOf(tfdate.getValue());   
+        String adresse =(tfAdresse.getText()); 
+        Date dateouverture = Date.valueOf(tfdate.getValue());   
         Float capacite = (Float.parseFloat(tfCapacite.getText()));
         
         
@@ -95,7 +95,7 @@ public class EditStadeController implements Initializable {
         if(control == true)
         {
             
-            stade s = new stade(id, nom, adresse, capacite);
+            stade s = new stade(id, nom, adresse,dateouverture, capacite);
             StadeService ps = new StadeService();
             boolean test = ps.ModifierStade(s);
             
@@ -139,7 +139,7 @@ public class EditStadeController implements Initializable {
         id = s.getId();
         tfNom.setText(s.getNom());
         tfAdresse.setText(s.getAdresse());
-        
+        tfdate.setAccessibleText((String.valueOf(s.getDateouverture())));
         tfCapacite.setText(String.valueOf(s.getCapacite()));
        
 

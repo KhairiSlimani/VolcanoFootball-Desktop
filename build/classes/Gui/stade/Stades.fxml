@@ -5,20 +5,21 @@
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.Cursor?>
 <?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.FlowPane?>
 <?import javafx.scene.layout.StackPane?>
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane id="AnchorPane" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="1150.0" style="-fx-background-color: #1E1E1E;" stylesheets="@../stylesheet.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Gui.stade.StadesController">
+<AnchorPane id="AnchorPane" fx:id="affich" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="1150.0" style="-fx-background-color: #1E1E1E;" stylesheets="@../stylesheet.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Gui.stade.StadesController">
    <children>
       <ScrollPane layoutX="25.0" layoutY="285.0" prefHeight="1100.0" prefWidth="1100.0" style="-fx-background: transparent; -fx-background-color: transparent;">
          <content>
             <FlowPane fx:id="FlowPane" hgap="40.0" prefHeight="200.0" prefWidth="1080.0" vgap="40.0" />
          </content>
       </ScrollPane>
-      <Text fill="WHITE" layoutX="23.0" layoutY="267.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Liste des Stades">
+      <Text fill="WHITE" layoutX="14.0" layoutY="236.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Liste des Stades">
          <font>
             <Font size="24.0" />
          </font>
@@ -68,7 +69,7 @@
             </Text>
          </children>
       </AnchorPane>
-      <JFXButton contentDisplay="CENTER" layoutX="788.0" layoutY="18.0" onAction="#stat" text="Statistique des Stades" textFill="WHITE" textOverrun="CLIP">
+      <JFXButton contentDisplay="CENTER" layoutX="220.0" layoutY="28.0" onAction="#stat" text="Statistique des Stades" textFill="WHITE" textOverrun="CLIP">
          <font>
             <Font name="Ebrima" size="32.0" />
          </font>
@@ -76,6 +77,7 @@
             <Cursor fx:constant="E_RESIZE" />
          </cursor>
       </JFXButton>
-      <JFXButton fx:id="imprimer" layoutX="262.0" layoutY="243.0" onAction="#Print" prefHeight="30.0" prefWidth="155.0" styleClass="btn" text="Imprimer" />
+      <JFXButton fx:id="imprimer" layoutX="985.0" layoutY="45.0" onAction="#Print" prefHeight="35.0" prefWidth="133.0" styleClass="btn" text="Imprimer" />
+      <TextField fx:id="filterField" layoutX="984.0" layoutY="91.0" prefHeight="35.0" prefWidth="134.0" promptText="Search .." style="-fx-background-radius: 30; -fx-alignment: ;" />
    </children>
 </AnchorPane>

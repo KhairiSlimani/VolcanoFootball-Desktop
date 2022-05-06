@@ -15,15 +15,16 @@ import java.time.LocalDate;
  */
 public class stade {
     private int id;
-    private String nom, adresse;
+    private String nom, adresse,photo;
     private Date dateouverture;
     private float capacite;
 
-    public stade(int id, String nom, String adresse, float capacite) {
+    public stade(int id, String nom, String adresse, float capacite ,String photo) {
         this.id=id;
         this.nom=nom;
         this.capacite=capacite;
         this.adresse=adresse;
+        this.photo=photo;
     }
 
    
@@ -41,6 +42,13 @@ public class stade {
 
     public void setNom(String nom) {
         this.nom = nom;
+    }
+      public String getPhoto(){
+        return photo;
+    }
+
+    public void setPhoto(String photo) {
+        this.photo = photo;
     }
 
     public String getAdresse() {
@@ -66,24 +74,42 @@ public class stade {
     public stade() {
     }
 
-    public stade(int id, String nom, String adresse, Date dateouverture, float capacite) {
+    public stade(int id, String nom, String adresse, Date dateouverture, float capacite, String photo) {
         this.id = id;
         this.nom = nom; 
         this.adresse = adresse;
         this.dateouverture = dateouverture;
         this.capacite = capacite;
+        this.photo=photo;
     }
-        public stade(String nom, String adresse, Date dateouverture, float capacite) {
+     public stade(int id, String nom, String adresse, Date dateouverture, float capacite) {
+        this.id = id;
+        this.nom = nom; 
+        this.adresse = adresse;
+        this.dateouverture = dateouverture;
+        this.capacite = capacite;
+       
+    }
+        public stade(String nom, String adresse, Date dateouverture, float capacite , String photo) {
        
         this.nom = nom;
         this.adresse = adresse;
         this.dateouverture = dateouverture;
         this.capacite = capacite;
+        this.photo=photo;
+    }
+         public stade(String nom, String adresse, Date dateouverture, float capacite) {
+       
+        this.nom = nom;
+        this.adresse = adresse;
+        this.dateouverture = dateouverture;
+        this.capacite = capacite;
+       
     }
 
     @Override
     public String toString() {
-        return "stade{" + "id=" + id + ", nom=" + nom + ", dateouverture=" + dateouverture +  ", dateouverture=" + dateouverture + ", capacite=" + capacite +'}';
+        return "stade{" + "id=" + id + ", nom=" + nom + ", dateouverture=" + dateouverture +  ", dateouverture=" + dateouverture + ", capacite=" + capacite +", photo=" + photo +'}';
     }
     
     

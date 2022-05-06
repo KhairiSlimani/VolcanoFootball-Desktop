@@ -16,8 +16,12 @@ import com.jfoenix.controls.JFXButton;
 import com.jfoenix.controls.JFXDialog;
 import java.io.IOException;
 import java.net.URL;
+import static java.util.Collections.list;
 import java.util.List;
 import java.util.ResourceBundle;
+import javafx.collections.ObservableList;
+import javafx.collections.transformation.FilteredList;
+import javafx.collections.transformation.SortedList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -30,6 +34,7 @@ import javafx.print.PrinterJob;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.TextField;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.FlowPane;
 import javafx.scene.layout.Pane;
@@ -62,6 +67,10 @@ public class StadesController implements Initializable {
     private Text nbrStades;
     @FXML
     private JFXButton imprimer;
+    @FXML
+    private TextField filterField;
+    @FXML
+    private AnchorPane affich;
 
     /**
      * Initializes the controller class.
@@ -69,13 +78,14 @@ public class StadesController implements Initializable {
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         //ListProduits();
+        
         if(SessionManager.get().getRole().equals("Client"))
         {
             addPB.setVisible(false);
-        }
-        
+        } 
+       
         Affichage();
-                ListStades();
+        ListStades();
 
         
 
@@ -85,6 +95,8 @@ public class StadesController implements Initializable {
         
         StadeService us = new StadeService();
         List<stade> list = us.AfficherStade();
+        
+        
         try {
             for (int i = 0; i < list.size(); i++) {
                 
@@ -95,7 +107,10 @@ public class StadesController implements Initializable {
                 controller.ItemInfos(list.get(i), FlowPane, dialog , container, cartSize);
 
                 FlowPane.getChildren().add(pane);
+                
+                
             }
+            
         } catch (IOException e) {
             e.printStackTrace();
         }
@@ -119,7 +134,7 @@ public class StadesController implements Initializable {
             dialog.setDialogContainer(container);
 
             dialog.show();  
-            
+           
         }
         catch (IOException e){
             e.printStackTrace();
@@ -144,6 +159,7 @@ public class StadesController implements Initializable {
         }
         nbrStades.setText(String.valueOf(stades));
         System.out.println("stades: "+stades);
+        
 
     }
 

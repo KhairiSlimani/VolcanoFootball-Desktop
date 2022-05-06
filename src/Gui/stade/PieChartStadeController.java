@@ -52,14 +52,14 @@ public class PieChartStadeController implements Initializable {
            
       try {
            
-          String query = "SELECT COUNT(*),id FROM stade GROUP BY id" ;
+          String query = "SELECT COUNT(*),nom FROM kiosque GROUP BY stade_id" ;
        
              PreparedStatement PreparedStatement = cnx.prepareStatement(query);
              rs = PreparedStatement.executeQuery();
             
                      
             while (rs.next()){               
-               data.add(new PieChart.Data(rs.getString("id"),rs.getInt("COUNT(*)")));
+               data.add(new PieChart.Data(rs.getString("nom"),rs.getInt("COUNT(*)")));
             }     
         } catch (SQLException ex) {
             Logger.getLogger(StadesController.class.getName()).log(Level.SEVERE, null, ex);

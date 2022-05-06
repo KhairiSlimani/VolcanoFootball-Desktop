@@ -17,6 +17,7 @@ import Services.FavoriService;
 import Services.StadeService;
 import com.jfoenix.controls.JFXButton;
 import com.jfoenix.controls.JFXDialog;
+import java.io.File;
 import java.io.IOException;
 import java.net.URL;
 import java.sql.Date;
@@ -32,11 +33,16 @@ import javafx.print.Printer;
 import javafx.print.PrinterJob;
 import javafx.scene.Node;
 import javafx.scene.control.TextField;
+import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.FlowPane;
 import javafx.scene.layout.Pane;
 import javafx.scene.layout.StackPane;
+import javafx.scene.shape.Circle;
 import javafx.scene.text.Text;
+import javafx.stage.FileChooser;
+import javafx.stage.Stage;
 
 /**
  * FXML Controller class
@@ -69,6 +75,11 @@ public class StadeItemController implements Initializable {
     private Text date;
     @FXML
     private JFXButton PrintButton;
+    @FXML
+    private JFXButton insert_image;
+  
+    @FXML
+    private ImageView image_view;
 
    
     @Override
@@ -173,6 +184,32 @@ public class StadeItemController implements Initializable {
         job.endJob();
     }
     }
+    }
+
+    @FXML
+    private void insertImage(ActionEvent event) {
+        FileChooser open = new FileChooser();
+        
+        Stage stage = (Stage)image_view.getScene().getWindow();
+        
+        File file = open.showOpenDialog(stage);
+        
+        if(file != null){
+            
+            String path = file.getAbsolutePath();
+            
+           // path = path.replace("\\", "\\\\");
+            path = path.replace("\\", "\\\\");
+            
+            Image image = new Image(file.toURI().toString(), 110, 110, false, true);
+            
+            image_view.setImage(image);
+            
+        }else{
+            
+            System.out.println("NO DATA EXIST!");
+            
+        }
     }
     
 }
