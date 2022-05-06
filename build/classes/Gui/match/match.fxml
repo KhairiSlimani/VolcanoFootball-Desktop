@@ -3,6 +3,7 @@
 <?import com.jfoenix.controls.JFXDialog?>
 <?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconView?>
 <?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
 <?import javafx.scene.control.DatePicker?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.ScrollPane?>
@@ -19,7 +20,7 @@
 
 <AnchorPane id="AnchorPane" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="1150.0" style="-fx-background-color: #1E1E1E;" stylesheets="@../stylesheet.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Gui.match.MatchController">
    <children>
-      <Text fill="WHITE" layoutX="31.0" layoutY="279.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Liste des Matchs">
+      <Text fill="WHITE" layoutX="31.0" layoutY="241.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Liste des Matchs">
          <font>
             <Font size="24.0" />
          </font>
@@ -60,7 +61,7 @@
             </Text>
          </children>
       </AnchorPane>
-      <AnchorPane layoutX="795.0" layoutY="148.0" prefHeight="410.0" prefWidth="293.0" style="-fx-background-color: black; -fx-background-radius: 20;">
+      <AnchorPane layoutX="795.0" layoutY="124.0" prefHeight="410.0" prefWidth="293.0" style="-fx-background-color: black; -fx-background-radius: 20;">
          <children>
             <Button layoutX="21.0" layoutY="313.0" mnemonicParsing="false" onAction="#add" prefHeight="32.0" prefWidth="198.0" style="-fx-background-color: #ae1e23; -fx-background-radius: 20;" text="Ajouter" textFill="#fcf7f7">
                <font>
@@ -91,5 +92,12 @@
             <FontAwesomeIconView glyphName="TRASH" layoutX="143.0" layoutY="381.0" size="15" wrappingWidth="29.625005275011063" />
          </children>
       </AnchorPane>
+      <Button fx:id="btn_météo" layoutX="38.0" layoutY="523.0" mnemonicParsing="false" onAction="#interfacemétéo" prefHeight="31.0" prefWidth="90.0" style="-fx-background-color: #ae1e23; -fx-background-radius: 20;" text="test le météo" textFill="#f8f6f6">
+         <font>
+            <Font name="Times New Roman Bold" size="12.0" />
+         </font>
+      </Button>
+      <TextField fx:id="TFFilter" layoutX="37.0" layoutY="251.0" onAction="#searchConge" prefHeight="32.0" prefWidth="316.0" promptText="Rechercher" style="-fx-background-radius: 20;" />
+      <ComboBox fx:id="triBox" layoutX="374.0" layoutY="254.0" onAction="#trie" prefWidth="150.0" promptText="trie par" style="-fx-background-radius: 20;" />
    </children>
 </AnchorPane>

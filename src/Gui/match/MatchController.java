@@ -40,6 +40,7 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
+import javafx.scene.control.ComboBox;
 import javafx.scene.control.DatePicker;
 import javafx.scene.control.ScrollPane;
 import javafx.scene.control.SortEvent;
@@ -113,6 +114,10 @@ public class MatchController implements Initializable {
     private DatePicker TFDate;
     @FXML
     private Button btn_météo;
+    @FXML
+    private TextField TFFilter;
+    @FXML
+    private ComboBox<?> triBox;
 
     /**
      * Initializes the controller class.
@@ -401,7 +406,7 @@ public class MatchController implements Initializable {
     private void interfacemétéo(ActionEvent event) {
         try{
              btn_météo.getScene().getWindow().hide();
-            Parent root =FXMLLoader.load(getClass().getResource("../Gui.match/primary.fxml"));
+            Parent root =FXMLLoader.load(getClass().getResource("match/primary.fxml"));
                 Stage mainStage = new Stage();
                 Scene scene= new Scene(root);
                 mainStage.setScene(scene);
@@ -412,4 +417,58 @@ public class MatchController implements Initializable {
             JOptionPane.showMessageDialog(null, e);
         }
     }
+
+    @FXML
+     public void searchConge(){
+      
+        updateTable();
+         try{
+             dataList=ServiceMatch.getInstance().getAll();
+          tableview.setItems(dataList);
+          FilteredList<Match> filtredData = new FilteredList<>(dataList, b -> true);
+          TFFilter.textProperty().addListener((observable, olValue, newValue)->{
+             filtredData.setPredicate(person-> {
+                 if(newValue == null|| newValue.isEmpty()){
+                     return true;
+                 }
+                 String lowerCaseFilter= newValue.toLowerCase();
+                
+                 if(person.getNom_match().toLowerCase().indexOf(lowerCaseFilter)!=-1){
+                     return true;
+                 }
+                 else if(String.valueOf(person.getStade()).indexOf(lowerCaseFilter)!=-1)
+                     return true;
+                     else
+                     return false;
+                 });
+             });
+         SortedList<Match> sortedData = new SortedList<>(filtredData);
+         sortedData.comparatorProperty().bind(tableview.comparatorProperty());
+         tableview.setItems(sortedData);
+
+         }catch(Exception e){
+             System.out.println(e.getMessage());
+             
+         }          
+          
+          
+     }
+
+   @FXML
+    public void trie() {
+        Comparator<Match> comparator = null;
+        if (triBox.getValue() == "Id") {
+            comparator = Comparator.comparingInt(Match::getId);
+
+        } else if (triBox.getValue() == "NomMatch") {
+            comparator = Comparator.comparing(Match::getNom_match);
+
+        }
+
+        FXCollections.sort(obl, comparator);
+        tableview.setItems(obl);
+        updateTable();
+
+    }
+
 }

@@ -3,6 +3,7 @@
 <?import com.jfoenix.controls.JFXDialog?>
 <?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconView?>
 <?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.ScrollPane?>
 <?import javafx.scene.control.TableColumn?>
@@ -25,20 +26,15 @@
       </Text>
       <ScrollPane fx:id="ScrollPane" layoutX="35.0" layoutY="295.0" prefHeight="1100.0" prefWidth="1100.0" style="-fx-background: transparent; -fx-background-color: transparent;">
          <content>
-            <FlowPane fx:id="FlowPane" hgap="40.0" prefHeight="180.0" prefWidth="1080.0" vgap="40.0">
+            <FlowPane fx:id="FlowPane" hgap="40.0" prefHeight="322.0" prefWidth="1080.0" vgap="40.0">
                <children>
-                  <TableView fx:id="tableview" onMouseClicked="#getSelected" prefHeight="264.0" prefWidth="229.0">
+                  <TableView fx:id="tableview" onMouseClicked="#getSelected" prefHeight="236.0" prefWidth="229.0">
                      <columns>
                         <TableColumn fx:id="col_id" prefWidth="54.0" text="Id" />
                         <TableColumn fx:id="col_type" prefWidth="90.0" text="type" />
                         <TableColumn fx:id="col_prix" prefWidth="89.0" text="prix" />
                      </columns>
                   </TableView>
-                  <Button mnemonicParsing="false" onAction="#stats" prefHeight="38.0" prefWidth="234.0" style="-fx-background-color: #ae1e23;" text="stats" textFill="WHITE">
-                     <font>
-                        <Font name="Dubai Medium" size="15.0" />
-                     </font>
-                  </Button>
                </children>
             </FlowPane>
          </content>
@@ -62,7 +58,7 @@
             </Text>
          </children>
       </AnchorPane>
-      <AnchorPane layoutX="795.0" layoutY="148.0" prefHeight="410.0" prefWidth="293.0" style="-fx-background-color: black; -fx-background-radius: 20;">
+      <AnchorPane layoutX="795.0" layoutY="108.0" prefHeight="410.0" prefWidth="293.0" style="-fx-background-color: black; -fx-background-radius: 20;">
          <children>
             <Button layoutX="21.0" layoutY="273.0" mnemonicParsing="false" onAction="#add" prefHeight="32.0" prefWidth="198.0" style="-fx-background-color: #ae1e23; -fx-background-radius: 20;" text="Ajouter" textFill="#fcf7f7">
                <font>
@@ -90,6 +86,12 @@
             <FontAwesomeIconView glyphName="TRASH" layoutX="143.0" layoutY="381.0" size="15" wrappingWidth="29.625005275011063" />
          </children>
       </AnchorPane>
-      <TextField fx:id="TFFilter" layoutX="36.0" layoutY="259.0" onAction="#searchConge" prefHeight="32.0" prefWidth="230.0" promptText="Rechercher" />
+      <TextField fx:id="TFFilter" layoutX="36.0" layoutY="259.0" onAction="#searchConge" prefHeight="32.0" prefWidth="146.0" promptText="Rechercher" style="-fx-background-radius: 20;" />
+      <Button layoutX="35.0" layoutY="545.0" mnemonicParsing="false" onAction="#stats" prefHeight="38.0" prefWidth="234.0" style="-fx-background-color: #ae1e23; -fx-background-radius: 20;" text="stats" textFill="WHITE">
+         <font>
+            <Font name="Dubai Medium" size="15.0" />
+         </font>
+      </Button>
+      <ComboBox fx:id="triBox" layoutX="186.0" layoutY="258.0" onAction="#trie" prefHeight="31.0" prefWidth="79.0" promptText="trie par" style="-fx-background-radius: 20;" />
    </children>
 </AnchorPane>

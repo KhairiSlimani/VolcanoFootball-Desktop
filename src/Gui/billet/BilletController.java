@@ -18,9 +18,11 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
+import java.util.Comparator;
 import java.util.ResourceBundle;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.collections.transformation.FilteredList;
 import javafx.collections.transformation.SortedList;
@@ -34,6 +36,7 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
+import javafx.scene.control.ComboBox;
 import javafx.scene.control.ScrollPane;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
@@ -79,16 +82,18 @@ public class BilletController implements Initializable {
     private TextField TFType;
     @FXML
     private TextField TFPrix;
-     @FXML
     private Button btn_quitter;
     @FXML
     private TextField TFFilter;
+    ObservableList<Billet> obl = FXCollections.observableArrayList();
     ObservableList<Billet> listM;
     ObservableList<Billet> dataList;
     int index = -1;
     Connection cnx = null;
     ResultSet rs = null;
     PreparedStatement pst = null;
+    @FXML
+    private ComboBox<?> triBox;
 
     /**
      * Initializes the controller class.
@@ -271,11 +276,10 @@ public class BilletController implements Initializable {
 
     }
 
-    @FXML
     private void Quitter(ActionEvent event) throws Exception {
         try {
             btn_quitter.getScene().getWindow().hide();
-            Parent root = FXMLLoader.load(getClass().getResource("../GUI/FXMLMenu.fxml"));
+            Parent root = FXMLLoader.load(getClass().getResource("../GUI/dashboard.fxml"));
             Stage mainStage = new Stage();
             Scene scene = new Scene(root);
             mainStage.setScene(scene);
@@ -302,6 +306,7 @@ public class BilletController implements Initializable {
             
         }
     }
+    @FXML
     public void searchConge(){
       
         updateTable();
@@ -335,7 +340,6 @@ public class BilletController implements Initializable {
           
           
      }
- @FXML
     private void esportexcel(ActionEvent event) throws SQLException {
 
         try {
@@ -377,6 +381,24 @@ public class BilletController implements Initializable {
             System.out.println(ex);
 
         }
+    }
+    
+    
+     @FXML
+    public void trie() {
+        Comparator<Billet> comparator = null;
+        if (triBox.getValue() == "Id") {
+            comparator = Comparator.comparingInt(Billet::getId);
+
+        } else if (triBox.getValue() == "type") {
+            comparator = Comparator.comparing(Billet::getType);
+
+        }
+
+        FXCollections.sort(obl, comparator);
+        tableview.setItems(obl);
+        updateTable();
+
     }
     
 }
