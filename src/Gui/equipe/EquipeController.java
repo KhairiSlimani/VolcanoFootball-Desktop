@@ -6,6 +6,7 @@
 package Gui.equipe;
 
 import Entities.Equipe;
+import Gui.SessionManager;
 import Services.EquipeService;
 import com.jfoenix.controls.JFXDatePicker;
 import com.jfoenix.controls.JFXDialog;
@@ -106,6 +107,8 @@ public class EquipeController implements Initializable {
     @FXML
     private StackPane container;
     private BorderPane borderPane;
+    @FXML
+    private AnchorPane form;
 
     /**
      * Initializes the controller class.
@@ -113,6 +116,11 @@ public class EquipeController implements Initializable {
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         // TODO
+        
+         if(SessionManager.get().getRole().equals("Client"))
+        {
+            form.setVisible(false);
+        }
         showEquipe();
         RangEquipe();
         EquipeService es = new EquipeService();

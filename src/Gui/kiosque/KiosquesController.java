@@ -8,15 +8,20 @@ package Gui.kiosque;
 
 import Entities.kiosque;
 import Gui.SessionManager;
+import Gui.agence.AgenceController;
 import Services.CommandeService;
 import Services.KiosqueService;
+import com.jfoenix.controls.JFXButton;
 
 import com.jfoenix.controls.JFXDialog;
 import java.io.IOException;
 import java.net.URL;
+import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.ResourceBundle;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -48,13 +53,21 @@ public class KiosquesController implements Initializable {
     private StackPane container;
     @FXML
     private JFXDialog dialog;
+    @FXML
+    private JFXButton btnAdd;
 
     /**
      * Initializes the controller class.
      */
     @Override
     public void initialize(URL url, ResourceBundle rb) {
+        
+        if(SessionManager.get().getRole().equals("Client"))
+        {
+            btnAdd.setVisible(false);
+        }
         ListKiosques();
+
     }    
 
    
@@ -64,14 +77,8 @@ public class KiosquesController implements Initializable {
         KiosqueService cs = new KiosqueService();
         List<kiosque> list = new ArrayList();
         
-        if(SessionManager.get().getRole().equals("Admin"))
-        {
-            list = cs.AfficherKiosque();
-        }
-        else
-        {
-            list = cs.AfficherKiosque(SessionManager.get().getId());
-        }
+        list = cs.AfficherKiosque();
+        
         
         try {
             for (int i = 0; i < list.size(); i++) {

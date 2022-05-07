@@ -5,8 +5,13 @@
  */
 package Gui;
 
+import Gui.agence.AgenceController;
+import Gui.billet.BilletController;
+import Gui.hebergement.HebergementController;
 import Gui.kiosque.KiosquesController;
+import Gui.match.MatchController;
 import Gui.produit.ProduitsController;
+import Gui.reservation.ReservationController;
 import Gui.stade.StadesController;
 import java.io.IOException;
 import java.net.URL;
@@ -61,8 +66,6 @@ public class DashboardController implements Initializable {
     @FXML
     private Text joueur;
     @FXML
-    private HBox commandesBox1;
-    @FXML
     private HBox EquipeBox;
     @FXML
     private HBox joueurBox1;
@@ -72,6 +75,22 @@ public class DashboardController implements Initializable {
     private HBox StadeBox;
     @FXML
     private HBox KiosqueBox;
+    @FXML
+    private HBox Agncebtn;
+    @FXML
+    private Text commandesText111;
+    @FXML
+    private HBox hebbtn;
+    @FXML
+    private Text joueur1;
+    @FXML
+    private HBox reservationbtn;
+    @FXML
+    private Text statequipe1;
+    @FXML
+    private HBox billetbtn;
+    @FXML
+    private HBox matchbtn;
 
     /**
      * Initializes the controller class.
@@ -186,6 +205,51 @@ public class DashboardController implements Initializable {
         FXMLLoader loader = new FXMLLoader(getClass().getResource("kiosque/Kiosques.fxml"));
         view=loader.load();
         KiosquesController controller = loader.getController();
+        
+        borderPane.setCenter(view);
+    }
+
+    @FXML
+    private void OpenAgence(MouseEvent event) throws IOException {
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("agence/Agence.fxml"));
+        view=loader.load();
+        AgenceController controller = loader.getController();
+        
+        borderPane.setCenter(view);
+    }
+
+    @FXML
+    private void OpenHebergement(MouseEvent event) throws IOException {
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("hebergement/Hebergement.fxml"));
+        view=loader.load();
+       HebergementController controller = loader.getController();
+        
+        borderPane.setCenter(view);
+    }
+
+    @FXML
+    private void OpenReservation(MouseEvent event) throws IOException {
+         FXMLLoader loader = new FXMLLoader(getClass().getResource("reservation/Reservation.fxml"));
+        view=loader.load();
+        ReservationController controller = loader.getController();
+        
+        borderPane.setCenter(view);
+    }
+
+    @FXML
+    private void OpenBillet(MouseEvent event) throws IOException {
+         FXMLLoader loader = new FXMLLoader(getClass().getResource("billet/billet.fxml"));
+        view=loader.load();
+        BilletController controller = loader.getController();
+        
+        borderPane.setCenter(view);
+    }
+
+    @FXML
+    private void OpenMatch(MouseEvent event) throws IOException {
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("match/match.fxml"));
+        view=loader.load();
+        MatchController controller = loader.getController();
         
         borderPane.setCenter(view);
     }

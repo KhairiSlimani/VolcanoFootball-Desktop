@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXDialog?>
+<?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconView?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.FlowPane?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.shape.Circle?>
+<?import javafx.scene.shape.Line?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane id="AnchorPane" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="1150.0" style="-fx-background-color: #1E1E1E;" stylesheets="@../stylesheet.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Gui.billet.BilletController">
+   <children>
+      <Text fill="WHITE" layoutX="31.0" layoutY="248.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Liste des Billets">
+         <font>
+            <Font size="24.0" />
+         </font>
+      </Text>
+      <ScrollPane fx:id="ScrollPane" layoutX="35.0" layoutY="295.0" prefHeight="1100.0" prefWidth="1100.0" style="-fx-background: transparent; -fx-background-color: transparent;">
+         <content>
+            <FlowPane fx:id="FlowPane" hgap="40.0" prefHeight="322.0" prefWidth="1080.0" vgap="40.0">
+               <children>
+                  <TableView fx:id="tableview" onMouseClicked="#getSelected" prefHeight="184.0" prefWidth="332.0">
+                     <columns>
+                        <TableColumn fx:id="col_id" prefWidth="54.0" text="Id" />
+                        <TableColumn fx:id="col_type" prefWidth="136.66668701171875" text="type" />
+                        <TableColumn fx:id="col_prix" prefWidth="140.33331298828125" text="prix" />
+                     </columns>
+                  </TableView>
+               </children>
+            </FlowPane>
+         </content>
+      </ScrollPane>
+      <StackPane fx:id="container" layoutX="748.0" layoutY="32.0" style="-fx-background-color: transparent;">
+         <children>
+            <JFXDialog fx:id="dialog" style="-fx-background-color: transparent;" />
+         </children>
+      </StackPane>
+      <AnchorPane layoutX="14.0" layoutY="14.0" prefHeight="184.0" prefWidth="193.0" style="-fx-background-radius: 15; -fx-background-color: linear-gradient(to top, #ff00cc, #333399);">
+         <children>
+            <Text fill="WHITE" layoutX="8.0" layoutY="66.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Page">
+               <font>
+                  <Font size="24.0" />
+               </font>
+            </Text>
+            <Text fill="WHITE" layoutX="8.0" layoutY="106.0" strokeType="OUTSIDE" strokeWidth="0.0" text="des Billets">
+               <font>
+                  <Font size="24.0" />
+               </font>
+            </Text>
+         </children>
+      </AnchorPane>
+      <AnchorPane fx:id="form" layoutX="795.0" layoutY="108.0" prefHeight="410.0" prefWidth="293.0" style="-fx-background-color: black; -fx-background-radius: 20;">
+         <children>
+            <Button layoutX="21.0" layoutY="273.0" mnemonicParsing="false" onAction="#add" prefHeight="32.0" prefWidth="198.0" style="-fx-background-color: #ae1e23; -fx-background-radius: 20;" text="Ajouter" textFill="#fcf7f7">
+               <font>
+                  <Font name="Arial Bold" size="12.0" />
+               </font>
+            </Button>
+            <TextField fx:id="TFId" layoutX="23.0" layoutY="95.0" opacity="0.8" promptText="id" style="-fx-background-color: #1E1E1E; -fx-background-radius: 20;" />
+            <TextField fx:id="TFType" layoutX="23.0" layoutY="149.0" opacity="0.8" promptText="type" style="-fx-background-color: #1E1E1E; -fx-background-radius: 20;" />
+            <TextField fx:id="TFPrix" layoutX="23.0" layoutY="205.0" opacity="0.8" promptText="prix" style="-fx-background-color: #1E1E1E; -fx-background-radius: 20;" />
+            <Label graphicTextGap="5.0" layoutX="85.0" layoutY="7.0" prefHeight="21.0" prefWidth="124.0" text="Ajouter Billet :" textFill="WHITE" />
+            <Button blendMode="ADD" layoutX="72.0" layoutY="357.0" mnemonicParsing="false" onAction="#Edit" prefHeight="34.0" prefWidth="39.0" style="-fx-background-color: orange; -fx-border-radius: 20;" textFill="#fff8f8">
+               <font>
+                  <Font name="Arial Bold" size="12.0" />
+               </font>
+            </Button>
+            <Circle fill="WHITE" layoutX="41.0" layoutY="37.0" radius="30.0" stroke="WHITE" strokeType="INSIDE" />
+            <FontAwesomeIconView glyphName="LIST_UL" layoutX="16.0" layoutY="53.0" size="45" text="" wrappingWidth="39.50000703334808" />
+            <Line endX="43.0" layoutX="234.0" layoutY="34.0" startX="-169.0" stroke="WHITE" />
+            <FontAwesomeIconView glyphName="EDIT" layoutX="87.0" layoutY="381.0" size="15" wrappingWidth="22.499999776482582" />
+            <Button blendMode="ADD" layoutX="125.0" layoutY="357.0" mnemonicParsing="false" onAction="#Delete" prefHeight="34.0" prefWidth="39.0" style="-fx-background-color: red; -fx-border-radius: 20;" textFill="#fff8f8">
+               <font>
+                  <Font name="Arial Bold" size="12.0" />
+               </font>
+            </Button>
+            <FontAwesomeIconView glyphName="TRASH" layoutX="143.0" layoutY="381.0" size="15" wrappingWidth="29.625005275011063" />
+         </children>
+      </AnchorPane>
+      <TextField fx:id="TFFilter" layoutX="36.0" layoutY="259.0" onAction="#searchConge" prefHeight="32.0" prefWidth="146.0" promptText="Rechercher" style="-fx-background-radius: 20;" />
+      <ComboBox fx:id="triBox" layoutX="186.0" layoutY="258.0" onAction="#trie" prefHeight="31.0" prefWidth="79.0" promptText="trie par" style="-fx-background-radius: 20;" />
+      <Button layoutX="410.0" layoutY="256.0" mnemonicParsing="false" onAction="#stats" prefHeight="38.0" prefWidth="131.0" style="-fx-background-color: #ae1e23; -fx-background-radius: 20;" text="stats" textFill="WHITE">
+         <font>
+            <Font name="Dubai Medium" size="15.0" />
+         </font>
+      </Button>
+   </children>
+</AnchorPane>

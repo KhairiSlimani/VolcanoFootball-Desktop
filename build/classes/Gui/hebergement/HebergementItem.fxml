@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.shape.Circle?>
+<?import javafx.scene.shape.Line?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane fx:id="item" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="200.0" prefWidth="200.0" styleClass="child" stylesheets="@../stylesheet.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Gui.hebergement.HebergementItemController">
+   <children>
+      <Circle fill="WHITE" layoutX="65.0" layoutY="62.0" radius="35.0" stroke="WHITE" strokeType="INSIDE" />
+      <Line endX="-16.0" layoutX="205.0" layoutY="64.0" startX="-105.0" stroke="WHITE" />
+      <Text fx:id="nomH" fill="WHITE" layoutX="106.0" layoutY="55.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Hebergement">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Text>
+      <Text fill="WHITE" layoutX="38.0" layoutY="122.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Agence:">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Text>
+      <Text fx:id="agence" fill="WHITE" layoutX="91.0" layoutY="121.0" strokeType="OUTSIDE" strokeWidth="0.0" text="agence">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Text>
+      <Text fill="WHITE" layoutX="36.0" layoutY="141.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Adresse:">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Text>
+      <Text fx:id="adresse" fill="WHITE" layoutX="90.0" layoutY="141.0" strokeType="OUTSIDE" strokeWidth="0.0" text="adresse">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Text>
+      <JFXButton fx:id="deleteButton" ellipsisString="" layoutX="115.0" layoutY="176.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" onAction="#DeleteH" prefHeight="25.0" prefWidth="28.0" style="-fx-background-color: red;" text="Button">
+         <graphic>
+            <FontAwesomeIconView glyphName="TRASH" size="15" />
+         </graphic>
+      </JFXButton>
+      <JFXButton fx:id="editButton" ellipsisString="" layoutX="77.0" layoutY="176.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" onAction="#EditCommande" prefHeight="25.0" prefWidth="28.0" style="-fx-background-color: orange;" text="Button">
+         <graphic>
+            <FontAwesomeIconView glyphName="EDIT" size="15" />
+         </graphic>
+      </JFXButton>
+      <FontAwesomeIconView glyphName="LIST_UL" layoutX="42.0" layoutY="80.0" size="45" text="" />
+      <Text fill="WHITE" layoutX="36.0" layoutY="160.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Type:">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Text>
+      <Text fx:id="type" fill="WHITE" layoutX="91.0" layoutY="160.0" strokeType="OUTSIDE" strokeWidth="0.0" text="type">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Text>
+   </children>
+</AnchorPane>

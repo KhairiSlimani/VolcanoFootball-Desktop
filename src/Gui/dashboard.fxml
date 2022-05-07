@@ -94,13 +94,13 @@
          <children>
             <HBox fx:id="dashboardBox" alignment="CENTER_LEFT" styleClass="hover_border">
                <VBox.margin>
-                  <Insets bottom="2.0" left="2.0" right="2.0" top="2.0" />
+                  <Insets />
                </VBox.margin>
                <padding>
-                  <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                  <Insets bottom="8.0" left="8.0" right="8.0" top="8.0" />
                </padding>
                <children>
-                  <FontAwesomeIconView fill="WHITE" glyphName="DASHBOARD" size="2em" />
+                  <FontAwesomeIconView fill="WHITE" glyphName="DASHBOARD" size="1.5em" />
                   <Text fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="Dashboard">
                      <HBox.margin>
                         <Insets left="10.0" />
@@ -113,10 +113,10 @@
             </HBox>
             <HBox fx:id="usersBox" alignment="CENTER_LEFT" onMouseClicked="#OpenUsers" styleClass="hover_border">
                <padding>
-                  <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                  <Insets bottom="8.0" left="8.0" right="8.0" top="8.0" />
                </padding>
                <children>
-                  <FontAwesomeIconView fill="WHITE" glyphName="USERS" size="2em" />
+                  <FontAwesomeIconView fill="WHITE" glyphName="USERS" size="1.5em" />
                   <Text fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="Users">
                      <font>
                         <Font size="14.0" />
@@ -129,10 +129,10 @@
             </HBox>
             <HBox fx:id="produitsBox" alignment="CENTER_LEFT" onMouseClicked="#OpenProduits" styleClass="hover_border">
                <padding>
-                  <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                  <Insets bottom="8.0" left="8.0" right="8.0" top="8.0" />
                </padding>
                <children>
-                  <FontAwesomeIconView fill="WHITE" glyphName="SHOPPING_CART" size="2em" />
+                  <FontAwesomeIconView fill="WHITE" glyphName="SHOPPING_CART" size="1.5em" />
                   <Text fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="Produits">
                      <font>
                         <Font size="14.0" />
@@ -145,10 +145,10 @@
             </HBox>
             <HBox fx:id="commandesBox" alignment="CENTER_LEFT" onMouseClicked="#OpenCommandes" styleClass="hover_border">
                <padding>
-                  <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                  <Insets bottom="8.0" left="8.0" right="8.0" top="8.0" />
                </padding>
                <children>
-                  <FontAwesomeIconView fill="WHITE" glyphName="LIST_UL" size="2em" />
+                  <FontAwesomeIconView fill="WHITE" glyphName="LIST_UL" size="1.5em" />
                   <Text fx:id="commandesText" fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="Commandes">
                      <font>
                         <Font size="14.0" />
@@ -161,10 +161,10 @@
             </HBox>
             <HBox fx:id="favorisBox" alignment="CENTER_LEFT" onMouseClicked="#OpenFavoris" styleClass="hover_border">
                <padding>
-                  <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                  <Insets bottom="8.0" left="8.0" right="8.0" top="8.0" />
                </padding>
                <children>
-                  <FontAwesomeIconView fill="WHITE" glyphName="HEART" size="2em" />
+                  <FontAwesomeIconView fill="WHITE" glyphName="HEART" size="1.5em" />
                   <Text fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="Favoris">
                      <font>
                         <Font size="14.0" />
@@ -177,10 +177,10 @@
             </HBox>
             <HBox fx:id="EquipeBox" alignment="CENTER_LEFT" onMouseClicked="#OpenEquipe" styleClass="hover_border">
                <padding>
-                  <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                  <Insets bottom="8.0" left="8.0" right="8.0" top="8.0" />
                </padding>
                <children>
-                  <FontAwesomeIconView fill="WHITE" glyphName="USERS" size="2em" />
+                  <FontAwesomeIconView fill="WHITE" glyphName="USERS" size="1.5em" />
                   <Text fx:id="commandesText11" fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="Equipe">
                      <font>
                         <Font size="14.0" />
@@ -193,10 +193,10 @@
             </HBox>
             <HBox fx:id="joueurBox" alignment="CENTER_LEFT" onMouseClicked="#OpenJoueur" styleClass="hover_border">
                <padding>
-                  <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                  <Insets bottom="8.0" left="8.0" right="8.0" top="8.0" />
                </padding>
                <children>
-                  <FontAwesomeIconView fill="WHITE" glyphName="USER" size="2em" wrappingWidth="20.14285659790039" />
+                  <FontAwesomeIconView fill="WHITE" glyphName="USER" size="1.5em" wrappingWidth="20.14285659790039" />
                   <Text fx:id="joueur" fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="Joueur">
                      <font>
                         <Font size="14.0" />
@@ -209,10 +209,10 @@
             </HBox>
             <HBox fx:id="joueurBox1" alignment="CENTER_LEFT" onMouseClicked="#OpenStatEquipe" styleClass="hover_border">
                <padding>
-                  <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                  <Insets bottom="8.0" left="8.0" right="8.0" top="8.0" />
                </padding>
                <children>
-                  <FontAwesomeIconView fill="WHITE" glyphName="USER" size="2em" wrappingWidth="20.14285659790039" />
+                  <FontAwesomeIconView fill="WHITE" glyphName="USER" size="1.5em" wrappingWidth="20.14285659790039" />
                   <Text fx:id="statequipe" fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="Stat Equipe">
                      <font>
                         <Font size="14.0" />
@@ -225,10 +225,10 @@
             </HBox>
             <HBox fx:id="StadeBox" alignment="CENTER_LEFT" onMouseClicked="#OpenStade" styleClass="hover_border">
                <padding>
-                  <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                  <Insets bottom="8.0" left="8.0" right="8.0" top="8.0" />
                </padding>
                <children>
-                  <FontAwesomeIconView fill="WHITE" glyphName="FOOTBALL" size="2em" />
+                  <FontAwesomeIconView fill="WHITE" glyphName="FOOTBALL" size="1.5em" />
                   <Text fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="Stade">
                      <font>
                         <Font size="14.0" />
@@ -241,11 +241,91 @@
             </HBox>
             <HBox fx:id="KiosqueBox" alignment="CENTER_LEFT" onMouseClicked="#OpenKiosque" styleClass="hover_border">
                <padding>
-                  <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                  <Insets bottom="8.0" left="8.0" right="8.0" top="8.0" />
                </padding>
                <children>
-                  <FontAwesomeIconView fill="WHITE" glyphName="ANCHOR" size="2em" />
+                  <FontAwesomeIconView fill="WHITE" glyphName="ANCHOR" size="1.5em" />
                   <Text fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="Kiosque">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                     <HBox.margin>
+                        <Insets left="10.0" />
+                     </HBox.margin>
+                  </Text>
+               </children>
+            </HBox>
+            <HBox fx:id="Agncebtn" alignment="CENTER_LEFT" onMouseClicked="#OpenAgence" styleClass="hover_border">
+               <padding>
+                  <Insets bottom="8.0" left="8.0" right="8.0" top="8.0" />
+               </padding>
+               <children>
+                  <FontAwesomeIconView fill="WHITE" glyphName="USERS" size="1.5em" />
+                  <Text fx:id="commandesText111" fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="Agence">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                     <HBox.margin>
+                        <Insets left="10.0" />
+                     </HBox.margin>
+                  </Text>
+               </children>
+            </HBox>
+            <HBox fx:id="hebbtn" alignment="CENTER_LEFT" onMouseClicked="#OpenHebergement" styleClass="hover_border">
+               <padding>
+                  <Insets bottom="8.0" left="8.0" right="8.0" top="8.0" />
+               </padding>
+               <children>
+                  <FontAwesomeIconView fill="WHITE" glyphName="USER" size="1.5em" wrappingWidth="20.14285659790039" />
+                  <Text fx:id="joueur1" fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="Hébergement">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                     <HBox.margin>
+                        <Insets left="10.0" />
+                     </HBox.margin>
+                  </Text>
+               </children>
+            </HBox>
+            <HBox fx:id="reservationbtn" alignment="CENTER_LEFT" onMouseClicked="#OpenReservation" styleClass="hover_border">
+               <padding>
+                  <Insets bottom="8.0" left="8.0" right="8.0" top="8.0" />
+               </padding>
+               <children>
+                  <FontAwesomeIconView fill="WHITE" glyphName="USER" size="1.5em" wrappingWidth="20.14285659790039" />
+                  <Text fx:id="statequipe1" fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="Réservation">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                     <HBox.margin>
+                        <Insets left="10.0" />
+                     </HBox.margin>
+                  </Text>
+               </children>
+            </HBox>
+            <HBox fx:id="billetbtn" alignment="CENTER_LEFT" onMouseClicked="#OpenBillet" styleClass="hover_border">
+               <padding>
+                  <Insets bottom="8.0" left="8.0" right="8.0" top="8.0" />
+               </padding>
+               <children>
+                  <FontAwesomeIconView fill="WHITE" glyphName="FOOTBALL" size="1.5em" />
+                  <Text fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="Billet">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                     <HBox.margin>
+                        <Insets left="10.0" />
+                     </HBox.margin>
+                  </Text>
+               </children>
+            </HBox>
+            <HBox fx:id="matchbtn" alignment="CENTER_LEFT" onMouseClicked="#OpenMatch" styleClass="hover_border">
+               <padding>
+                  <Insets bottom="8.0" left="8.0" right="8.0" top="8.0" />
+               </padding>
+               <children>
+                  <FontAwesomeIconView fill="WHITE" glyphName="ANCHOR" size="1.5em" />
+                  <Text fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="Match">
                      <font>
                         <Font size="14.0" />
                      </font>
@@ -257,11 +337,6 @@
             </HBox>
             <VBox alignment="CENTER" prefHeight="288.0" prefWidth="150.0" VBox.vgrow="ALWAYS">
                <children>
-                  <HBox fx:id="commandesBox1" alignment="CENTER_LEFT" onMouseClicked="#OpenCommandes" styleClass="hover_border">
-                     <padding>
-                        <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
-                     </padding>
-                  </HBox>
                   <HBox alignment="CENTER_LEFT" onMouseClicked="#Logout" styleClass="hover_border">
                      <padding>
                         <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />

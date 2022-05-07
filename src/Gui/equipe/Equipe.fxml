@@ -47,7 +47,7 @@
                         <TableColumn fx:id="colrang" prefWidth="83.0" text="Rang" />
                      </columns>
                   </TableView>
-                  <AnchorPane prefHeight="370.0" prefWidth="234.0">
+                  <AnchorPane fx:id="form" prefHeight="370.0" prefWidth="234.0">
                      <children>
                         <GridPane layoutX="-28.0" layoutY="27.0" prefHeight="250.0" prefWidth="233.0">
                            <columnConstraints>

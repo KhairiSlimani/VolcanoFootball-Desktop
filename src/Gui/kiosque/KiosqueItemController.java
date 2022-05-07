@@ -70,13 +70,13 @@ public class KiosqueItemController implements Initializable {
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         
-        /*
+        
         if(SessionManager.get().getRole().equals("Client"))
         {
             editButton.setVisible(false);
             deleteButton.setVisible(false);
         }
-        */
+        
 
     }    
 

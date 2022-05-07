@@ -6,6 +6,7 @@
 package Gui.joueur;
 
 import Entities.Joueur;
+import Gui.SessionManager;
 import Gui.commande.AddCommandeController;
 import Services.JoueurService;
 import com.jfoenix.controls.JFXButton;
@@ -78,6 +79,8 @@ public class JoueurController implements Initializable {
     private JFXTextField tfequipe;
     @FXML
     private JFXTextField tfphoto;
+    @FXML
+    private AnchorPane form;
 
     /**
      * Initializes the controller class.
@@ -89,6 +92,11 @@ public class JoueurController implements Initializable {
         JoueurService joueur = new JoueurService();
         ObservableList<Joueur> list = joueur.afficherJoueursByEquipe(1);
         System.out.println(list.size());
+        
+         if(SessionManager.get().getRole().equals("Client"))
+        {
+            form.setVisible(false);
+        }
     }
 
     public void showJoueur() {
