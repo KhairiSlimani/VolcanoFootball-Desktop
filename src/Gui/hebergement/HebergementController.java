@@ -123,7 +123,7 @@ public class HebergementController implements Initializable {
 
     @FXML
     private void searchedAvance(KeyEvent event) {
-              System.out.println("test");
+              System.out.println(recherche.getText());
          
         FlowPaneAg.getChildren().clear();
 
@@ -149,6 +149,7 @@ public class HebergementController implements Initializable {
         } catch (IOException e) {
             e.printStackTrace();
         }
+
     }
    
 

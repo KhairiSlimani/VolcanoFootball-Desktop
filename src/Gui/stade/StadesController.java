@@ -16,6 +16,7 @@ import com.jfoenix.controls.JFXButton;
 import com.jfoenix.controls.JFXDialog;
 import java.io.IOException;
 import java.net.URL;
+import java.util.ArrayList;
 import static java.util.Collections.list;
 import java.util.List;
 import java.util.ResourceBundle;
@@ -35,6 +36,8 @@ import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.TextField;
+import javafx.scene.input.InputMethodEvent;
+import javafx.scene.input.KeyEvent;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.FlowPane;
 import javafx.scene.layout.Pane;
@@ -68,9 +71,9 @@ public class StadesController implements Initializable {
     @FXML
     private JFXButton imprimer;
     @FXML
-    private TextField filterField;
-    @FXML
     private AnchorPane affich;
+    @FXML
+    private TextField recherche;
 
     /**
      * Initializes the controller class.
@@ -84,7 +87,7 @@ public class StadesController implements Initializable {
             addPB.setVisible(false);
         } 
        
-        Affichage();
+        
         ListStades();
 
         
@@ -194,4 +197,39 @@ public class StadesController implements Initializable {
      if(success){
         job.endJob();
     }
-     }}}
+     }}
+
+    private void search(InputMethodEvent event) {
+        
+    }
+
+    @FXML
+    private void search(KeyEvent event) {
+              
+                
+        FlowPane.getChildren().clear();
+        StadeService gs = new StadeService();
+        java.util.List<stade> list = new ArrayList<>();
+
+        list = gs.recherche(recherche.getText());
+         System.out.println("test"+list);
+
+      
+        try {
+            for (int i = 0; i < list.size(); i++) {
+                
+                FXMLLoader loader = new FXMLLoader(getClass().getResource("StadeItem.fxml"));
+                Pane pane = loader.load();
+                StadeItemController controller = loader.getController();
+                controller.ItemInfos(list.get(i), FlowPane, dialog , container, cartSize);
+
+                FlowPane.getChildren().add(pane);
+  
+            }
+            
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
+    }
+}

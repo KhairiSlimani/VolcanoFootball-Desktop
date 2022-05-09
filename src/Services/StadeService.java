@@ -155,6 +155,33 @@ public class StadeService implements IServicestade {
         return stade;
 
     }
+     public List<stade> recherche(String searched) {
+
+        List<stade> liste = new ArrayList<>();
+        try {
+
+            String req = "select * from stade WHERE nom LIKE '%" + searched + "%' OR adresse LIKE '%" + searched + "%' ;";
+            PreparedStatement pst = con.prepareStatement(req);
+            ResultSet rs = pst.executeQuery();
+            stade h = new stade();
+            while (rs.next()) {
+
+             h.setId(rs.getInt("id"));
+                h.setNom(rs.getString("nom"));
+                h.setAdresse(rs.getString("adresse"));
+                h.setDateouverture(rs.getDate("dateouverture"));
+                
+                h.setCapacite((int) rs.getFloat("capacite"));
+                
+                liste.add(h);
+            }
+            return liste;
+        } catch (SQLException ex) {
+            System.out.println("errreur" + ex.getMessage());
+        }
+        return null;
+
+    }
 
    
     

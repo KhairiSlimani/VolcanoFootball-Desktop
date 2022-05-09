@@ -78,6 +78,6 @@
          </cursor>
       </JFXButton>
       <JFXButton fx:id="imprimer" layoutX="985.0" layoutY="45.0" onAction="#Print" prefHeight="35.0" prefWidth="133.0" styleClass="btn" text="Imprimer" />
-      <TextField fx:id="filterField" layoutX="984.0" layoutY="91.0" prefHeight="35.0" prefWidth="134.0" promptText="Search .." style="-fx-background-radius: 30; -fx-alignment: ;" />
+      <TextField fx:id="recherche" layoutX="984.0" layoutY="91.0" onKeyTyped="#search" prefHeight="35.0" prefWidth="134.0" promptText="Search .." style="-fx-background-radius: 30; -fx-alignment: ;" />
    </children>
 </AnchorPane>
