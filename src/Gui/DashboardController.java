@@ -7,6 +7,7 @@ package Gui;
 
 import Gui.agence.AgenceController;
 import Gui.billet.BilletController;
+import Gui.event.EventController;
 import Gui.hebergement.HebergementController;
 import Gui.kiosque.KiosquesController;
 import Gui.match.MatchController;
@@ -91,6 +92,8 @@ public class DashboardController implements Initializable {
     private HBox billetbtn;
     @FXML
     private HBox matchbtn;
+    @FXML
+    private HBox eventbtn;
 
     /**
      * Initializes the controller class.
@@ -254,6 +257,14 @@ public class DashboardController implements Initializable {
         borderPane.setCenter(view);
     }
     
+     @FXML
+    private void OpenEvent(MouseEvent event) throws IOException {
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("event/Event.fxml"));
+        view=loader.load();
+        EventController controller = loader.getController();
+        
+        borderPane.setCenter(view);
+    }
     
 
 }
