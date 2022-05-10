@@ -212,7 +212,7 @@
                   <Insets bottom="8.0" left="8.0" right="8.0" top="8.0" />
                </padding>
                <children>
-                  <FontAwesomeIconView fill="WHITE" glyphName="USER" size="1.5em" wrappingWidth="20.14285659790039" />
+                  <FontAwesomeIconView fill="WHITE" glyphName="SIGNAL" size="1.5em" wrappingWidth="20.14285659790039" />
                   <Text fx:id="statequipe" fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="Stat Equipe">
                      <font>
                         <Font size="14.0" />
@@ -228,7 +228,7 @@
                   <Insets bottom="8.0" left="8.0" right="8.0" top="8.0" />
                </padding>
                <children>
-                  <FontAwesomeIconView fill="WHITE" glyphName="FOOTBALL" size="1.5em" />
+                  <FontAwesomeIconView fill="WHITE" glyphName="INBOX" size="1.5em" />
                   <Text fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="Stade">
                      <font>
                         <Font size="14.0" />
@@ -244,7 +244,7 @@
                   <Insets bottom="8.0" left="8.0" right="8.0" top="8.0" />
                </padding>
                <children>
-                  <FontAwesomeIconView fill="WHITE" glyphName="ANCHOR" size="1.5em" />
+                  <FontAwesomeIconView fill="WHITE" glyphName="CUTLERY" size="1.5em" />
                   <Text fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="Kiosque">
                      <font>
                         <Font size="14.0" />
@@ -260,7 +260,7 @@
                   <Insets bottom="8.0" left="8.0" right="8.0" top="8.0" />
                </padding>
                <children>
-                  <FontAwesomeIconView fill="WHITE" glyphName="USERS" size="1.5em" />
+                  <FontAwesomeIconView fill="WHITE" glyphName="PLANE" size="1.5em" />
                   <Text fx:id="commandesText111" fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="Agence">
                      <font>
                         <Font size="14.0" />
@@ -276,7 +276,7 @@
                   <Insets bottom="8.0" left="8.0" right="8.0" top="8.0" />
                </padding>
                <children>
-                  <FontAwesomeIconView fill="WHITE" glyphName="USER" size="1.5em" wrappingWidth="20.14285659790039" />
+                  <FontAwesomeIconView fill="WHITE" glyphName="HOME" size="1.5em" wrappingWidth="20.14285659790039" />
                   <Text fx:id="joueur1" fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="Hébergement">
                      <font>
                         <Font size="14.0" />
@@ -292,7 +292,7 @@
                   <Insets bottom="8.0" left="8.0" right="8.0" top="8.0" />
                </padding>
                <children>
-                  <FontAwesomeIconView fill="WHITE" glyphName="USER" size="1.5em" wrappingWidth="20.14285659790039" />
+                  <FontAwesomeIconView fill="WHITE" glyphName="CALENDAR" size="1.5em" wrappingWidth="20.14285659790039" />
                   <Text fx:id="statequipe1" fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="Réservation">
                      <font>
                         <Font size="14.0" />
@@ -308,7 +308,7 @@
                   <Insets bottom="8.0" left="8.0" right="8.0" top="8.0" />
                </padding>
                <children>
-                  <FontAwesomeIconView fill="WHITE" glyphName="FOOTBALL" size="1.5em" />
+                  <FontAwesomeIconView fill="WHITE" glyphName="CREDIT_CARD" size="1.5em" />
                   <Text fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="Billet">
                      <font>
                         <Font size="14.0" />
@@ -324,7 +324,7 @@
                   <Insets bottom="8.0" left="8.0" right="8.0" top="8.0" />
                </padding>
                <children>
-                  <FontAwesomeIconView fill="WHITE" glyphName="ANCHOR" size="1.5em" />
+                  <FontAwesomeIconView fill="WHITE" glyphName="FIRE" size="1.5em" />
                   <Text fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="Match">
                      <font>
                         <Font size="14.0" />
@@ -340,7 +340,7 @@
                   <Insets bottom="8.0" left="8.0" right="8.0" top="8.0" />
                </padding>
                <children>
-                  <FontAwesomeIconView fill="WHITE" glyphName="ANCHOR" size="1.5em" />
+                  <FontAwesomeIconView fill="WHITE" glyphName="STAR" size="1.5em" />
                   <Text fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="Evennement">
                      <font>
                         <Font size="14.0" />

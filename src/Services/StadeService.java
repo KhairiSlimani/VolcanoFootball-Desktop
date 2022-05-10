@@ -36,7 +36,7 @@ public class StadeService implements IServicestade {
             pstm.setString(2, s.getAdresse());
             pstm.setDate(3, (Date) s.getDateouverture());
             pstm.setFloat(4, s.getCapacite());
-          
+            
             pstm.executeUpdate();
 
             System.out.println("Stade Ajouté");

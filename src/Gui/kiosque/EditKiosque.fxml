@@ -10,15 +10,14 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-
-<AnchorPane id="AnchorPane" prefHeight="350.0" prefWidth="200.0" style="-fx-border-radius: 20; -fx-border-color: black; -fx-border-width: 2;" styleClass="child" stylesheets="@../stylesheet.css" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/8.0.171" fx:controller="Gui.kiosque.EditKiosqueController">
+<AnchorPane id="AnchorPane" prefHeight="350.0" prefWidth="200.0" style="-fx-border-radius: 20; -fx-border-color: black; -fx-border-width: 2;" styleClass="child" stylesheets="@../stylesheet.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Gui.kiosque.EditKiosqueController">
    <children>
-      <FontAwesomeIconView glyphName="LIST_UL" layoutX="79.0" layoutY="45.0" size="45" />
-      <VBox layoutX="16.0" layoutY="76.0" prefHeight="243.0" prefWidth="171.0">
+      <FontAwesomeIconView glyphName="CUTLERY" layoutX="84.0" layoutY="57.0" size="45" />
+      <VBox layoutX="16.0" layoutY="81.0" prefHeight="239.0" prefWidth="171.0">
          <children>
             <JFXTextField fx:id="tfNom" focusColor="#b82025" labelFloat="true" promptText="Nom">
                <VBox.margin>
-                  <Insets bottom="20.0" />
+                  <Insets bottom="15.0" left="15.0" right="15.0" top="15.0" />
                </VBox.margin>
                <font>
                   <Font size="14.0" />
@@ -26,13 +25,13 @@
             </JFXTextField>
             <JFXComboBox fx:id="tfStade" focusColor="#b82025" labelFloat="true" prefHeight="25.0" prefWidth="202.0" promptText="Stade">
                <VBox.margin>
-                  <Insets bottom="20.0" />
+                  <Insets bottom="15.0" left="15.0" right="15.0" top="15.0" />
                </VBox.margin>
             </JFXComboBox>
             
             <JFXComboBox fx:id="tfType" focusColor="#b82025" labelFloat="true" prefHeight="25.0" prefWidth="202.0" promptText="Type">
                <VBox.margin>
-                  <Insets bottom="20.0" />
+                  <Insets bottom="15.0" left="15.0" right="15.0" top="15.0" />
                </VBox.margin>
             </JFXComboBox>
             <JFXButton onAction="#EditK" prefHeight="25.0" prefWidth="192.0" styleClass="btn" text="Modifier Kioque">
@@ -45,6 +44,9 @@
                <font>
                   <Font size="14.0" />
                </font>
+               <VBox.margin>
+                  <Insets bottom="15.0" left="15.0" right="15.0" top="15.0" />
+               </VBox.margin>
             </JFXButton>
          </children>
       </VBox>
